@@ -1,0 +1,406 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-19 16:50:02.921625",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "suporte_tab",
+  "protocolo_vinculado_section",
+  "ticket_docname",
+  "sp_docname",
+  "general_info_section",
+  "main_eqp_serial_no",
+  "main_eqp_model_ref",
+  "main_eqp_item_code",
+  "main_eqp_model",
+  "column_break_rwki",
+  "main_eqp_type",
+  "main_eqp_family",
+  "main_eqp_error_version",
+  "main_eqp_group",
+  "service_partner_company",
+  "column_break_aycr",
+  "main_eqp_start_firmware",
+  "main_eqp_end_firmware",
+  "equipment_add_info_section",
+  "distributor",
+  "main_uf_installation",
+  "column_break_wfsg",
+  "section_pre_analysis",
+  "main_eqp_is_online",
+  "instalação_section",
+  "column_break_ftxy",
+  "ext_fault_description",
+  "ext_fault_code",
+  "column_break_qwyr",
+  "fotos_do_ambiente_section",
+  "oss_data_extraction",
+  "main_eqp_serial_no_label_picture",
+  "column_break_msdg",
+  "main_eqp_purchase_invoice",
+  "main_eqp_env_picture",
+  "ext_fault_video",
+  "section_break_resolution",
+  "eqp_column",
+  "warranty_approval",
+  "warranty_denial_reason",
+  "caveat",
+  "email",
+  "técnico_column",
+  "technical_responsible",
+  "ext_fault_support_description",
+  "internal_tab",
+  "priority",
+  "sac",
+  "warranty_battery",
+  "confirm_battery_warranty",
+  "confirm_sac",
+  "corrections_tracker",
+  "naming_series"
+ ],
+ "fields": [
+  {
+   "fieldname": "suporte_tab",
+   "fieldtype": "Tab Break",
+   "label": "Suporte"
+  },
+  {
+   "fieldname": "protocolo_vinculado_section",
+   "fieldtype": "Section Break",
+   "label": "Vínculos"
+  },
+  {
+   "fieldname": "ticket_docname",
+   "fieldtype": "Link",
+   "label": "Referência Ticket",
+   "options": "Service Protocol",
+   "reqd": 1,
+   "read_only": 1,
+   "description": "*<strong>Vinculado</strong> com o documento acima. Acesse o link para visualizar."
+  },
+  {
+   "fieldname": "sp_docname",
+   "fieldtype": "Link",
+   "label": "Referência Service Protocol",
+   "options": "Service Protocol",
+   "reqd": 1,
+   "read_only": 1,
+   "description": "*<strong>Vinculado</strong> com o documento acima. Acesse o link para visualizar."
+  },
+  {
+   "fieldname": "general_info_section",
+   "fieldtype": "Section Break",
+   "label": "Informações do Equipamento"
+  },
+  {
+   "fieldname": "main_eqp_serial_no",
+   "fieldtype": "Data",
+   "label": "Número de Série",
+   "reqd": 1,
+   "read_only": 1,
+   "placeholder": "Insira um SN válido."
+  },
+  {
+   "fieldname": "main_eqp_model_ref",
+   "fieldtype": "Data",
+   "label": "Referência do Modelo",
+   "reqd": 1,
+   "fetch_from": "ref_naming_series.main_eqp_model_ref",
+   "placeholder": "Insira um modelo da lista."
+  },
+  {
+   "fieldname": "main_eqp_item_code",
+   "fieldtype": "Data",
+   "label": "Código do Modelo",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "main_eqp_model",
+   "fieldtype": "Data",
+   "label": "Modelo",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rwki",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "main_eqp_type",
+   "fieldtype": "Data",
+   "label": "Tipo",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "main_eqp_family",
+   "fieldtype": "Data",
+   "label": "Familia",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "main_eqp_error_version",
+   "fieldtype": "Data",
+   "label": "Versão",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "main_eqp_group",
+   "fieldtype": "Data",
+   "label": "Grupo",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "service_partner_company",
+   "fieldtype": "Data",
+   "label": "Parceiro de Serviço",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_aycr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "main_eqp_start_firmware",
+   "fieldtype": "Data",
+   "label": "Firmware Inicial",
+   "read_only": 1
+  },
+  {
+   "fieldname": "main_eqp_end_firmware",
+   "fieldtype": "Data",
+   "label": "Firmware Final",
+   "read_only": 1
+  },
+  {
+   "fieldname": "equipment_add_info_section",
+   "fieldtype": "Section Break",
+   "label": "Informações Adicionais"
+  },
+  {
+   "fieldname": "distributor",
+   "fieldtype": "Link",
+   "label": "Distribuidor",
+   "options": "Distributor",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "main_uf_installation",
+   "fieldtype": "Data",
+   "label": "UF da Instalação",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wfsg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_pre_analysis",
+   "fieldtype": "Section Break",
+   "label": "Análise Preliminar"
+  },
+  {
+   "fieldname": "main_eqp_is_online",
+   "fieldtype": "Check",
+   "label": "Online",
+   "default": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "instalação_section",
+   "fieldtype": "Section Break",
+   "label": "Informações da Instalação"
+  },
+  {
+   "fieldname": "column_break_ftxy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ext_fault_description",
+   "fieldtype": "Data",
+   "label": "Descrição da Falha",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "ext_fault_code",
+   "fieldtype": "Link",
+   "label": "Falha",
+   "options": "External Issue Code",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qwyr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fotos_do_ambiente_section",
+   "fieldtype": "Section Break",
+   "label": "Fotos do Ambiente"
+  },
+  {
+   "fieldname": "oss_data_extraction",
+   "fieldtype": "Attach",
+   "label": "Extração de Dados (OSS)"
+  },
+  {
+   "fieldname": "main_eqp_serial_no_label_picture",
+   "fieldtype": "Attach",
+   "label": "Foto da Etiqueta",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_msdg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "main_eqp_purchase_invoice",
+   "fieldtype": "Attach",
+   "label": "NF de Compra"
+  },
+  {
+   "fieldname": "main_eqp_env_picture",
+   "fieldtype": "Attach",
+   "label": "Foto do Ambiente"
+  },
+  {
+   "fieldname": "ext_fault_video",
+   "fieldtype": "Attach",
+   "label": "Video do Problema "
+  },
+  {
+   "fieldname": "section_break_resolution",
+   "fieldtype": "Section Break",
+   "label": "Resolução"
+  },
+  {
+   "fieldname": "eqp_column",
+   "fieldtype": "Column Break",
+   "label": "Equipamento"
+  },
+  {
+   "fieldname": "warranty_approval",
+   "fieldtype": "Select",
+   "label": "Garantia",
+   "options": "\nAprovado\nReprovado"
+  },
+  {
+   "fieldname": "warranty_denial_reason",
+   "fieldtype": "Select",
+   "label": "Motivo da reprova",
+   "options": "\n1. Quebra do Selo do produto\n2. Instalação ou comissionamento incorretos\n3. Falha relacionada a não observação do manual do Usuário\n4. Modificações não autorizadas , mudanças ou tentativas de reparo.\n5. Operação inapropriada ou incorreta.\n6. Ventilação Insuficiente para o dispositivo.\n7. Força Maior (raios, sobretensão, ventoinhas, incêndios e outros).\n8. Tempo de garantia expirado",
+   "depends_on": "eval:doc.warranty == \"Reprovado\" ;"
+  },
+  {
+   "fieldname": "caveat",
+   "fieldtype": "Select",
+   "label": "Ressalva",
+   "options": "\nExposição ao Sol\nEspaçamento\nTensão da rede alta",
+   "depends_on": "eval:doc.status == \"Aprovado\" ;"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "depends_on": "eval:doc.warranty == \"Reprovado\" ;"
+  },
+  {
+   "fieldname": "técnico_column",
+   "fieldtype": "Column Break",
+   "label": "Técnico"
+  },
+  {
+   "fieldname": "technical_responsible",
+   "fieldtype": "Data",
+   "label": "Responsável Técnico"
+  },
+  {
+   "fieldname": "ext_fault_support_description",
+   "fieldtype": "Small Text",
+   "label": "Observações"
+  },
+  {
+   "fieldname": "internal_tab",
+   "fieldtype": "Tab Break",
+   "label": "Internal"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Prioridade",
+   "options": "\nMáxima\nReclame aqui\nProcesso judicial"
+  },
+  {
+   "fieldname": "sac",
+   "fieldtype": "Link",
+   "label": "SAC",
+   "options": "Compliance Statement"
+  },
+  {
+   "fieldname": "warranty_battery",
+   "fieldtype": "Link",
+   "label": "Warranty Battery",
+   "options": "Service Protocol Battery Checklist"
+  },
+  {
+   "fieldname": "confirm_battery_warranty",
+   "fieldtype": "Check",
+   "label": "Confirm Battery",
+   "default": "0"
+  },
+  {
+   "fieldname": "confirm_sac",
+   "fieldtype": "Check",
+   "label": "Confirm SAC",
+   "default": "0",
+   "hidden": 1
+  },
+  {
+   "fieldname": "corrections_tracker",
+   "fieldtype": "Table",
+   "label": "Pedidos de Correção",
+   "options": "Corrections Tracker"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Data"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-11-19 16:50:02.921625",
+ "modified_by": "Administrator",
+ "module": "Frappe Growatt Checklists",
+ "name": "Service Protocol Datalogger Checklist",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

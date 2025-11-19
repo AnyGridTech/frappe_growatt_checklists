@@ -1,0 +1,482 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-11 17:29:40.423488",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_public",
+  "section_checklist_links",
+  "cust_card",
+  "ticket_docname",
+  "sp_docname",
+  "child_tracker_html",
+  "child_tracker_table",
+  "section_customer",
+  "main_customer_email",
+  "column_break_owbg",
+  "main_customer_name",
+  "section_eqp",
+  "column_break_wxwp",
+  "main_eqp_serial_no",
+  "main_eqp_model_ref",
+  "main_eqp_item_code",
+  "main_eqp_model",
+  "main_eqp_mppt_number",
+  "main_eqp_phase",
+  "main_eqp_type",
+  "column_break_uwza",
+  "main_eqp_group",
+  "main_eqp_family",
+  "main_eqp_error_version",
+  "service_partner_company",
+  "main_eqp_start_firmware",
+  "main_eqp_end_firmware",
+  "main_eqp_warehouse",
+  "section_additional",
+  "distributor",
+  "main_uf_installation",
+  "column_break_ttdu",
+  "main_eqp_purchase_invoice",
+  "main_eqp_serial_no_label_picture",
+  "section_eqp_failure",
+  "ext_fault_date",
+  "ext_fault_code",
+  "ext_fault_description",
+  "ext_fault_customer_description",
+  "section_pre_analysis",
+  "análise_column",
+  "main_eqp_is_online",
+  "main_eqp_has_updated",
+  "main_eqp_has_reseted",
+  "main_eqp_has_neutral",
+  "main_eqp_has_stringbox",
+  "main_eqp_has_battery",
+  "main_eqp_has_transformer",
+  "main_eqp_has_sm",
+  "main_eqp_has_sem",
+  "column_break_hitx",
+  "oss_data_extraction",
+  "section_pre_analysis_conclusion",
+  "solution_description",
+  "solution_select",
+  "tab_internal",
+  "informações_internas_section",
+  "priority",
+  "corrections_tracker",
+  "tab_system",
+  "fields_section",
+  "email_applicant",
+  "subject_email"
+ ],
+  "fields": [
+    {
+      "fieldname": "tab_public",
+      "fieldtype": "Tab Break",
+      "label": "Public"
+    },
+    {
+      "fieldname": "section_checklist_links",
+      "fieldtype": "Section Break",
+      "label": "Documentos Derivados"
+    },
+    {
+      "fieldname": "cust_card",
+      "fieldtype": "HTML",
+      "read_only": 1
+    },
+    {
+      "fieldname": "ticket_docname",
+      "fieldtype": "Data",
+      "label": "Referência [Ticket]",
+      "read_only": 1
+    },
+    {
+      "fieldname": "sp_docname",
+      "fieldtype": "Data",
+      "label": "Referência [Service Protocol]"
+    },
+    {
+      "fieldname": "child_tracker_html",
+      "fieldtype": "HTML",
+      "label": "Child Tracker - HTML",
+      "read_only": 1
+    },
+    {
+      "fieldname": "child_tracker_table",
+      "fieldtype": "Table",
+      "label": "Child Tracker",
+      "options": "Child Tracker Table",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "section_customer",
+      "fieldtype": "Section Break",
+      "label": "Informações do Cliente"
+    },
+    {
+      "fieldname": "main_customer_email",
+      "fieldtype": "Link",
+      "label": "Email Principal",
+      "options": "User",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "in_preview": 1
+    },
+    {
+      "fieldname": "column_break_owbg",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "main_customer_name",
+      "fieldtype": "Data",
+      "label": "Nome Completo",
+      "reqd": 1,
+      "read_only": 1,
+      "fetch_from": "main_customer_email.full_name"
+    },
+    {
+      "fieldname": "section_eqp",
+      "fieldtype": "Section Break",
+      "label": "Informações do Equipamento"
+    },
+    {
+      "fieldname": "column_break_wxwp",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "main_eqp_serial_no",
+      "fieldtype": "Data",
+      "label": "Número de Série",
+      "reqd": 1
+    },
+    {
+      "fieldname": "main_eqp_model_ref",
+      "fieldtype": "Link",
+      "label": "Referência do Modelo",
+      "options": "Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "main_eqp_item_code",
+      "fieldtype": "Data",
+      "label": "Código do Modelo",
+      "reqd": 1,
+      "read_only": 1,
+      "fetch_from": "main_eqp_model_ref.item_code",
+      "bold": 1
+    },
+    {
+      "fieldname": "main_eqp_model",
+      "fieldtype": "Data",
+      "label": "Modelo",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "fetch_from": "main_eqp_model_ref.item_name"
+    },
+    {
+      "fieldname": "main_eqp_mppt_number",
+      "fieldtype": "Data",
+      "label": "Número de MPPTs",
+      "read_only": 1,
+      "mandatory_depends_on": "eval:doc.main_eqp_group == \"Inverter\" || doc.main_eqp_group == \"Inversor\";",
+      "fetch_from": "main_eqp_model_ref.custom_mppt"
+    },
+    {
+      "fieldname": "main_eqp_phase",
+      "fieldtype": "Data",
+      "label": "Fase do Inversor",
+      "read_only": 1,
+      "fetch_from": "main_eqp_model_ref.custom_phase"
+    },
+    {
+      "fieldname": "main_eqp_type",
+      "fieldtype": "Data",
+      "label": "Tipo",
+      "reqd": 1,
+      "read_only": 1,
+      "fetch_from": "main_eqp_model_ref.custom_equipament_type",
+      "bold": 1
+    },
+    {
+      "fieldname": "column_break_uwza",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "main_eqp_group",
+      "fieldtype": "Data",
+      "label": "Grupo",
+      "reqd": 1,
+      "read_only": 1,
+      "fetch_from": "main_eqp_model_ref.item_group"
+    },
+    {
+      "fieldname": "main_eqp_family",
+      "fieldtype": "Data",
+      "label": "Familia",
+      "reqd": 1,
+      "read_only": 1,
+      "fetch_from": "main_eqp_model_ref.custom_family"
+    },
+    {
+      "fieldname": "main_eqp_error_version",
+      "fieldtype": "Data",
+      "label": "Versão",
+      "reqd": 1,
+      "read_only": 1,
+      "fetch_from": "main_eqp_model_ref.custom_error_version"
+    },
+    {
+      "fieldname": "service_partner_company",
+      "fieldtype": "Link",
+      "label": "Parceiro de Serviço",
+      "options": "Company",
+      "read_only": 1,
+      "link_filters": "[[\"Company\",\"custom_service_partner\",\"=\",1]]"
+    },
+    {
+      "fieldname": "main_eqp_start_firmware",
+      "fieldtype": "Data",
+      "label": "Firmware Inicial",
+      "read_only": 1
+    },
+    {
+      "fieldname": "main_eqp_end_firmware",
+      "fieldtype": "Data",
+      "label": "Firmware Final",
+      "read_only": 1
+    },
+    {
+      "fieldname": "main_eqp_warehouse",
+      "fieldtype": "Data",
+      "label": "Equipment Warehouse",
+      "read_only": 1
+    },
+    {
+      "fieldname": "section_additional",
+      "fieldtype": "Section Break",
+      "label": "Informações Adicionais"
+    },
+    {
+      "fieldname": "distributor",
+      "fieldtype": "Link",
+      "label": "Distribuidor",
+      "options": "Distributor",
+      "reqd": 1
+    },
+    {
+      "fieldname": "main_uf_installation",
+      "fieldtype": "Link",
+      "label": "UF da Instalação",
+      "options": "UF",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_ttdu",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "main_eqp_purchase_invoice",
+      "fieldtype": "Attach",
+      "label": "NF de Compra"
+    },
+    {
+      "fieldname": "main_eqp_serial_no_label_picture",
+      "fieldtype": "Attach",
+      "label": "Foto da Etiqueta"
+    },
+    {
+      "fieldname": "section_eqp_failure",
+      "fieldtype": "Section Break",
+      "label": "Informações da Falha"
+    },
+    {
+      "fieldname": "ext_fault_date",
+      "fieldtype": "Date",
+      "label": "Data da Falha",
+      "default": "Today"
+    },
+    {
+      "fieldname": "ext_fault_code",
+      "fieldtype": "Link",
+      "label": "Código de Falha",
+      "options": "External Issue Code"
+    },
+    {
+      "fieldname": "ext_fault_description",
+      "fieldtype": "Data",
+      "label": "Descrição da Falha",
+      "read_only": 1,
+      "fetch_from": "ext_fault_code.error_name",
+      "placeholder": "***Preencha o Código de Falha***"
+    },
+    {
+      "fieldname": "ext_fault_customer_description",
+      "fieldtype": "Text Editor",
+      "label": "Descrição do Problema (Cliente)"
+    },
+    {
+      "fieldname": "section_pre_analysis",
+      "fieldtype": "Section Break",
+      "label": "Análise Preliminar"
+    },
+    {
+      "fieldname": "análise_column",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "main_eqp_is_online",
+      "fieldtype": "Check",
+      "label": "Online",
+      "default": "0"
+    },
+    {
+      "fieldname": "main_eqp_has_updated",
+      "fieldtype": "Check",
+      "label": "Atualizado",
+      "default": "0"
+    },
+    {
+      "fieldname": "main_eqp_has_reseted",
+      "fieldtype": "Check",
+      "label": "Reset",
+      "default": "0"
+    },
+    {
+      "fieldname": "main_eqp_has_neutral",
+      "fieldtype": "Check",
+      "label": "Neutro",
+      "default": "0"
+    },
+    {
+      "fieldname": "main_eqp_has_stringbox",
+      "fieldtype": "Check",
+      "label": "String Box",
+      "default": "0"
+    },
+    {
+      "fieldname": "main_eqp_has_battery",
+      "fieldtype": "Check",
+      "label": "Baterias",
+      "default": "0"
+    },
+    {
+      "fieldname": "main_eqp_has_transformer",
+      "fieldtype": "Check",
+      "label": "Transformador",
+      "default": "0"
+    },
+    {
+      "fieldname": "main_eqp_has_sm",
+      "fieldtype": "Check",
+      "label": "Smart Meter",
+      "default": "0"
+    },
+    {
+      "fieldname": "main_eqp_has_sem",
+      "fieldtype": "Check",
+      "label": "Smart Energy Manager",
+      "default": "0"
+    },
+    {
+      "fieldname": "column_break_hitx",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "oss_data_extraction",
+      "fieldtype": "Attach",
+      "label": "Captura de Tela da OSS"
+    },
+    {
+      "fieldname": "section_pre_analysis_conclusion",
+      "fieldtype": "Section Break",
+      "label": "Conclusão da Análise"
+    },
+    {
+      "fieldname": "solution_description",
+      "fieldtype": "Text Editor",
+      "label": "Conclusão da Análise"
+    },
+    {
+      "fieldname": "solution_select",
+      "fieldtype": "Link",
+      "label": "Solução Aplicada",
+      "options": "Service Protocol - Applied Solution"
+    },
+    {
+      "fieldname": "tab_internal",
+      "fieldtype": "Tab Break",
+      "label": "Private"
+    },
+    {
+      "fieldname": "informações_internas_section",
+      "fieldtype": "Section Break",
+      "label": "Informações Internas"
+    },
+    {
+      "fieldname": "priority",
+      "fieldtype": "Select",
+      "label": "Prioridade",
+      "options": "\nMáxima\nReclame Aqui\nProcesso Judicial"
+    },
+    {
+      "fieldname": "corrections_tracker",
+      "fieldtype": "Table",
+      "label": "Pedidos de correção",
+      "options": "Corrections Tracker"
+    },
+    {
+      "fieldname": "tab_system",
+      "fieldtype": "Tab Break",
+      "label": "System",
+      "depends_on": "eval: (frappe.user_roles.length === 1 && frappe.user_roles.includes(\"Customer\"))"
+    },
+    {
+      "fieldname": "fields_section",
+      "fieldtype": "Section Break",
+      "label": "Fields"
+    },
+    {
+      "fieldname": "email_applicant",
+      "fieldtype": "Data",
+      "label": "E-mail",
+      "options": "Email"
+    },
+    {
+      "fieldname": "subject_email",
+      "fieldtype": "Data",
+      "label": "Subject E-mail"
+    }
+  ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-19 15:42:31.609245",
+ "modified_by": "Administrator",
+ "module": "Frappe Growatt Checklists",
+ "name": "Service Protocol",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
