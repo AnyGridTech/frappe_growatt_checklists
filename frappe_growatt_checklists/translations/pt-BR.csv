@@ -1,0 +1,197 @@
+***Fill in the Failure Code***,***Preencha o Código de Falha***
+*<strong>Linked</strong> with the document above. Access the link to view.,*<strong>Vinculado</strong> com o documento acima. Acesse o link para visualizar.
+0,0
+1,1
+1. Product Seal Breach,1. Quebra do Selo do produto
+2,2
+2. Incorrect Installation or Commissioning,2. Instalação ou comissionamento incorretos
+3,3
+3. Failure Related to Non-Observance of User Manual,3. Falha relacionada a não observação do manual do Usuário
+4,4
+"4. Unauthorized Modifications, Changes or Repair Attempts","4. Modificações não autorizadas , mudanças ou tentativas de reparo."
+5,5
+5. Inappropriate or Incorrect Operation,5. Operação inapropriada ou incorreta.
+6,6
+6. Insufficient Ventilation for the Device,6. Ventilação Insuficiente para o dispositivo.
+7,7
+"7. Force Majeure (Lightning, Overvoltage, Fans, Fires and Others)","7. Força Maior (raios, sobretensão, ventoinhas, incêndios e outros)."
+8,8
+8. Warranty Period Expired,8. Tempo de garantia expirado
+AC Current L1,Corrente AC L1
+AC Current L2,Corrente AC L2
+AC Current L3,Corrente AC L3
+AC Frequency,Frequência AC
+AC Input,Entrada AC
+AC Input Section,Seção de Entrada AC
+AC Output,Saída AC
+AC Output Current L1,Corrente de Saída AC L1
+AC Output Current L2,Corrente de Saída AC L2
+AC Output Current L3,Corrente de Saída AC L3
+AC Output Frequency,Frequência de Saída AC
+AC Output Power,Potência de Saída AC
+AC Output Section,Seção de Saída AC
+AC Output Voltage L1,Tensão de Saída AC L1
+AC Output Voltage L2,Tensão de Saída AC L2
+AC Output Voltage L3,Tensão de Saída AC L3
+AC Power,Potência AC
+AC Voltage L1,Tensão AC L1
+AC Voltage L2,Tensão AC L2
+AC Voltage L3,Tensão AC L3
+Address,Endereço
+Amended From,Alterado De
+Approved,Aprovada
+BMS,BMS
+Battery Brand,Marca da Bateria
+Battery Communication,Comunicação da Bateria
+Battery Configuration Program 02,Programa de Configuração da Bateria 02
+Battery Configuration Program 05,Programa de Configuração da Bateria 05
+Battery Configuration Program 12,Programa de Configuração da Bateria 12
+Battery Configuration Program 19,Programa de Configuração da Bateria 19
+Battery Configuration Program 20,Programa de Configuração da Bateria 20
+Battery Configuration Program 21,Programa de Configuração da Bateria 21
+Battery Configuration Program 36,Programa de Configuração da Bateria 36
+Battery Current,Corrente da Bateria
+Battery Nameplate Photo,Foto da Placa da Bateria
+Battery Photo,Foto da Bateria
+Battery Power,Potência da Bateria
+Battery SOC,SOC da Bateria
+Battery Type,Tipo de Bateria
+Battery Video,Vídeo da Bateria
+Battery Voltage,Tensão da Bateria
+CPF/CNPJ,CPF/CNPJ
+Caveat,Ressalva
+Charger Nameplate Photo,Foto da Placa do Carregador
+Charger Photo,Foto do Carregador
+Charger Video,Vídeo do Carregador
+City,Cidade
+Client,Cliente
+Client Name,Nome do Cliente
+Column Break,Quebra de Coluna
+Complement,Complemento
+Connected Batteries,Baterias Conectadas
+Connection Diagram Photo,Foto do Diagrama de Conexão
+Connector Photo,Foto do Conector
+Connector Type,Tipo de Conector
+Customer Info,Informações do Cliente
+DC Current,Corrente DC
+DC Input,Entrada DC
+DC Input Section,Seção de Entrada DC
+DC Output,Saída DC
+DC Output Current,Corrente de Saída DC
+DC Output Power,Potência de Saída DC
+DC Output Section,Seção de Saída DC
+DC Output Voltage,Tensão de Saída DC
+DC Power,Potência DC
+DC Voltage,Tensão DC
+Datalogger Photo,Foto do Datalogger
+Datalogger Video,Vídeo do Datalogger
+Distributor,Distribuidor
+Distributor Name,Nome do Distribuidor
+District,Bairro
+Email,Email
+Enter a model from the list.,Insira um modelo da lista.
+Enter a valid SN.,Insira um SN válido.
+Equipment,Equipamento
+Equipment Info,Informações do Equipamento
+Equipment Model,Modelo do Equipamento
+Equipment Name,Nome do Equipamento
+Equipment Serial Number,Número de Série do Equipamento
+External Code,Código Externo
+External Issue Code,Código de Problema Externo
+Failure Code,Código de Falha
+Failure Date,Data da Falha
+Failure Description,Descrição da Falha
+Failure Info,Informações da Falha
+Failure Symptom,Sintoma da Falha
+Firmware,Firmware
+Firmware Version,Versão do Firmware
+High Grid Voltage,Tensão da rede alta
+Installation Address,Endereço de Instalação
+Installation City,Cidade de Instalação
+Installation Complement,Complemento de Instalação
+Installation District,Bairro de Instalação
+Installation Number,Número de Instalação
+Installation Site,Local de Instalação
+Installation Site Photo,Foto do Local de Instalação
+Installation Site Video,Vídeo do Local de Instalação
+Installation State,Estado de Instalação
+Installation ZIP Code,CEP de Instalação
+Internal,Interno
+Inverter Nameplate Photo,Foto da Placa do Inversor
+Inverter Photo,Foto do Inversor
+Inverter Video,Vídeo do Inversor
+Invoice,Nota Fiscal
+Invoice Date,Data da Nota Fiscal
+Item,Item
+Item Description,Descrição do Item
+Item Name,Nome do Item
+Large,Grande
+Large Type 1,Grande Tipo 1
+Large Type 2,Grande Tipo 2
+Lead Acid,Chumbo Ácido
+Legal Process,Processo Judicial
+Lithium,Lítio
+MPPT 1 Current,Corrente MPPT 1
+MPPT 1 Power,Potência MPPT 1
+MPPT 1 Voltage,Tensão MPPT 1
+MPPT 2 Current,Corrente MPPT 2
+MPPT 2 Power,Potência MPPT 2
+MPPT 2 Voltage,Tensão MPPT 2
+MPPT 3 Current,Corrente MPPT 3
+MPPT 3 Power,Potência MPPT 3
+MPPT 3 Voltage,Tensão MPPT 3
+Maximum,Máxima
+Medium,Médio
+Meter Photo,Foto do Medidor
+Meter Video,Vídeo do Medidor
+Model,Modelo
+N/A,N/A
+Nameplate Photo,Foto da Placa de Identificação
+Number,Número
+Number of Batteries,Quantidade de Baterias
+OFF-GRID/HYBRIDS,OFF-GRID/HÍBRIDOS
+ON-GRID/OFF-GRID/HYBRID,ON-GRID/OFF-GRID/HÍBRIDO
+OSS Data,Dados OSS
+OSS Data Extraction,Extração de Dados OSS
+Peripheral,Periférico
+Peripheral 1,Periférico 1
+Peripheral 2,Periférico 2
+Phase Configuration,Configuração de Fase
+Phone,Telefone
+Photo,Foto
+Photos and Videos,Fotos e Vídeos
+Pre-Attendance,Pré Atendimento
+Preliminary Analysis,Análise Preliminar
+Preliminary Analysis Date,Data da Análise Preliminar
+Preliminary Analysis Description,Descrição da Análise Preliminar
+Preliminary Analysis Result,Resultado da Análise Preliminar
+Preliminary Analysis Technician,Técnico da Análise Preliminar
+Priority,Prioridade
+Private,Privado
+Procedure Performed,Procedimento Realizado
+Procedure Performed Section,Seção de Procedimento Realizado
+Public,Público
+RS485,RS485
+Reclame Aqui,Reclame Aqui
+Rejected,Reprovada
+Rejection Reason,Motivo da Rejeição
+SEM MAC,MAC do SEM
+Section Break,Quebra de Seção
+Serial Number,Número de Série
+Service Protocol,Protocolo de Atendimento
+Single Phase,Monofásico
+Small,Pequeno
+Spacing,Espaçamento
+State,Estado
+Status,Status
+Sun Exposure,Exposição ao Sol
+System,Sistema
+System Power,Potência do Sistema
+Tab Break,Quebra de Aba
+Terminal,Borne
+Three Phase,Trifásico
+Ticket,Ticket
+Two Phase,Bifásico
+Video,Vídeo
+Warranty Analysis,Análise de Garantia
+ZIP Code,CEP

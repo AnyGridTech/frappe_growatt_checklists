@@ -66,18 +66,18 @@
   {
    "fieldname": "suporte_tab",
    "fieldtype": "Tab Break",
-   "label": "Suporte"
+   "label": "Support"
   },
   {
    "fieldname": "distributor",
    "fieldtype": "Link",
-   "label": "Distribuidor",
+   "label": "Distributor",
    "options": "Distributor"
   },
   {
    "fieldname": "client_name",
    "fieldtype": "Link",
-   "label": "Cliente",
+   "label": "Customer",
    "options": "Customer"
   },
   {
@@ -87,13 +87,13 @@
   {
    "fieldname": "sn_eqp",
    "fieldtype": "Link",
-   "label": "SN do Equipamento",
+   "label": "Equipment SN",
    "options": "Serial No"
   },
   {
    "fieldname": "eqp_model",
    "fieldtype": "Link",
-   "label": "Modelo do Equipamento",
+   "label": "Equipment Model",
    "options": "Item",
    "read_only": 1,
    "in_list_view": 1
@@ -105,32 +105,32 @@
   {
    "fieldname": "ext_fault_code",
    "fieldtype": "Link",
-   "label": "Falha",
+   "label": "Failure",
    "options": "External Issue Code",
    "in_list_view": 1
   },
   {
    "fieldname": "ext_fault_description",
    "fieldtype": "Data",
-   "label": "Descrição da Falha",
+   "label": "Failure Description",
    "read_only": 1,
    "in_list_view": 1
   },
   {
    "fieldname": "checklist_section",
    "fieldtype": "Section Break",
-   "label": "Instalação"
+   "label": "Installation"
   },
   {
    "fieldname": "main_eqp_purchase_invoice",
    "fieldtype": "Attach",
-   "label": "NF de Compra",
+   "label": "Purchase Invoice",
    "in_list_view": 1
   },
   {
    "fieldname": "main_eqp_ev_charger_connector",
    "fieldtype": "Attach",
-   "label": "Foto do conector de carregamento"
+   "label": "Charging Connector Photo"
   },
   {
    "fieldname": "column_break_bqov",
@@ -139,13 +139,13 @@
   {
    "fieldname": "photo_label",
    "fieldtype": "Attach",
-   "label": "Foto da etiqueta do equipamento",
+   "label": "Equipment Label Photo",
    "in_list_view": 1
   },
   {
    "fieldname": "project_diagram",
    "fieldtype": "Attach",
-   "label": "Diagrama do projeto",
+   "label": "Project Diagram",
    "in_list_view": 1
   },
   {
@@ -155,13 +155,13 @@
   {
    "fieldname": "environment_photo",
    "fieldtype": "Attach",
-   "label": "Foto do Ambiente",
+   "label": "Environment Photo",
    "in_list_view": 1
   },
   {
    "fieldname": "video_problem",
    "fieldtype": "Attach",
-   "label": "Video do problema"
+   "label": "Problem Video"
   },
   {
    "fieldname": "column_break_bahv",
@@ -170,14 +170,14 @@
   {
    "fieldname": "phase",
    "fieldtype": "Select",
-   "label": "Fase",
-   "options": "\nMonofásico\nBifásico\nTrifásico",
+   "label": "Phase",
+   "options": "Single Phase\nTwo Phase\nThree Phase",
    "in_list_view": 1
   },
   {
    "fieldname": "neutral",
    "fieldtype": "Check",
-   "label": "Neutro ",
+   "label": "Neutral",
    "default": "1",
    "reqd": 1,
    "in_list_view": 1
@@ -185,107 +185,107 @@
   {
    "fieldname": "medições_ca_section",
    "fieldtype": "Section Break",
-   "label": "Medições CA devem ser realizadas no Conector/Borne do Carregador"
+   "label": "AC Measurements must be taken at the Charger Connector/Terminal"
   },
   {
    "fieldname": "tensão_entre_fases_column",
    "fieldtype": "Column Break",
-   "label": "Tensão entre Fases"
+   "label": "Voltage Between Phases"
   },
   {
    "fieldname": "voltage_between_phases_r_e_s",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fases R e S",
+   "label": "Voltage Between Phases R and S",
    "depends_on": "eval:doc.phase == \"Bifásico\" || doc.phase == \"Trifásico\""
   },
   {
    "fieldname": "voltage_between_phases_s_e_t",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fases S e T ",
+   "label": "Voltage Between Phases S and T",
    "depends_on": "eval:doc.phase == \"Trifásico\" ;"
   },
   {
    "fieldname": "voltage_between_phases_t_e_r",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fases T e R",
+   "label": "Voltage Between Phases T and R",
    "depends_on": "eval:doc.phase == \"Trifásico\" ;"
   },
   {
    "fieldname": "column_break_armb",
    "fieldtype": "Column Break",
-   "label": "Tensão entre Fase e Terra"
+   "label": "Voltage Between Phase and Ground"
   },
   {
    "fieldname": "voltage_between_phases_r_e_terra",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase R e Terra"
+   "label": "Voltage Between Phase R and Ground"
   },
   {
    "fieldname": "voltage_between_phases_s_e_terra",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase S e Terra ",
+   "label": "Voltage Between Phase S and Ground",
    "depends_on": "eval:doc.phase == \"Bifásico\" || doc.phase == \"Trifásico\""
   },
   {
    "fieldname": "voltage_between_phases_t_e_terra",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase T e Terra ",
+   "label": "Voltage Between Phase T and Ground",
    "depends_on": "eval:doc.phase == \"Trifásico\" ;"
   },
   {
    "fieldname": "column_break_jtlr",
    "fieldtype": "Column Break",
-   "label": "Fotos"
+   "label": "Photos"
   },
   {
    "fieldname": "photo_ca",
    "fieldtype": "Attach",
-   "label": "Foto do quadro CA"
+   "label": "AC Panel Photo"
   },
   {
    "fieldname": "photo_connector_charge",
    "fieldtype": "Attach",
-   "label": "Foto do Conector "
+   "label": "Connector Photo"
   },
   {
    "fieldname": "continuity_test_ca",
    "fieldtype": "Attach",
-   "label": "Teste de continuidade CA (opcional)"
+   "label": "AC Continuity Test (optional)"
   },
   {
    "fieldname": "column_break_ygbg",
    "fieldtype": "Column Break",
-   "label": "Medições Neutro",
+   "label": "Neutral Measurements",
    "depends_on": "eval:doc.neutro == 1"
   },
   {
    "fieldname": "voltage_between_terra_e_neutro",
    "fieldtype": "Attach",
-   "label": "Tensão entre Terra e Neutro",
+   "label": "Voltage Between Ground and Neutral",
    "depends_on": "eval:doc.neutro == 1"
   },
   {
    "fieldname": "voltage_between_phase_fase_r_e_neutro",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase R e Neutro ",
+   "label": "Voltage Between Phase R and Neutral",
    "depends_on": "eval:doc.neutro == 1;"
   },
   {
    "fieldname": "voltage_between_phases_s_e_neutro",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase S e Neutro",
+   "label": "Voltage Between Phase S and Neutral",
    "depends_on": "eval:doc.phase == \"Bifásico\" || doc.phase == \"Trifásico\";\neval:doc.neutro == 1;"
   },
   {
    "fieldname": "voltage_between_phases_t_e_neutro",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase T e Neutro ",
+   "label": "Voltage Between Phase T and Neutral",
    "depends_on": "eval:doc.phase == \"Trifásico\" ;\neval:doc.neutro == 1 ;"
   },
   {
    "fieldname": "section_break_tfod",
    "fieldtype": "Section Break",
-   "label": "Resolução"
+   "label": "Resolution"
   },
   {
    "fieldname": "column_break_cvio",
@@ -294,36 +294,36 @@
   {
    "fieldname": "responsible_technician",
    "fieldtype": "Data",
-   "label": "Responsável Técnico"
+   "label": "Technical Responsible"
   },
   {
    "fieldname": "ext_fault_support_description",
    "fieldtype": "Small Text",
-   "label": "Observações"
+   "label": "Observations"
   },
   {
    "fieldname": "column_break_laph",
    "fieldtype": "Column Break",
-   "label": "Equipamento"
+   "label": "Equipment"
   },
   {
    "fieldname": "select_treatment",
    "fieldtype": "Select",
-   "label": "Tratativa",
-   "options": "\nAprovada\nReprovada"
+   "label": "Treatment",
+   "options": "Approved\nRejected"
   },
   {
    "fieldname": "reason_for_failure",
    "fieldtype": "Select",
-   "label": "Motivo da reprovação",
-   "options": "\n1.Quebra do Selo do produto\n2. Instalação ou comissionamento incorretos\n3.Falha relacionada a não observação do manual do Usuário\n4.Modificações não autorizadas , mudanças ou tentativas de reparo.\n5. Operação inapropriada ou incorreta.\n6. Ventilação Insuficiente para o dispositivo.\n7. Força Maior (raios, sobretensão, ventoinhas, incêndios e outros).\n8. Tempo de garantia expirado",
+   "label": "Rejection Reason",
+   "options": "1. Product Seal Breach\n2. Incorrect Installation or Commissioning\n3. Failure Related to Non-Observance of User Manual\n4. Unauthorized Modifications, Changes or Repair Attempts\n5. Inappropriate or Incorrect Operation\n6. Insufficient Ventilation for the Device\n7. Force Majeure (Lightning, Overvoltage, Fans, Fires and Others)\n8. Warranty Period Expired",
    "depends_on": "eval:doc.garantia == \"Reprovada\""
   },
   {
    "fieldname": "email",
    "fieldtype": "Select",
    "label": "Email",
-   "options": "\nExposição ao Sol\nEspaçamento"
+   "options": "Sun Exposure\nSpacing"
   },
   {
    "fieldname": "internal_tab",
@@ -333,8 +333,8 @@
   {
    "fieldname": "priority",
    "fieldtype": "Select",
-   "label": "Prioridade",
-   "options": "\nMáxima\nReclame aqui\nProcesso judicial"
+   "label": "Priority",
+   "options": "Maximum\nReclame Aqui\nLegal Process"
   },
   {
    "fieldname": "naming_series",
@@ -353,7 +353,7 @@
   {
    "fieldname": "confirm_sac",
    "fieldtype": "Check",
-   "label": "confirm sac",
+   "label": "Confirm SAC",
    "default": "0",
    "hidden": 1
   },
@@ -366,13 +366,13 @@
   {
    "fieldname": "ticket_docname",
    "fieldtype": "Link",
-   "label": "Referência Ticket",
+   "label": "Ticket Reference",
    "options": "Service Protocol"
   },
   {
    "fieldname": "sp_docname",
    "fieldtype": "Link",
-   "label": "Referência Service Protocol",
+   "label": "Service Protocol Reference",
    "options": "Service Protocol"
   },
   {

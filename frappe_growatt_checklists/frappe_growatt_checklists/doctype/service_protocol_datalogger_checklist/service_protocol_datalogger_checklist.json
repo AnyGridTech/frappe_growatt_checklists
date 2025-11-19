@@ -63,63 +63,63 @@
   {
    "fieldname": "suporte_tab",
    "fieldtype": "Tab Break",
-   "label": "Suporte"
+   "label": "Support"
   },
   {
    "fieldname": "protocolo_vinculado_section",
    "fieldtype": "Section Break",
-   "label": "Vínculos"
+   "label": "Links"
   },
   {
    "fieldname": "ticket_docname",
    "fieldtype": "Link",
-   "label": "Referência Ticket",
+   "label": "Ticket Reference",
    "options": "Service Protocol",
    "reqd": 1,
    "read_only": 1,
-   "description": "*<strong>Vinculado</strong> com o documento acima. Acesse o link para visualizar."
+   "description": "*<strong>Linked</strong> with the document above. Access the link to view."
   },
   {
    "fieldname": "sp_docname",
    "fieldtype": "Link",
-   "label": "Referência Service Protocol",
+   "label": "Service Protocol Reference",
    "options": "Service Protocol",
    "reqd": 1,
    "read_only": 1,
-   "description": "*<strong>Vinculado</strong> com o documento acima. Acesse o link para visualizar."
+   "description": "*<strong>Linked</strong> with the document above. Access the link to view."
   },
   {
    "fieldname": "general_info_section",
    "fieldtype": "Section Break",
-   "label": "Informações do Equipamento"
+   "label": "Equipment Information"
   },
   {
    "fieldname": "main_eqp_serial_no",
    "fieldtype": "Data",
-   "label": "Número de Série",
+   "label": "Serial Number",
    "reqd": 1,
    "read_only": 1,
-   "placeholder": "Insira um SN válido."
+   "placeholder": "Enter a valid SN."
   },
   {
    "fieldname": "main_eqp_model_ref",
    "fieldtype": "Data",
-   "label": "Referência do Modelo",
+   "label": "Model Reference",
    "reqd": 1,
    "fetch_from": "ref_naming_series.main_eqp_model_ref",
-   "placeholder": "Insira um modelo da lista."
+   "placeholder": "Enter a model from the list."
   },
   {
    "fieldname": "main_eqp_item_code",
    "fieldtype": "Data",
-   "label": "Código do Modelo",
+   "label": "Model Code",
    "reqd": 1,
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_model",
    "fieldtype": "Data",
-   "label": "Modelo",
+   "label": "Model",
    "reqd": 1,
    "read_only": 1
   },
@@ -130,35 +130,35 @@
   {
    "fieldname": "main_eqp_type",
    "fieldtype": "Data",
-   "label": "Tipo",
+   "label": "Type",
    "reqd": 1,
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_family",
    "fieldtype": "Data",
-   "label": "Familia",
+   "label": "Family",
    "reqd": 1,
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_error_version",
    "fieldtype": "Data",
-   "label": "Versão",
+   "label": "Version",
    "reqd": 1,
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_group",
    "fieldtype": "Data",
-   "label": "Grupo",
+   "label": "Group",
    "reqd": 1,
    "read_only": 1
   },
   {
    "fieldname": "service_partner_company",
    "fieldtype": "Data",
-   "label": "Parceiro de Serviço",
+   "label": "Service Partner",
    "read_only": 1
   },
   {
@@ -168,24 +168,24 @@
   {
    "fieldname": "main_eqp_start_firmware",
    "fieldtype": "Data",
-   "label": "Firmware Inicial",
+   "label": "Initial Firmware",
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_end_firmware",
    "fieldtype": "Data",
-   "label": "Firmware Final",
+   "label": "Final Firmware",
    "read_only": 1
   },
   {
    "fieldname": "equipment_add_info_section",
    "fieldtype": "Section Break",
-   "label": "Informações Adicionais"
+   "label": "Additional Information"
   },
   {
    "fieldname": "distributor",
    "fieldtype": "Link",
-   "label": "Distribuidor",
+   "label": "Distributor",
    "options": "Distributor",
    "reqd": 1,
    "read_only": 1
@@ -193,7 +193,7 @@
   {
    "fieldname": "main_uf_installation",
    "fieldtype": "Data",
-   "label": "UF da Instalação",
+   "label": "Installation State",
    "reqd": 1,
    "read_only": 1
   },
@@ -204,7 +204,7 @@
   {
    "fieldname": "section_pre_analysis",
    "fieldtype": "Section Break",
-   "label": "Análise Preliminar"
+   "label": "Preliminary Analysis"
   },
   {
    "fieldname": "main_eqp_is_online",
@@ -216,7 +216,7 @@
   {
    "fieldname": "instalação_section",
    "fieldtype": "Section Break",
-   "label": "Informações da Instalação"
+   "label": "Installation Information"
   },
   {
    "fieldname": "column_break_ftxy",
@@ -225,14 +225,14 @@
   {
    "fieldname": "ext_fault_description",
    "fieldtype": "Data",
-   "label": "Descrição da Falha",
+   "label": "Failure Description",
    "reqd": 1,
    "read_only": 1
   },
   {
    "fieldname": "ext_fault_code",
    "fieldtype": "Link",
-   "label": "Falha",
+   "label": "Failure",
    "options": "External Issue Code",
    "reqd": 1,
    "read_only": 1
@@ -244,17 +244,17 @@
   {
    "fieldname": "fotos_do_ambiente_section",
    "fieldtype": "Section Break",
-   "label": "Fotos do Ambiente"
+   "label": "Environment Photos"
   },
   {
    "fieldname": "oss_data_extraction",
    "fieldtype": "Attach",
-   "label": "Extração de Dados (OSS)"
+   "label": "Data Extraction (OSS)"
   },
   {
    "fieldname": "main_eqp_serial_no_label_picture",
    "fieldtype": "Attach",
-   "label": "Foto da Etiqueta",
+   "label": "Label Photo",
    "in_list_view": 1
   },
   {
@@ -264,46 +264,46 @@
   {
    "fieldname": "main_eqp_purchase_invoice",
    "fieldtype": "Attach",
-   "label": "NF de Compra"
+   "label": "Purchase Invoice"
   },
   {
    "fieldname": "main_eqp_env_picture",
    "fieldtype": "Attach",
-   "label": "Foto do Ambiente"
+   "label": "Environment Photo"
   },
   {
    "fieldname": "ext_fault_video",
    "fieldtype": "Attach",
-   "label": "Video do Problema "
+   "label": "Problem Video"
   },
   {
    "fieldname": "section_break_resolution",
    "fieldtype": "Section Break",
-   "label": "Resolução"
+   "label": "Resolution"
   },
   {
    "fieldname": "eqp_column",
    "fieldtype": "Column Break",
-   "label": "Equipamento"
+   "label": "Equipment"
   },
   {
    "fieldname": "warranty_approval",
    "fieldtype": "Select",
-   "label": "Garantia",
-   "options": "\nAprovado\nReprovado"
+   "label": "Warranty",
+   "options": "Approved\nRejected"
   },
   {
    "fieldname": "warranty_denial_reason",
    "fieldtype": "Select",
-   "label": "Motivo da reprova",
-   "options": "\n1. Quebra do Selo do produto\n2. Instalação ou comissionamento incorretos\n3. Falha relacionada a não observação do manual do Usuário\n4. Modificações não autorizadas , mudanças ou tentativas de reparo.\n5. Operação inapropriada ou incorreta.\n6. Ventilação Insuficiente para o dispositivo.\n7. Força Maior (raios, sobretensão, ventoinhas, incêndios e outros).\n8. Tempo de garantia expirado",
+   "label": "Rejection Reason",
+   "options": "1. Product Seal Breach\n2. Incorrect Installation or Commissioning\n3. Failure Related to Non-Observance of User Manual\n4. Unauthorized Modifications, Changes or Repair Attempts\n5. Inappropriate or Incorrect Operation\n6. Insufficient Ventilation for the Device\n7. Force Majeure (Lightning, Overvoltage, Fans, Fires and Others)\n8. Warranty Period Expired",
    "depends_on": "eval:doc.warranty == \"Reprovado\" ;"
   },
   {
    "fieldname": "caveat",
    "fieldtype": "Select",
-   "label": "Ressalva",
-   "options": "\nExposição ao Sol\nEspaçamento\nTensão da rede alta",
+   "label": "Caveat",
+   "options": "Sun Exposure\nSpacing\nHigh Grid Voltage",
    "depends_on": "eval:doc.status == \"Aprovado\" ;"
   },
   {
@@ -315,17 +315,17 @@
   {
    "fieldname": "técnico_column",
    "fieldtype": "Column Break",
-   "label": "Técnico"
+   "label": "Technician"
   },
   {
    "fieldname": "technical_responsible",
    "fieldtype": "Data",
-   "label": "Responsável Técnico"
+   "label": "Technical Responsible"
   },
   {
    "fieldname": "ext_fault_support_description",
    "fieldtype": "Small Text",
-   "label": "Observações"
+   "label": "Observations"
   },
   {
    "fieldname": "internal_tab",
@@ -335,8 +335,8 @@
   {
    "fieldname": "priority",
    "fieldtype": "Select",
-   "label": "Prioridade",
-   "options": "\nMáxima\nReclame aqui\nProcesso judicial"
+   "label": "Priority",
+   "options": "Maximum\nReclame Aqui\nLegal Process"
   },
   {
    "fieldname": "sac",
@@ -366,7 +366,7 @@
   {
    "fieldname": "corrections_tracker",
    "fieldtype": "Table",
-   "label": "Pedidos de Correção",
+   "label": "Correction Requests",
    "options": "Corrections Tracker"
   },
   {

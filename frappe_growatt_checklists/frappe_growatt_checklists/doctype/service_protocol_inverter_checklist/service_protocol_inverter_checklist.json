@@ -160,43 +160,43 @@
   {
    "fieldname": "suporte_tab",
    "fieldtype": "Tab Break",
-   "label": "Suporte"
+   "label": "Support"
   },
   {
    "fieldname": "section_main",
    "fieldtype": "Section Break",
-   "label": "Vínculos"
+   "label": "Links"
   },
   {
    "fieldname": "ticket_docname",
    "fieldtype": "Link",
-   "label": "Referência [Ticket]",
+   "label": "Reference [Ticket]",
    "options": "Ticket",
    "read_only": 1
   },
   {
    "fieldname": "sp_docname",
    "fieldtype": "Link",
-   "label": "Referência [Service Protocol]",
+   "label": "Reference [Service Protocol]",
    "options": "Service Protocol",
    "read_only": 1
   },
   {
    "fieldname": "section_eqp",
    "fieldtype": "Section Break",
-   "label": "Informações do Equipamento"
+   "label": "Equipment Information"
   },
   {
    "fieldname": "main_eqp_serial_no",
    "fieldtype": "Data",
-   "label": "Número de Série",
+   "label": "Serial Number",
    "reqd": 1,
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_model_ref",
    "fieldtype": "Link",
-   "label": "Referência do Modelo",
+   "label": "Model Reference",
    "options": "Item",
    "reqd": 1,
    "read_only": 1,
@@ -205,28 +205,28 @@
   {
    "fieldname": "main_eqp_model",
    "fieldtype": "Data",
-   "label": "Modelo",
+   "label": "Model",
    "reqd": 1,
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_item_code",
    "fieldtype": "Data",
-   "label": "Código do Modelo",
+   "label": "Model Code",
    "reqd": 1,
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_mppt_number",
    "fieldtype": "Data",
-   "label": "Número de MPPT",
+   "label": "Number of MPPT",
    "reqd": 1,
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_phase",
    "fieldtype": "Data",
-   "label": "Fase do Inversor",
+   "label": "Inverter Phase",
    "reqd": 1,
    "read_only": 1,
    "fetch_from": "main_eqp_model_ref.custom_phase"
@@ -238,28 +238,28 @@
   {
    "fieldname": "main_eqp_type",
    "fieldtype": "Data",
-   "label": "Tipo",
+   "label": "Type",
    "reqd": 1,
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_group",
    "fieldtype": "Data",
-   "label": "Grupo",
+   "label": "Group",
    "reqd": 1,
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_family",
    "fieldtype": "Data",
-   "label": "Familia",
+   "label": "Family",
    "reqd": 1,
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_error_version",
    "fieldtype": "Data",
-   "label": "Versão",
+   "label": "Version",
    "reqd": 1,
    "read_only": 1,
    "fetch_from": "main_eqp_model_ref.custom_error_version",
@@ -268,7 +268,7 @@
   {
    "fieldname": "service_partner_company",
    "fieldtype": "Data",
-   "label": "Parceiro de Serviço",
+   "label": "Service Partner",
    "reqd": 1,
    "read_only": 1
   },
@@ -279,44 +279,44 @@
   {
    "fieldname": "main_eqp_start_firmware",
    "fieldtype": "Data",
-   "label": "Firmware Inicial",
+   "label": "Initial Firmware",
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_end_firmware",
    "fieldtype": "Data",
-   "label": "Firmware Final",
+   "label": "Final Firmware",
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_serial_no_label_picture",
    "fieldtype": "Attach",
-   "label": "Foto da Etiqueta",
+   "label": "Label Photo",
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_purchase_invoice",
    "fieldtype": "Attach",
-   "label": "NF de Compra",
+   "label": "Purchase Invoice",
    "read_only": 1
   },
   {
    "fieldname": "section_additional",
    "fieldtype": "Section Break",
-   "label": "Informações Adicionais"
+   "label": "Additional Information"
   },
   {
    "fieldname": "main_eqp_grid_connection_type",
    "fieldtype": "Select",
-   "label": "Tipo de Conexão",
-   "options": "\nMonofásico\nBifásico\nTrifásico",
+   "label": "Connection Type",
+   "options": "Single Phase\nTwo Phase\nThree Phase",
    "read_only": 1,
    "link_filters": "[[\"Item Group\",\"parent_item_group\",\"=\",\"Phase\"]]"
   },
   {
    "fieldname": "distributor",
    "fieldtype": "Link",
-   "label": "Distribuidor",
+   "label": "Distributor",
    "options": "Distributor",
    "reqd": 1,
    "read_only": 1
@@ -324,7 +324,7 @@
   {
    "fieldname": "main_uf_installation",
    "fieldtype": "Data",
-   "label": "UF da Instalação",
+   "label": "Installation State",
    "reqd": 1,
    "read_only": 1
   },
@@ -335,7 +335,7 @@
   {
    "fieldname": "section_eqp_failure",
    "fieldtype": "Section Break",
-   "label": "Informações da Falha"
+   "label": "Failure Information"
   },
   {
    "fieldname": "column_break_ftxy",
@@ -344,14 +344,14 @@
   {
    "fieldname": "ext_fault_date",
    "fieldtype": "Data",
-   "label": "Data da Falha",
+   "label": "Failure Date",
    "reqd": 1,
    "read_only": 1
   },
   {
    "fieldname": "ext_fault_code",
    "fieldtype": "Link",
-   "label": "Código de Falha",
+   "label": "Failure Code",
    "options": "External Issue Code",
    "reqd": 1,
    "read_only": 1,
@@ -360,22 +360,22 @@
   {
    "fieldname": "ext_fault_description",
    "fieldtype": "Data",
-   "label": "Descrição da Falha",
+   "label": "Failure Description",
    "reqd": 1,
    "read_only": 1,
    "fetch_from": "ext_fault_code.error_name",
-   "placeholder": "***Preencha o Código de Falha***"
+   "placeholder": "***Fill in the Failure Code***"
   },
   {
    "fieldname": "ext_fault_customer_description",
    "fieldtype": "Text Editor",
-   "label": "Descrição do Problema (Cliente)",
+   "label": "Problem Description (Customer)",
    "read_only": 1
   },
   {
    "fieldname": "section_pre_analysis",
    "fieldtype": "Section Break",
-   "label": "Análise Preliminar"
+   "label": "Preliminary Analysis"
   },
   {
    "fieldname": "main_eqp_is_online",
@@ -387,7 +387,7 @@
   {
    "fieldname": "main_eqp_has_neutral",
    "fieldtype": "Check",
-   "label": "Neutro",
+   "label": "Neutral",
    "default": "0",
    "read_only": 1
   },
@@ -401,14 +401,14 @@
   {
    "fieldname": "main_eqp_has_battery",
    "fieldtype": "Check",
-   "label": "Baterias",
+   "label": "Batteries",
    "default": "0",
    "read_only": 1
   },
   {
    "fieldname": "main_eqp_has_transformer",
    "fieldtype": "Check",
-   "label": "Transformador",
+   "label": "Transformer",
    "default": "0",
    "read_only": 1
   },
@@ -429,7 +429,7 @@
   {
    "fieldname": "section_environment",
    "fieldtype": "Section Break",
-   "label": "Fotos do Ambiente"
+   "label": "Environment Photos"
   },
   {
    "fieldname": "colbreak_environment_1",
@@ -438,13 +438,13 @@
   {
    "fieldname": "oss_data_extraction",
    "fieldtype": "Attach",
-   "label": "Extração de Dados (OSS)",
+   "label": "Data Extraction (OSS)",
    "in_list_view": 1
   },
   {
    "fieldname": "project_diagram",
    "fieldtype": "Attach",
-   "label": "Diagrama do Projeto"
+   "label": "Project Diagram"
   },
   {
    "fieldname": "colbreak_environment_2",
@@ -453,17 +453,17 @@
   {
    "fieldname": "main_eqp_env_picture",
    "fieldtype": "Attach",
-   "label": "Foto do Ambiente"
+   "label": "Environment Photo"
   },
   {
    "fieldname": "ext_fault_video",
    "fieldtype": "Attach",
-   "label": "Video do Problema "
+   "label": "Problem Video"
   },
   {
    "fieldname": "section_cc_measurements",
    "fieldtype": "Section Break",
-   "label": "Medições CC"
+   "label": "DC Measurements"
   },
   {
    "fieldname": "colbreak_cc_measurements_1",
@@ -472,226 +472,226 @@
   {
    "fieldname": "inverter_mppt_continuity_test_video",
    "fieldtype": "Table",
-   "label": "Teste de continuidade MPPT",
+   "label": "MPPT Continuity Test",
    "options": "Global Attachments Table"
   },
   {
    "fieldname": "inverter_dc_strings_opencircuit_voltage_picture",
    "fieldtype": "Table",
-   "label": "Medição CC das Strings em circuito Aberto",
+   "label": "DC Measurement of Strings in Open Circuit",
    "options": "Global Attachments Table"
   },
   {
    "fieldname": "inverter_dc_voltage_positive_pe_picture",
    "fieldtype": "Table",
-   "label": "Medição Positivo com Terra",
+   "label": "Positive to Ground Measurement",
    "options": "Global Attachments Table"
   },
   {
    "fieldname": "inverter_dc_voltage_negative_pe_picture",
    "fieldtype": "Table",
-   "label": "Medição Negativo com Terra ",
+   "label": "Negative to Ground Measurement",
    "options": "Global Attachments Table"
   },
   {
    "fieldname": "inverter_dc_connectors_picture",
    "fieldtype": "Table",
-   "label": "Foto dos conectores CC",
+   "label": "DC Connectors Photo",
    "options": "Global Attachments Table"
   },
   {
    "fieldname": "section_ca_output_measurements",
    "fieldtype": "Section Break",
-   "label": "Medições CA (Output)",
-   "description": "OFF-GRID/HÍBRIDOS"
+   "label": "AC Measurements (Output)",
+   "description": "OFF-GRID/HYBRIDS"
   },
   {
    "fieldname": "colbreak_ca_output_measurements_1",
    "fieldtype": "Column Break",
-   "label": "Tensão entre Fases"
+   "label": "Voltage Between Phases"
   },
   {
    "fieldname": "inverter_output_voltage_r_s_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fases R e S"
+   "label": "Voltage Between Phases R and S"
   },
   {
    "fieldname": "inverter_output_voltage_s_t_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fases S e T"
+   "label": "Voltage Between Phases S and T"
   },
   {
    "fieldname": "inverter_output_voltage_t_r_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fases T e R "
+   "label": "Voltage Between Phases T and R"
   },
   {
    "fieldname": "colbreak_ca_output_measurements_2",
    "fieldtype": "Column Break",
-   "label": "Tensão entre Fase e Terra"
+   "label": "Voltage Between Phase and Ground"
   },
   {
    "fieldname": "inverter_output_voltage_r_pe_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase R e Terra"
+   "label": "Voltage Between Phase R and Ground"
   },
   {
    "fieldname": "inverter_output_voltage_s_pe_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase S e Terra"
+   "label": "Voltage Between Phase S and Ground"
   },
   {
    "fieldname": "inverter_output_voltage_t_pe_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase T e Terra"
+   "label": "Voltage Between Phase T and Ground"
   },
   {
    "fieldname": "colbreak_ca_output_measurements_3",
    "fieldtype": "Column Break",
-   "label": "Medições com Neutro"
+   "label": "Measurements with Neutral"
   },
   {
    "fieldname": "inverter_output_voltage_ne_pe_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Terra e Neutro"
+   "label": "Voltage Between Ground and Neutral"
   },
   {
    "fieldname": "inverter_output_voltage_r_ne_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase R e Neutro"
+   "label": "Voltage Between Phase R and Neutral"
   },
   {
    "fieldname": "inverter_output_voltage_s_ne_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase S e Neutro"
+   "label": "Voltage Between Phase S and Neutral"
   },
   {
    "fieldname": "inverter_output_voltage_t_ne_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase T e Neutro"
+   "label": "Voltage Between Phase T and Neutral"
   },
   {
    "fieldname": "colbreak_ca_output_measurements_4",
    "fieldtype": "Column Break",
-   "label": "Fotos Auxiliares"
+   "label": "Auxiliary Photos"
   },
   {
    "fieldname": "inverter_output_connector_load_picture",
    "fieldtype": "Attach",
-   "label": "Foto do Conector (CARGAS)"
+   "label": "Connector Photo (LOADS)"
   },
   {
    "fieldname": "inverter_out_ac_continuity_test_video",
    "fieldtype": "Attach",
-   "label": "Teste de continuidade CA (opcional) "
+   "label": "AC Continuity Test (optional)"
   },
   {
    "fieldname": "section_ca_input_measurements",
    "fieldtype": "Section Break",
-   "label": "Medições CA (Input)",
-   "description": "ON-GRID/OFF-GRID/HÍBRIDO"
+   "label": "AC Measurements (Input)",
+   "description": "ON-GRID/OFF-GRID/HYBRID"
   },
   {
    "fieldname": "colbreak_ca_input_measurements_1",
    "fieldtype": "Column Break",
-   "label": "Tensão entre Fases"
+   "label": "Voltage Between Phases"
   },
   {
    "fieldname": "inverter_voltage_r_s_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fases R e S"
+   "label": "Voltage Between Phases R and S"
   },
   {
    "fieldname": "inverter_voltage_s_t_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fases S e T "
+   "label": "Voltage Between Phases S and T"
   },
   {
    "fieldname": "inverter_voltage_t_r_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fases T e R"
+   "label": "Voltage Between Phases T and R"
   },
   {
    "fieldname": "colbreak_ca_input_measurements_2",
    "fieldtype": "Column Break",
-   "label": "Tensão entre Fase e Terra"
+   "label": "Voltage Between Phase and Ground"
   },
   {
    "fieldname": "inverter_voltage_r_pe_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase R e Terra"
+   "label": "Voltage Between Phase R and Ground"
   },
   {
    "fieldname": "inverter_voltage_s_pe_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase S e Terra "
+   "label": "Voltage Between Phase S and Ground"
   },
   {
    "fieldname": "inverter_voltage_t_pe_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase T e Terra "
+   "label": "Voltage Between Phase T and Ground"
   },
   {
    "fieldname": "colbreak_ca_input_measurements_3",
    "fieldtype": "Column Break",
-   "label": "Medições com Neutro",
+   "label": "Measurements with Neutral",
    "hidden": 1
   },
   {
    "fieldname": "inverter_voltage_ne_pe_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Terra e Neutro"
+   "label": "Voltage Between Ground and Neutral"
   },
   {
    "fieldname": "inverter_voltage_r_ne_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase R e Neutro "
+   "label": "Voltage Between Phase R and Neutral"
   },
   {
    "fieldname": "inverter_voltage_s_ne_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase S e Neutro"
+   "label": "Voltage Between Phase S and Neutral"
   },
   {
    "fieldname": "inverter_voltage_t_ne_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Fase T e Neutro "
+   "label": "Voltage Between Phase T and Neutral"
   },
   {
    "fieldname": "colbreak_ca_input_measurements_4",
    "fieldtype": "Column Break",
-   "label": "Foto Auxiliares"
+   "label": "Auxiliary Photos"
   },
   {
    "fieldname": "ac_panel_picture",
    "fieldtype": "Attach",
-   "label": "Foto do quadro CA"
+   "label": "AC Panel Photo"
   },
   {
    "fieldname": "inverter_ac_continuity_test_video",
    "fieldtype": "Attach",
-   "label": "Teste de continuidade CA (opcional)"
+   "label": "AC Continuity Test (optional)"
   },
   {
    "fieldname": "inverter_ac_connector_picture",
    "fieldtype": "Attach",
-   "label": "Foto do Conector CA do inversor"
+   "label": "Inverter AC Connector Photo"
   },
   {
    "fieldname": "section_batteries",
    "fieldtype": "Section Break",
-   "label": "Baterias"
+   "label": "Batteries"
   },
   {
    "fieldname": "batteries_table",
    "fieldtype": "Table",
-   "label": "Baterias Conectadas",
+   "label": "Connected Batteries",
    "options": "Inverter Checklist Connected Batteries Table"
   },
   {
    "fieldname": "section_battery_settings",
    "fieldtype": "Section Break",
-   "label": "Configurações da Bateria"
+   "label": "Battery Settings"
   },
   {
    "fieldname": "colbreak_battery_settings_1",
@@ -700,8 +700,8 @@
   {
    "fieldname": "battery_type",
    "fieldtype": "Select",
-   "label": "Tipo da Bateria",
-   "options": "\nLítio\nChumbo Ácido"
+   "label": "Battery Type",
+   "options": "Lithium\nLead Acid"
   },
   {
    "fieldname": "colbreak_battery_settings_2",
@@ -710,17 +710,17 @@
   {
    "fieldname": "battery_program_02",
    "fieldtype": "Data",
-   "label": "Programa 02"
+   "label": "Program 02"
   },
   {
    "fieldname": "battery_program_05",
    "fieldtype": "Data",
-   "label": "Programa 05"
+   "label": "Program 05"
   },
   {
    "fieldname": "battery_program_12",
    "fieldtype": "Data",
-   "label": "Programa 12 "
+   "label": "Program 12"
   },
   {
    "fieldname": "colbreak_battery_settings_3",
@@ -729,17 +729,17 @@
   {
    "fieldname": "battery_program_19",
    "fieldtype": "Data",
-   "label": "Programa 19"
+   "label": "Program 19"
   },
   {
    "fieldname": "battery_program_20",
    "fieldtype": "Data",
-   "label": "Programa 20"
+   "label": "Program 20"
   },
   {
    "fieldname": "battery_program_21",
    "fieldtype": "Data",
-   "label": "Programa 21"
+   "label": "Program 21"
   },
   {
    "fieldname": "colbreak_battery_settings_4",
@@ -748,7 +748,7 @@
   {
    "fieldname": "battery_program_36",
    "fieldtype": "Data",
-   "label": "Programa 36"
+   "label": "Program 36"
   },
   {
    "fieldname": "section_smart_meter",
@@ -762,7 +762,7 @@
   {
    "fieldname": "smart_meter_eqp_picture",
    "fieldtype": "Attach",
-   "label": "Foto da Etiqueta"
+   "label": "Label Photo"
   },
   {
    "fieldname": "colbreak_smart_meter_2",
@@ -771,7 +771,7 @@
   {
    "fieldname": "smart_meter_end_block_connections",
    "fieldtype": "Attach",
-   "label": "Conexões do bloco de terminais "
+   "label": "Terminal Block Connections"
   },
   {
    "fieldname": "colbreak_smart_meter_3",
@@ -780,7 +780,7 @@
   {
    "fieldname": "smart_meter_tcs_picture",
    "fieldtype": "Attach",
-   "label": "Foto dos TC'S (opcional)"
+   "label": "CTs Photo (optional)"
   },
   {
    "fieldname": "colbreak_smart_meter_4",
@@ -789,7 +789,7 @@
   {
    "fieldname": "smart_meter_screen_video",
    "fieldtype": "Attach",
-   "label": "Video da tela do medidor"
+   "label": "Meter Screen Video"
   },
   {
    "fieldname": "section_sme",
@@ -799,141 +799,141 @@
   {
    "fieldname": "sem_serial_no_picture",
    "fieldtype": "Attach",
-   "label": "Foto da Etiqueta"
+   "label": "Label Photo"
   },
   {
    "fieldname": "sem_leds_video",
    "fieldtype": "Attach",
-   "label": "Vídeo mostrando os LEDs do ShineMaster"
+   "label": "Video Showing ShineMaster LEDs"
   },
   {
    "fieldname": "sem_end_block_connections",
    "fieldtype": "Attach",
-   "label": "Conexões do bloco de terminais"
+   "label": "Terminal Block Connections"
   },
   {
    "fieldname": "sem_tcs_picture",
    "fieldtype": "Attach",
-   "label": "Foto dos TC'S"
+   "label": "CTs Photo"
   },
   {
    "fieldname": "sem_position_tc",
    "fieldtype": "Small Text",
-   "label": "Lado e local onde os TCs foram instalados"
+   "label": "Side and Location Where CTs Were Installed"
   },
   {
    "fieldname": "section_transformer",
    "fieldtype": "Section Break",
-   "label": "Transformador"
+   "label": "Transformer"
   },
   {
    "fieldname": "colbreak_transformer_1",
    "fieldtype": "Column Break",
-   "label": "Tensão entre Fases"
+   "label": "Voltage Between Phases"
   },
   {
    "fieldname": "transformer_voltage_r_s_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre fases R e S"
+   "label": "Voltage Between Phases R and S"
   },
   {
    "fieldname": "transformer_voltage_s_t_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre fases S e T"
+   "label": "Voltage Between Phases S and T"
   },
   {
    "fieldname": "transformer_voltage_t_r_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre fases T e R"
+   "label": "Voltage Between Phases T and R"
   },
   {
    "fieldname": "colbreak_transformer_2",
    "fieldtype": "Column Break",
-   "label": "Tensão entre Fase e Terra"
+   "label": "Voltage Between Phase and Ground"
   },
   {
    "fieldname": "transformer_voltage_r_ne_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre fase R e Terra"
+   "label": "Voltage Between Phase R and Ground"
   },
   {
    "fieldname": "transformer_voltage_s_ne_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre fase S e Terra "
+   "label": "Voltage Between Phase S and Ground"
   },
   {
    "fieldname": "transformer_voltage_t_ne_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre fase T e Terra"
+   "label": "Voltage Between Phase T and Ground"
   },
   {
    "fieldname": "colbreak_transformer_3",
    "fieldtype": "Column Break",
-   "label": "Medições com Neutro"
+   "label": "Measurements with Neutral"
   },
   {
    "fieldname": "transformer_voltage_ne_pe_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre Terra e Neutro "
+   "label": "Voltage Between Ground and Neutral"
   },
   {
    "fieldname": "transformer_voltage_r_pe_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre fase R e Neutro "
+   "label": "Voltage Between Phase R and Neutral"
   },
   {
    "fieldname": "transformer_voltage_s_pe_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre fase S e Neutro"
+   "label": "Voltage Between Phase S and Neutral"
   },
   {
    "fieldname": "transformer_voltage_t_pe_picture",
    "fieldtype": "Attach",
-   "label": "Tensão entre fase T e Neutro"
+   "label": "Voltage Between Phase T and Neutral"
   },
   {
    "fieldname": "colbreak_transformer_4",
    "fieldtype": "Column Break",
-   "label": "Fotos Auxiliares"
+   "label": "Auxiliary Photos"
   },
   {
    "fieldname": "transformer_label_picture",
    "fieldtype": "Attach",
-   "label": "Foto da etiqueta do transformador"
+   "label": "Transformer Label Photo"
   },
   {
    "fieldname": "section_finishment",
    "fieldtype": "Section Break",
-   "label": "Finalização"
+   "label": "Completion"
   },
   {
    "fieldname": "technical_responsible",
    "fieldtype": "Data",
-   "label": "Responsável Técnico"
+   "label": "Technical Responsible"
   },
   {
    "fieldname": "main_eqp_connector_type",
    "fieldtype": "Select",
-   "label": "Conector",
-   "options": "\nBorne\nPequeno\nGrande Tipo 1\nGrande Tipo 2\nN/A"
+   "label": "Connector",
+   "options": "Terminal\nSmall\nLarge Type 1\nLarge Type 2\nN/A"
   },
   {
    "fieldname": "warranty_approval",
    "fieldtype": "Select",
-   "label": "Garantia",
-   "options": "\nAprovado\nReprovado"
+   "label": "Warranty",
+   "options": "Approved\nRejected"
   },
   {
    "fieldname": "warranty_denial_reason",
    "fieldtype": "Select",
-   "label": "Motivo da Reprova",
-   "options": "\n1. Quebra do Selo do produto\n2. Instalação ou comissionamento incorretos\n3. Falha relacionada a não observação do manual do Usuário\n4. Modificações não autorizadas , mudanças ou tentativas de reparo.\n5. Operação inapropriada ou incorreta.\n6. Ventilação Insuficiente para o dispositivo.\n7. Força Maior (raios, sobretensão, ventoinhas, incêndios e outros).\n8. Tempo de garantia expirado"
+   "label": "Rejection Reason",
+   "options": "1. Product Seal Breach\n2. Incorrect Installation or Commissioning\n3. Failure Related to Non-Observance of User Manual\n4. Unauthorized Modifications, Changes or Repair Attempts\n5. Inappropriate or Incorrect Operation\n6. Insufficient Ventilation for the Device\n7. Force Majeure (Lightning, Overvoltage, Fans, Fires and Others)\n8. Warranty Period Expired"
   },
   {
    "fieldname": "caveat",
    "fieldtype": "Select",
-   "label": "Ressalva",
-   "options": "\nExposição ao Sol\nEspaçamento\nTensão da rede alta"
+   "label": "Caveat",
+   "options": "Sun Exposure\nSpacing\nHigh Grid Voltage"
   },
   {
    "fieldname": "email",
@@ -943,7 +943,7 @@
   {
    "fieldname": "ext_fault_support_description",
    "fieldtype": "Text Editor",
-   "label": "Observações"
+   "label": "Observations"
   },
   {
    "fieldname": "internal_tab",
@@ -953,8 +953,8 @@
   {
    "fieldname": "priority",
    "fieldtype": "Select",
-   "label": "Prioridade",
-   "options": "\nMáxima\nReclame aqui\nProcesso judicial"
+   "label": "Priority",
+   "options": "Maximum\nReclame Aqui\nLegal Process"
   },
   {
    "fieldname": "sac",
@@ -965,7 +965,7 @@
   {
    "fieldname": "corrections_tracker",
    "fieldtype": "Table",
-   "label": "Pedidos de Correção",
+   "label": "Correction Requests",
    "options": "Corrections Tracker",
    "columns": 10
   },
