@@ -1,28 +1,14 @@
-***Fill in the Failure Code***,***Preencha o Código de Falha***
-*<strong>Linked</strong> with the document above. Access the link to view.,*<strong>Vinculado</strong> com o documento acima. Acesse o link para visualizar.
-0,0
-1,1
-1. Product Seal Breach,1. Quebra do Selo do produto
-2,2
-2. Incorrect Installation or Commissioning,2. Instalação ou comissionamento incorretos
-3,3
-3. Failure Related to Non-Observance of User Manual,3. Falha relacionada a não observação do manual do Usuário
-4,4
-"4. Unauthorized Modifications, Changes or Repair Attempts","4. Modificações não autorizadas , mudanças ou tentativas de reparo."
-5,5
-5. Inappropriate or Incorrect Operation,5. Operação inapropriada ou incorreta.
-6,6
-6. Insufficient Ventilation for the Device,6. Ventilação Insuficiente para o dispositivo.
-7,7
-"7. Force Majeure (Lightning, Overvoltage, Fans, Fires and Others)","7. Força Maior (raios, sobretensão, ventoinhas, incêndios e outros)."
-8,8
-8. Warranty Period Expired,8. Tempo de garantia expirado
+AC Continuity Test (optional),Teste de Continuidade AC (opcional)
 AC Current L1,Corrente AC L1
 AC Current L2,Corrente AC L2
 AC Current L3,Corrente AC L3
 AC Frequency,Frequência AC
 AC Input,Entrada AC
 AC Input Section,Seção de Entrada AC
+AC Measurements (Input),Medições AC (Entrada)
+AC Measurements (Output),Medições AC (Saída)
+AC Measurements must be taken at the Charger Connector/Terminal,As medições AC devem ser feitas no Conector/Borne do Carregador
+AC Measurements must be taken at the Inverter Connector/Terminal,As medições AC devem ser feitas no Conector/Borne do Inversor
 AC Output,Saída AC
 AC Output Current L1,Corrente de Saída AC L1
 AC Output Current L2,Corrente de Saída AC L2
@@ -33,49 +19,66 @@ AC Output Section,Seção de Saída AC
 AC Output Voltage L1,Tensão de Saída AC L1
 AC Output Voltage L2,Tensão de Saída AC L2
 AC Output Voltage L3,Tensão de Saída AC L3
+AC Panel Photo,Foto do Painel AC
 AC Power,Potência AC
 AC Voltage L1,Tensão AC L1
 AC Voltage L2,Tensão AC L2
 AC Voltage L3,Tensão AC L3
+Additional Information,Informações Adicionais
 Address,Endereço
 Amended From,Alterado De
+Analysis Conclusion,Conclusão da Análise
+Applied Solution,Solução Aplicada
 Approved,Aprovada
+Auxiliary Photos,Fotos Auxiliares
 BMS,BMS
-Battery Brand,Marca da Bateria
-Battery Communication,Comunicação da Bateria
-Battery Configuration Program 02,Programa de Configuração da Bateria 02
-Battery Configuration Program 05,Programa de Configuração da Bateria 05
-Battery Configuration Program 12,Programa de Configuração da Bateria 12
-Battery Configuration Program 19,Programa de Configuração da Bateria 19
-Battery Configuration Program 20,Programa de Configuração da Bateria 20
-Battery Configuration Program 21,Programa de Configuração da Bateria 21
-Battery Configuration Program 36,Programa de Configuração da Bateria 36
-Battery Current,Corrente da Bateria
-Battery Nameplate Photo,Foto da Placa da Bateria
-Battery Photo,Foto da Bateria
-Battery Power,Potência da Bateria
-Battery SOC,SOC da Bateria
+Batteries,Baterias
+Battery Information,Informações da Bateria
+Battery Installation,Instalação da Bateria
+Battery Label Photo,Foto da Placa da Bateria
+Battery Model,Modelo da Bateria
+Battery S/N,S/N da Bateria
+Battery Settings,Configurações da Bateria
+Battery Settings Video,Vídeo de Configurações da Bateria
 Battery Type,Tipo de Bateria
-Battery Video,Vídeo da Bateria
-Battery Voltage,Tensão da Bateria
+Battery Voltage in Closed Circuit,Tensão da Bateria em Circuito Fechado
+Battery Voltage in Open Circuit,Tensão da Bateria em Circuito Aberto
 CPF/CNPJ,CPF/CNPJ
+Case Data,Dados do Caso
 Caveat,Ressalva
-Charger Nameplate Photo,Foto da Placa do Carregador
-Charger Photo,Foto do Carregador
-Charger Video,Vídeo do Carregador
+Charging Connector Photo,Foto do Conector de Carga
+Child Tracker - HTML,Rastreador Filho - HTML
+Child Tracker,Rastreador Filho
 City,Cidade
 Client,Cliente
 Client Name,Nome do Cliente
 Column Break,Quebra de Coluna
+Communication Entry,Entrada de Comunicação
 Complement,Complemento
+Completion,Finalização
+Compliance Statement,Declaração de Conformidade
+Confirm Battery,Confirmar Bateria
+Confirm Compliance Statement,Confirmar Declaração de Conformidade
+Confirm SAC,Confirmar SAC
 Connected Batteries,Baterias Conectadas
 Connection Diagram Photo,Foto do Diagrama de Conexão
+Connection Type,Tipo de Conexão
+Connector,Conector
 Connector Photo,Foto do Conector
+Connector Photo (LOADS),Foto do Conector (CARGAS)
 Connector Type,Tipo de Conector
+Correction Requests,Solicitações de Correção
+CTs Photo,Foto dos TCs
+CTs Photo (optional),Foto dos TCs (opcional)
+Customer,Cliente
 Customer Info,Informações do Cliente
+Customer Information,Informações do Cliente
+DC Connectors Photo,Foto dos Conectores DC
 DC Current,Corrente DC
 DC Input,Entrada DC
 DC Input Section,Seção de Entrada DC
+DC Measurement of Strings in Open Circuit,Medição DC das Strings em Circuito Aberto
+DC Measurements,Medições DC
 DC Output,Saída DC
 DC Output Current,Corrente de Saída DC
 DC Output Power,Potência de Saída DC
@@ -83,33 +86,54 @@ DC Output Section,Seção de Saída DC
 DC Output Voltage,Tensão de Saída DC
 DC Power,Potência DC
 DC Voltage,Tensão DC
+Data Extraction (OSS),Extração de Dados (OSS)
 Datalogger Photo,Foto do Datalogger
 Datalogger Video,Vídeo do Datalogger
+Derived Documents,Documentos Derivados
 Distributor,Distribuidor
 Distributor Name,Nome do Distribuidor
 District,Bairro
+E-mail,E-mail
+E-mail Subject,Assunto do E-mail
 Email,Email
 Enter a model from the list.,Insira um modelo da lista.
 Enter a valid SN.,Insira um SN válido.
+Environment Photo,Foto do Ambiente
+Environment Photos,Fotos do Ambiente
 Equipment,Equipamento
 Equipment Info,Informações do Equipamento
+Equipment Information,Informações do Equipamento
+Equipment Label Photo,Foto da Placa do Equipamento
 Equipment Model,Modelo do Equipamento
 Equipment Name,Nome do Equipamento
+Equipment SN,SN do Equipamento
 Equipment Serial Number,Número de Série do Equipamento
+Equipment Type,Tipo de Equipamento
+Equipment Warehouse,Armazém do Equipamento
 External Code,Código Externo
 External Issue Code,Código de Problema Externo
+Failure,Falha
 Failure Code,Código de Falha
 Failure Date,Data da Falha
 Failure Description,Descrição da Falha
 Failure Info,Informações da Falha
+Failure Information,Informações da Falha
 Failure Symptom,Sintoma da Falha
+Family,Família
+Fields,Campos
+Final Firmware,Firmware Final
 Firmware,Firmware
 Firmware Version,Versão do Firmware
+Full Name,Nome Completo
+Group,Grupo
 High Grid Voltage,Tensão da rede alta
+Initial Firmware,Firmware Inicial
+Installation,Instalação
 Installation Address,Endereço de Instalação
 Installation City,Cidade de Instalação
 Installation Complement,Complemento de Instalação
 Installation District,Bairro de Instalação
+Installation Information,Informações da Instalação
 Installation Number,Número de Instalação
 Installation Site,Local de Instalação
 Installation Site Photo,Foto do Local de Instalação
@@ -117,7 +141,10 @@ Installation Site Video,Vídeo do Local de Instalação
 Installation State,Estado de Instalação
 Installation ZIP Code,CEP de Instalação
 Internal,Interno
+Internal Information,Informações Internas
+Inverter AC Connector Photo,Foto do Conector AC do Inversor
 Inverter Nameplate Photo,Foto da Placa do Inversor
+Inverter Phase,Fase do Inversor
 Inverter Photo,Foto do Inversor
 Inverter Video,Vídeo do Inversor
 Invoice,Nota Fiscal
@@ -125,11 +152,13 @@ Invoice Date,Data da Nota Fiscal
 Item,Item
 Item Description,Descrição do Item
 Item Name,Nome do Item
+Label Photo,Foto da Placa
 Large,Grande
 Large Type 1,Grande Tipo 1
 Large Type 2,Grande Tipo 2
 Lead Acid,Chumbo Ácido
 Legal Process,Processo Judicial
+Links,Links
 Lithium,Lítio
 MPPT 1 Current,Corrente MPPT 1
 MPPT 1 Power,Potência MPPT 1
@@ -140,26 +169,46 @@ MPPT 2 Voltage,Tensão MPPT 2
 MPPT 3 Current,Corrente MPPT 3
 MPPT 3 Power,Potência MPPT 3
 MPPT 3 Voltage,Tensão MPPT 3
+MPPT Continuity Test,Teste de Continuidade MPPT
+MPPT Continuity Test (optional),Teste de Continuidade MPPT (opcional)
+Main Email,Email Principal
 Maximum,Máxima
+Measurements with Neutral,Medições com Neutro
 Medium,Médio
 Meter Photo,Foto do Medidor
+Meter Screen Video,Vídeo da Tela do Medidor
 Meter Video,Vídeo do Medidor
 Model,Modelo
+Model Code,Código do Modelo
+Model Reference,Referência do Modelo
 N/A,N/A
 Nameplate Photo,Foto da Placa de Identificação
+Negative to Ground Measurement,Medição Negativo para Terra
+Neutral,Neutro
+Neutral Measurements,Medições com Neutro
 Number,Número
 Number of Batteries,Quantidade de Baterias
+Number of Connected Batteries,Número de Baterias Conectadas
+Number of MPPT,Número de MPPT
+Number of MPPTs,Número de MPPTs
 OFF-GRID/HYBRIDS,OFF-GRID/HÍBRIDOS
 ON-GRID/OFF-GRID/HYBRID,ON-GRID/OFF-GRID/HÍBRIDO
 OSS Data,Dados OSS
 OSS Data Extraction,Extração de Dados OSS
+OSS Screenshot,Captura de Tela OSS
+Observations,Observações
+Online,Online
 Peripheral,Periférico
 Peripheral 1,Periférico 1
 Peripheral 2,Periférico 2
+Peripherals,Periféricos
+Phase,Fase
 Phase Configuration,Configuração de Fase
 Phone,Telefone
 Photo,Foto
+Photos,Fotos
 Photos and Videos,Fotos e Vídeos
+Positive to Ground Measurement,Medição Positivo para Terra
 Pre-Attendance,Pré Atendimento
 Preliminary Analysis,Análise Preliminar
 Preliminary Analysis Date,Data da Análise Preliminar
@@ -168,30 +217,103 @@ Preliminary Analysis Result,Resultado da Análise Preliminar
 Preliminary Analysis Technician,Técnico da Análise Preliminar
 Priority,Prioridade
 Private,Privado
+Problem Description (Customer),Descrição do Problema (Cliente)
+Problem Video,Vídeo do Problema
 Procedure Performed,Procedimento Realizado
 Procedure Performed Section,Seção de Procedimento Realizado
+Program 02,Programa 02
+Program 05,Programa 05
+Program 12,Programa 12
+Program 19,Programa 19
+Program 20,Programa 20
+Program 21,Programa 21
+Program 36,Programa 36
+Project Diagram,Diagrama do Projeto
 Public,Público
+Purchase Invoice,Nota Fiscal de Compra
 RS485,RS485
 Reclame Aqui,Reclame Aqui
+Reference [Service Protocol],Referência [Protocolo de Atendimento]
+Reference [Ticket],Referência [Ticket]
 Rejected,Reprovada
 Rejection Reason,Motivo da Rejeição
+Reset,Resetar
+Resolution,Resolução
+SAC,SAC
 SEM MAC,MAC do SEM
 Section Break,Quebra de Seção
+Select,Selecione
 Serial Number,Número de Série
+Series,Série
+Service Partner,Parceiro de Serviço
 Service Protocol,Protocolo de Atendimento
+Service Protocol EV Charger Checklist,Checklist de Carregador EV do Protocolo de Atendimento
+Service Protocol Reference,Referência do Protocolo de Atendimento
+Side and Location Where CTs Were Installed,Lado e Localização Onde os TCs Foram Instalados
 Single Phase,Monofásico
+Smart Energy,Smart Energy
+Smart Energy Manager,Smart Energy Manager
+Smart Meter,Smart Meter
 Small,Pequeno
 Spacing,Espaçamento
 State,Estado
 Status,Status
+String Box,String Box
 Sun Exposure,Exposição ao Sol
+Support,Suporte
 System,Sistema
 System Power,Potência do Sistema
 Tab Break,Quebra de Aba
+Technical Responsible,Responsável Técnico
+Technician,Técnico
 Terminal,Borne
+Terminal Block Connections,Conexões do Bloco de Terminais
 Three Phase,Trifásico
 Ticket,Ticket
+Ticket Reference,Referência do Ticket
+Transformer,Transformador
+Transformer Label Photo,Foto da Placa do Transformador
+Treatment,Tratamento
+Trigger Battery Shipment,Acionar Envio de Bateria
 Two Phase,Bifásico
+Type,Tipo
+Updated,Atualizado
+Version,Versão
 Video,Vídeo
+Video Showing ShineMaster LEDs,Vídeo Mostrando LEDs do ShineMaster
+Voltage Between Ground and Neutral,Tensão Entre Terra e Neutro
+Voltage Between Phase and Ground,Tensão Entre Fase e Terra
+Voltage Between Phase R and Ground,Tensão Entre Fase R e Terra
+Voltage Between Phase R and Neutral,Tensão Entre Fase R e Neutro
+Voltage Between Phase S and Ground,Tensão Entre Fase S e Terra
+Voltage Between Phase S and Neutral,Tensão Entre Fase S e Neutro
+Voltage Between Phase T and Ground,Tensão Entre Fase T e Terra
+Voltage Between Phase T and Neutral,Tensão Entre Fase T e Neutro
+Voltage Between Phases,Tensão Entre Fases
+Voltage Between Phases R and S,Tensão Entre Fases R e S
+Voltage Between Phases S and T,Tensão Entre Fases S e T
+Voltage Between Phases T and R,Tensão Entre Fases T e R
+Warranty,Garantia
 Warranty Analysis,Análise de Garantia
+Warranty Battery,Garantia da Bateria
+Which?,Qual?
 ZIP Code,CEP
+***Fill in the Failure Code***,***Preencha o Código de Falha***
+*<strong>Linked</strong> with the document above. Access the link to view.,*<strong>Vinculado</strong> com o documento acima. Acesse o link para visualizar.
+0,0
+1,1
+1. Product Seal Breach,1. Quebra do Selo do produto
+2,2
+2. Incorrect Installation or Commissioning,2. Instalação ou comissionamento incorretos
+3,3
+3. Failure Related to Non-Observance of User Manual,3. Falha relacionada a não observação do manual do Usuário
+4,4
+"4. Unauthorized Modifications, Changes or Repair Attempts","4. Modificações não autorizadas, mudanças ou tentativas de reparo."
+5,5
+5. Inappropriate or Incorrect Operation,5. Operação inapropriada ou incorreta.
+6,6
+6. Insufficient Ventilation for the Device,6. Ventilação Insuficiente para o dispositivo.
+7,7
+"7. Force Majeure (Lightning, Overvoltage, Fans, Fires and Others)","7. Força Maior (raios, sobretensão, ventoinhas, incêndios e outros)."
+8,8
+8. Warranty Period Expired,8. Tempo de garantia expirado
