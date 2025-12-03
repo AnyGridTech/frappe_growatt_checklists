@@ -1,6 +1,7 @@
 import { ChecklistTracker } from "@anygridtech/frappe-agt-types/agt/doctype";
 import { FrappeForm } from "@anygridtech/frappe-types/client/frappe/core";
 
+
 frappe.provide("growatt.checklist_table");
 frappe.provide("growatt.checklist_table_inverter");
 frappe.provide("growatt.checklist_table_ev_charger");
@@ -170,14 +171,14 @@ const checklistConfig = [
   { group: 'Datalogger', doctype: 'Service Protocol Datalogger Checklist', table_field: 'child_tracker_table', childname: 'sp_docname' }
 ];
 
-growatt.checklist_table.setup = async () => {
-  await growatt.checklist_table_inverter.setup();
-  await growatt.checklist_table_ev_charger.setup();
-  await growatt.checklist_table_battery.setup();
-  await growatt.checklist_table_smart_meter.setup();
-  await growatt.checklist_table_smart_energy_manager.setup();
-  await growatt.checklist_table_datalogger.setup();
-  await growatt.child_tracker_table.setup();
+agt.checklist_table.setup = async () => {
+  await agt.checklist_table_inverter.setup();
+  await agt.checklist_table_ev_charger.setup();
+  await agt.checklist_table_battery.setup();
+  await agt.checklist_table_smart_meter.setup();
+  await agt.checklist_table_smart_energy_manager.setup();
+  await agt.checklist_table_datalogger.setup();
+  await agt.child_tracker_table.setup();
 
   frappe.ui.form.on('Service Protocol', {
     onload: async (frm: FrappeForm) => {
@@ -198,18 +199,18 @@ growatt.checklist_table.setup = async () => {
       if (frm.doc.workflow_state === growatt.namespace.service_protocol.workflow_state.holding_action.name) {
         await growatt.service_protocol.utils.trigger_create_sn_into_db(frm);
       }
-      await growatt.service_protocol.utils.share_doc_trigger(frm);
+      await agt.service_protocol.utils.share_doc_trigger(frm);
     }
   });
 
   checklistConfig.forEach(config => {
     frappe.ui.form.on(config.doctype, 'onload', async (form: FrappeForm) => {
-      growatt.utils.transport_values(form, "sp_docname");
+      agt.utils.form.transport_values(form, "sp_docname");
     });
   });
 
   frappe.ui.form.on("Compliance Statement", 'onload', async (form: FrappeForm) => {
-    growatt.utils.transport_values(form, "sp_docname");
+    agt.utils.form.transport_values(form, "sp_docname");
   });
 };
 

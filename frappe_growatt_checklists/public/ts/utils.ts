@@ -1,14 +1,13 @@
 import { format } from "path";
 import { FrappeForm } from "@anygridtech/frappe-types/client/frappe/core";
-import { Item, SerialNo, Company } from "@anygridtech/frappe-agt-types/agt/doctype";
+import { Item, SerialNo, Company, ServiceProtocol } from "@anygridtech/frappe-agt-types/agt/doctype";
 
-const hasCustomer = frappe.user.has_role('Customer');
-const hasStandardEmployee = frappe.user.has_role('Standard Employee');
-const hasSupport = frappe.user.has_role('Support User') || frappe.user.has_role('Support Manager');
+// const hasCustomer = frappe.user.has_role('Customer');
+// const hasStandardEmployee = frappe.user.has_role('Standard Employee');
+// const hasSupport = frappe.user.has_role('Support User') || frappe.user.has_role('Support Manager');
 const hasAdmin = frappe.user.has_role('System Manager') || frappe.user.has_role('Administrator') || frappe.user.has_role('Information Technology');
 
-frappe.provide('agt.service_protocol');
-agt.service_protocol.utils = {
+const service_protocol_utils = {
   async update_related_forms(): Promise<void> {
     const fields_record = cur_frm.fields_dict;
     const wci = agt.utils.table.row.find(cur_frm, 'checklist_table_inverter', { or: { docstatus: [0] } });
@@ -20,7 +19,7 @@ agt.service_protocol.utils = {
     const wsp = agt.utils.table.row.find(cur_frm, 'checklist_table_service_protocol', { or: { docstatus: [0] } });
 
     const clean_dict = Object.entries(fields_record)
-      .filter(([k, v]) => v.value !== undefined)
+      .filter(([_, v]) => v.value !== undefined)
       .reduce((acc, [k, v]) => {
         acc[k] = v.value;
         return acc;
@@ -43,43 +42,46 @@ agt.service_protocol.utils = {
       await agt.utils.doc.update_doc('Service Protocol Smart Meter Checklist', row.checklist_docname, clean_dict);
       await agt.utils.doc.share_doc('Service Protocol Smart Meter Checklist', row.checklist_docname, shared_users);
     });
-    wcd?.forEach(async row => {
-      await agt.utils.doc.update_doc('Service Protocol Datalogger Checklist', row.checklist_docname, clean_dict);
-      await agt.utils.doc.share_doc('Service Protocol Datalogger Checklist', row.checklist_docname, shared_users);
-    });
     wcem?.forEach(async row => {
       await agt.utils.doc.update_doc('Service Protocol Smart Energy Manager Checklist', row.checklist_docname, clean_dict);
       await agt.utils.doc.share_doc('Service Protocol Smart Energy Manager Checklist', row.checklist_docname, shared_users);
     });
+    wcd?.forEach(async row => {
+      await agt.utils.doc.update_doc('Service Protocol Datalogger Checklist', row.checklist_docname, clean_dict);
+      await agt.utils.doc.share_doc('Service Protocol Datalogger Checklist', row.checklist_docname, shared_users);
+    });
+    wsp?.forEach(async row => {
+      await agt.utils.doc.update_doc('Service Protocol', row.checklist_docname, clean_dict);
+      await agt.utils.doc.share_doc('Service Protocol', row.checklist_docname, shared_users);
+    });
   },
-
-  fields_listener(frm: FrappeForm) {
-    growatt.service_protocol.utils.fields_handler(frm);
+  fields_listener(frm: FrappeForm<ServiceProtocol>) {
+    service_protocol_utils.fields_handler(frm);
     Object.keys(frm.fields_dict).forEach((fn) => {
       const field = frm.fields_dict[fn];
-      if (field.df) {
+      if (field && field.df) {
         field.df['onchange'] = () => {
-          growatt.service_protocol.utils.fields_handler(frm);
+          service_protocol_utils.fields_handler(frm);
         };
       }
     });
   },
-  fields_handler: async function (frm: FrappeForm) {
+  fields_handler: async function (form: FrappeForm<ServiceProtocol>) {
 
-    if (frm.doc.opening_date === "" || frm.doc.opening_date === undefined || frm.doc.opening_date === null) {
-      frm.doc.opening_date = frappe.datetime.now_date();
+    if (form.doc.opening_date === "" || form.doc.opening_date === undefined || form.doc.opening_date === null) {
+      form.doc.opening_date = frappe.datetime.now_date();
     }
-    frm.set_df_property('opening_date', 'read_only', frm.doc.opening_date ? 1 : 0);
+    form.set_df_property('opening_date', 'read_only', form.doc.opening_date ? 1 : 0);
 
-    if (frm.doc.opening_user === "" || frm.doc.opening_user === undefined || frm.doc.opening_user === null) {
-      frm.doc.opening_user = frappe.session.user;
+    if (form.doc.opening_user === "" || form.doc.opening_user === undefined || form.doc.opening_user === null) {
+      form.doc.opening_user = frappe.session.user;
     }
-    frm.set_df_property('opening_user', 'read_only', frm.doc.opening_user ? 1 : 0);
+    form.set_df_property('opening_user', 'read_only', form.doc.opening_user ? 1 : 0);
 
-    growatt.utils.set_button_primary_style(frm, 'add_child_button');
+    agt.utils.set_button_primary_style(form, 'add_child_button');
 
-    growatt.utils.set_table_custom_properties(
-      frm, {
+    agt.utils.table.set_custom_properties(
+      form, {
       hidden: false,
       cannot_delete_rows: !hasAdmin,
       cannot_add_rows: !hasAdmin,
@@ -98,8 +100,8 @@ agt.service_protocol.utils = {
       'Adicionar Comentário',
     );
 
-    growatt.utils.set_table_custom_properties(
-      frm, {
+    agt.utils.table.set_custom_properties(
+      form, {
       hidden: false,
       cannot_delete_rows: !hasAdmin,
       cannot_add_rows: !hasAdmin,
@@ -129,7 +131,7 @@ agt.service_protocol.utils = {
     //   defaultTableRow.item_quantity = 1;
     // }
 
-    const mainEqpGroup = await growatt.utils.get_value_from_any_doc(frm, 'Ticket', 'ticket_docname', 'main_eqp_group');
+    const mainEqpGroup = await agt.utils.get_value_from_any_doc(form, 'Ticket', 'ticket_docname', 'main_eqp_group');
     if (mainEqpGroup === 'Datalogger') {
       defaultTableRow.item_name = 'Datalogger';
       defaultTableRow.item_quantity = 1;
@@ -162,7 +164,7 @@ agt.service_protocol.utils = {
     // );
 
     // setup const to grab workflow state by number
-    const workflowStates = growatt.namespace.service_protocol.workflow_state;
+    const workflowStates = agt.metadata.doctype.service_protocol.workflow_state;
     const currentStateId = Object.values(workflowStates).find(state => state.name === frm.doc.workflow_state)?.id || 0;
     // add_child_button, child_table, checklist_table_html, section_eqp_failure
     const sectionStarting = [
@@ -173,23 +175,22 @@ agt.service_protocol.utils = {
       'section_eqp_failure',
     ];
     sectionStarting.forEach(f => {
-      // frm.set_df_property(f, 'hidden', (frm.doc.__islocal || currentStateId <= 0) ? 1 : 0);
-      frm.set_df_property(f, 'read_only', currentStateId >= 3 ? 1 : 0);
+      // form.set_df_property(f, 'hidden', (form.doc.__islocal || currentStateId <= 0) ? 1 : 0);
+      form.set_df_property(f, 'read_only', currentStateId >= 3 ? 1 : 0);
     });
     // section_additional
-    // frm.set_df_property('section_additional', 'hidden', frm.doc.main_eqp_model ? 0 : 1);
-    frm.set_df_property('section_additional', 'read_only', currentStateId >= 3 ? 1 : 0);
-
-    // const snVisible = growatt.utils.sn_regex.test(frm.doc.main_eqp_serial_no || '');
-    // frm.set_df_property('main_eqp_model_ref', 'hidden', snVisible ? 0 : 1);
+    // form.set_df_property('section_additional', 'hidden', form.doc.main_eqp_model ? 0 : 1);
+    form.set_df_property('section_additional', 'read_only', currentStateId >= 3 ? 1 : 0);
+    // const snVisible = growatt.utils.sn_regex.test(form.doc.main_eqp_serial_no || '');
+    // form.set_df_property('main_eqp_model_ref', 'hidden', snVisible ? 0 : 1);
     // section_pre_analysis
     const sectionPreAnalysis = [
       'section_pre_analysis',
       'section_pre_analysis_conclusion',
     ];
     sectionPreAnalysis.forEach(f => {
-      // frm.set_df_property(f, 'hidden', (frm.doc.__islocal || currentStateId <= 2) ? 1 : 0);
-      frm.set_df_property(f, 'read_only', currentStateId >= 3 ? 1 : 0);
+      // form.set_df_property(f, 'hidden', (form.doc.__islocal || currentStateId <= 2) ? 1 : 0);
+      form.set_df_property(f, 'read_only', currentStateId >= 3 ? 1 : 0);
     });
     // ext_fault_date, ext_fault_code, ext_fault_description, ext_fault_customer_description
     const EqpFailure = [
@@ -199,10 +200,10 @@ agt.service_protocol.utils = {
       'ext_fault_customer_description'
     ];
     EqpFailure.forEach(f => {
-      // frm.set_df_property(f, 'reqd', currentStateId >= 2 ? 1 : 0);
-      frm.set_df_property(f, 'read_only', currentStateId >= 3 ? 1 : 0);
+      // form.set_df_property(f, 'reqd', currentStateId >= 2 ? 1 : 0);
+      form.set_df_property(f, 'read_only', currentStateId >= 3 ? 1 : 0);
     });
-    frm.set_df_property('ext_fault_description', 'read_only', 1);
+    form.set_df_property('ext_fault_description', 'read_only', 1);
   },
 
   trigger_create_sn_into_db: async (frm: FrappeForm) => {
@@ -234,10 +235,10 @@ agt.service_protocol.utils = {
     if (db_sn && hasKeys(db_sn)) {
       // Serial Number found and has properties - update workflow state
       try {
-        await growatt.utils.update_workflow_state({
+        await agt.utils.update_workflow_state({
           doctype: "Serial No",
           docname: db_sn.serial_no,
-          workflow_state: growatt.namespace.service_protocol.workflow_state.holding_action.name,
+          workflow_state: agt.metadata.doctype.service_protocol.workflow_state.holding_action.name,
           ignore_workflow_validation: true
         });
         console.log("Estado de workflow do Serial No atualizado com sucesso:", db_sn.serial_no);
@@ -275,7 +276,7 @@ agt.service_protocol.utils = {
 
         console.log("Fields for Serial No creation:", JSON.stringify(serialNoFields));
 
-        const sn_docname = await growatt.utils.create_doc<SerialNo>('Serial No', { docname: "sp_docname" }, serialNoFields);
+        const sn_docname = await agt.utils.doc.create_doc<SerialNo>('Serial No', { docname: "sp_docname" }, serialNoFields);
         if (!sn_docname) {
           throw new Error("Failed to create Serial No - no document name returned");
         }
@@ -283,10 +284,10 @@ agt.service_protocol.utils = {
         console.log("Serial No created successfully:", sn_docname);
 
         // Update the workflow state for the newly created Serial No
-        await growatt.utils.update_workflow_state({
+        await agt.utils.update_workflow_state({
           doctype: "Serial No",
           docname: sn_docname,
-          workflow_state: growatt.namespace.service_protocol.workflow_state.holding_action.name,
+          workflow_state: agt.metadata.doctype.service_protocol.workflow_state.holding_action.name,
           ignore_workflow_validation: true
         });
         console.log("Serial No workflow state updated successfully:", sn_docname);
@@ -302,13 +303,13 @@ agt.service_protocol.utils = {
       const service_partner_companies = await growatt.service_protocol.utils.GetServPartnerCompanies();
       return service_partner_companies?.filter((c: Company) => c.name === "Growatt")[0];
     }
-    if (frm.doc.workflow_state === growatt.namespace.service_protocol.workflow_state.holding_action.name) return;
+    if (frm.doc.workflow_state === agt.metadata.doctype.service_protocol.workflow_state.holding_action.name) return;
     if (frm.doc.__islocal) return;
     const service_partner_company = frm.doc.service_partner_company;
     if (service_partner_company) return;
     const spc = await decideServicePartner();
     if (!spc) return;
-    await growatt.utils.update_doc(frm.doctype, frm.docname, { service_partner_company: spc.name });
+    await agt.utils.doc.update_doc(frm.doctype, frm.docname, { service_partner_company: spc.name });
   },
 
   GetServPartnerCompanies: async function (name?: string) {
@@ -338,7 +339,8 @@ agt.service_protocol.utils = {
           write: 1
         }
       ];
-      await growatt.utils.share_doc('Service Protocol', frm.doc.name, shared_users);
+      await agt.utils.doc.share_doc('Service Protocol', frm.doc.name, shared_users);
     }
   },
 };
+export { service_protocol_utils };
