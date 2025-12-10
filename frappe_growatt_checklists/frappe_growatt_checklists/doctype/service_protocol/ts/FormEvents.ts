@@ -1,4 +1,6 @@
 import { FrappeForm } from "@anygridtech/frappe-types/client/frappe/core";
+import { ServiceProtocol } from "@anygridtech/frappe-agt-types/agt/doctype";
+import { service_protocol_utils } from 'frappe_growatt_checklists/public/ts/utils';
 
 /*
 * This file handles the form events for the Service Protocol doctype.
@@ -6,21 +8,21 @@ import { FrappeForm } from "@anygridtech/frappe-types/client/frappe/core";
 */
 
 frappe.ui.form.on("Service Protocol", {
-  setup: async (frm: FrappeForm) => {
+  setup: async (form: FrappeForm<ServiceProtocol>) => {
     await agt.setup.run();
-    agt.service_protocol.utils.fields_listener(frm);
+    service_protocol_utils.fields_listener(form);
   },
-  onload: async (frm: FrappeForm) => {
-    agt.service_protocol.utils.fields_listener(frm);
+  onload: async (form: FrappeForm<ServiceProtocol>) => {
+    service_protocol_utils.fields_listener(form);
   },
-  refresh: async (frm: FrappeForm) => {
-    agt.service_protocol.utils.fields_listener(frm);
+  refresh: async (form: FrappeForm<ServiceProtocol>) => {
+    service_protocol_utils.fields_listener(form);
   },
-  before_load: async (frm: FrappeForm) => {
-    agt.service_protocol.utils.fields_listener(frm);
+  before_load: async (form: FrappeForm<ServiceProtocol>) => {
+    service_protocol_utils.fields_listener(form);
   },
-  validate: async (frm: FrappeForm) => {
-    agt.service_protocol.utils.fields_listener(frm);
+  validate: async (form: FrappeForm<ServiceProtocol>) => {
+    service_protocol_utils.fields_listener(form);
   }
 },
 );
