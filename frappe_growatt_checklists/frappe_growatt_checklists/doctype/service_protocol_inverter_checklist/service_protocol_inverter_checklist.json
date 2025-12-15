@@ -262,7 +262,7 @@
    "label": "Version",
    "reqd": 1,
    "read_only": 1,
-   "fetch_from": "main_eqp_model_ref.custom_error_version",
+   "fetch_from": "main_eqp_model_ref.error_version",
    "link_filters": "[[\"Item Group\",\"parent_item_group\",\"=\",\"Phase\"]]"
   },
   {

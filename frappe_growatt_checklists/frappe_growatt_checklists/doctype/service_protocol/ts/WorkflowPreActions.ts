@@ -1,6 +1,6 @@
-import type { Item, SerialNo, ChecklistTracker } from "erpnext";
+import type { Item, SerialNo, ChecklistTracker, ServiceProtocol } from "@anygridtech/frappe-agt-types/agt/doctype";
 import { FrappeForm } from "@anygridtech/frappe-types/client/frappe/core";
-import type { WorkflowPreActions } from "../../../types/frappe/growatt/workflow/validate";
+import { WorkflowPreActions } from "@anygridtech/frappe-agt-types/agt/client/workflow/";
 
 const preActionsChecklistConfig = [
   { group: "Inverter", doctype: "Service Protocol Inverter Checklist", table_field: "child_tracker_table" },
@@ -12,7 +12,7 @@ const preActionsChecklistConfig = [
 ];
 
 const preActions = {
-  trigger_create_sn_into_db: async (frm: FrappeForm) => {
+  trigger_create_sn_into_db: async (frm: FrappeForm<ServiceProtocol> | FrappeForm<Record<string, any>>) => {
     try {
       const serial_no = frm.doc.main_eqp_serial_no;
       if (!serial_no) throw new Error("Número de série não fornecido");
@@ -28,20 +28,19 @@ const preActions = {
       const hasKeys = (obj: any) => obj && typeof obj === "object" && Object.keys(obj).length > 0;
 
       if (db_sn && hasKeys(db_sn)) {
-        await growatt.utils.update_workflow_state({
+        await agt.utils.update_workflow_state({
           doctype: "Serial No",
           docname: db_sn.serial_no,
-          workflow_state: growatt.namespace.service_protocol.workflow_state.holding_action.name,
+          workflow_state: agt.metadata.doctype.service_protocol.workflow_state.holding_action.name,
           ignore_workflow_validation: true
         });
       } else {
         const item = await frappe.db
-          .get_value<Item>('Item', { item_code: frm.doc.main_eqp_item_code }, ['item_name', 'item_code'])
+          .get_value<Item>('Item', { item_code: frm.doc['main_eqp_item_code'] }, ['item_name', 'item_code'])
           .then(r => r?.message)
           .catch(e => { throw new Error("Erro ao buscar item: " + (e instanceof Error ? e.message : String(e))); });
 
-        if (!item) throw new Error(`Item não encontrado para o código: ${frm.doc.main_eqp_item_code}`);
-
+        if (!item) throw new Error(`Item não encontrado para o código: ${frm.doc['main_eqp_item_code']}`);
         const serialNoFields: Record<string, any> = {
           serial_no: { value: serial_no },
           item_code: { value: item.item_code },
@@ -49,13 +48,13 @@ const preActions = {
           status: { value: "Active" }
         };
 
-        const sn_docname = await growatt.utils.create_doc<SerialNo>('Serial No', { docname: "sp_docname" }, serialNoFields);
+        const sn_docname = await agt.utils.doc.create_doc<SerialNo>('Serial No', { docname: "sp_docname" }, serialNoFields);
         if (!sn_docname) throw new Error("Falha ao criar Serial No - nenhum nome de documento retornado");
 
-        await growatt.utils.update_workflow_state({
+        await agt.utils.update_workflow_state({
           doctype: "Serial No",
           docname: sn_docname,
-          workflow_state: growatt.namespace.service_protocol.workflow_state.holding_action.name,
+          workflow_state: agt.metadata.doctype.service_protocol.workflow_state.holding_action.name,
           ignore_workflow_validation: true
         });
       }
@@ -63,12 +62,12 @@ const preActions = {
       throw new Error(error instanceof Error ? error.message : String(error));
     }
   },
-  create_checklist: async (frm: FrappeForm) => {
+  create_checklist: async (frm: FrappeForm<ServiceProtocol> | FrappeForm<Record<string, any>>) => {
     try {
       const swa = frm.states.frm.selected_workflow_action;
       const ws = frm.doc.workflow_state;
-      const swa_request_checklist = growatt.namespace.service_protocol.workflow_action.request_checklist.name;
-      const ws_preliminary_assessment = growatt.namespace.service_protocol.workflow_state.holding_action.name;
+      const swa_request_checklist = agt.metadata.doctype.service_protocol.workflow_action.request_checklist.name;
+      const ws_preliminary_assessment = agt.metadata.doctype.service_protocol.workflow_state.holding_action.name;
 
       if (ws !== ws_preliminary_assessment || !ws || swa !== swa_request_checklist || !swa)
         throw new Error(`Não foi possível criar checklist: critérios do workflow não atendidos.`);
@@ -81,40 +80,43 @@ const preActions = {
       const trackerRows = frm.doc[fieldname as keyof typeof frm.doc] as ChecklistTracker[];
       if (trackerRows?.length) {
         const not_rejected = trackerRows.filter(cit =>
-          cit.child_tracker_workflow_state !== growatt.namespace.service_protocol.workflow_state.rejected.name &&
+          cit.child_tracker_workflow_state !== agt.metadata.doctype.service_protocol.workflow_state.rejected.name &&
           cit.child_tracker_doctype === doctype
         );
-        if (not_rejected?.length) {
+        if (not_rejected?.length && not_rejected.length > 0) {
           const available_list_html = not_rejected.map(cit => `<li> ${cit.child_tracker_docname || cit.name || 'Sem nome'} </li>`).join("");
-          const docname = not_rejected[0].child_tracker_docname || not_rejected[0].name;
-          // Redireciona para o checklist já aberto
-          const url = growatt.utils.build_doc_url(doctype, docname);
-          growatt.utils.redirect_after_create_doc(false, url, docname, doctype);
+          const firstItem = not_rejected[0];
+          const docname = firstItem?.child_tracker_docname || firstItem?.name;
+          if (docname) {
+            // Redireciona para o checklist já aberto
+            const url = agt.utils.build_doc_url(doctype, docname);
+            agt.utils.redirect_after_create_doc(false, url, docname, doctype);
+          }
           throw new Error(`Já existe um ou mais checklists abertos para esse protocolo: <br><ul>${available_list_html}</ul>`);
         }
       }
 
-      const docname = await growatt.utils.create_doc(doctype, { docname: "sp_docname" }, frm.fields_dict);
+      const docname = await agt.utils.doc.create_doc(doctype, { docname: "sp_docname" }, frm.fields_dict);
       if (!docname) throw new Error(`Falha ao criar checklist '${doctype}'`);
 
       const checklist_doc = await frappe.db.get_value(doctype, docname, ['workflow_state']);
       const workflow_state = checklist_doc?.message?.workflow_state || 'Draft';
 
-      await growatt.utils.add_row(frm, fieldname, {
+      await agt.utils.table.row.add_one(frm, fieldname, {
         child_tracker_docname: docname,
         child_tracker_doctype: doctype,
         child_tracker_workflow_state: workflow_state
       });
       frm.dirty();
       await frm.save();
-      const url = growatt.utils.build_doc_url(doctype, docname);
-      growatt.utils.redirect_after_create_doc(true, url, docname, doctype);
+      const url = agt.utils.build_doc_url(doctype, docname);
+      agt.utils.redirect_after_create_doc(true, url, docname, doctype);
     } catch (error) {
       throw new Error(error instanceof Error ? error.message : String(error));
     }
   },
 
-  create_proposed_dispatch: async (frm: FrappeForm) => {
+  create_proposed_dispatch: async (frm: FrappeForm<ServiceProtocol> | FrappeForm<Record<string, any>>) => {
     try {
       const swa = frm.states.frm.selected_workflow_action;
       const swa_request_dispatch = "Solicitar Proposta de Envio";
@@ -128,25 +130,25 @@ const preActions = {
       });
       if (existingDispatches?.length) {
         const existing_list_html = existingDispatches.map(ticket => `<li>${ticket.name}</li>`).join("");
-        const url = growatt.utils.build_doc_url(dt_name, existingDispatches[0].name);
-        growatt.utils.redirect_after_create_doc(false, url, existingDispatches[0].name, dt_name);
+        const url = agt.utils.build_doc_url(dt_name, existingDispatches[0].name);
+        agt.utils.redirect_after_create_doc(false, url, existingDispatches[0].name, dt_name);
         throw new Error(`Já existe uma Proposta de Envio vinculada a este Ticket: <br><ul>${existing_list_html}</ul>`);
       }
 
-      const docname = await growatt.utils.create_doc(dt_name, { ticket_docname: "ticket_docname" }, frm.fields_dict);
+      const docname = await agt.utils.doc.create_doc(dt_name, { ticket_docname: "ticket_docname" }, frm.fields_dict);
       if (!docname) throw new Error("Falha ao criar Proposta de Envio.");
 
       const main_eqp_group = frm.doc.main_eqp_group;
       if (!main_eqp_group) throw new Error("Grupo do equipamento principal não definido.");
 
-      await growatt.utils.add_row(frm, "proposed_dispatch_table", {
+      await agt.utils.table.row.add_one(frm, "proposed_dispatch_table", {
         item_name: main_eqp_group,
         item_quantity: 1
       });
       frm.dirty();
       await frm.save();
-      const url = growatt.utils.build_doc_url(dt_name, docname);
-      growatt.utils.redirect_after_create_doc(true, url, docname, dt_name);
+      const url = agt.utils.build_doc_url(dt_name, docname);
+      agt.utils.redirect_after_create_doc(true, url, docname, dt_name);
     } catch (error) {
       throw new Error(error instanceof Error ? error.message : String(error));
     }
@@ -154,7 +156,7 @@ const preActions = {
 };
 
 const wp: WorkflowPreActions = {
-  [growatt.namespace.service_protocol.workflow_action.request_checklist.name]: {
+  [agt.metadata.doctype.service_protocol.workflow_action.request_checklist.name]: {
     "Create Serial No.": preActions.trigger_create_sn_into_db,
     "Create Checklist": preActions.create_checklist
   },

@@ -184,20 +184,20 @@ agt.checklist_table.setup = async () => {
     onload: async (frm: FrappeForm) => {
       // await trigger_sidebar(frm);
       await runSync(frm);
-      if (frm.doc.workflow_state === growatt.namespace.service_protocol.workflow_state.holding_action.name) {
-        await growatt.service_protocol.utils.trigger_create_sn_into_db(frm);
+      if (frm.doc.workflow_state === agt.metadata.doctype.service_protocol.workflow_state.holding_action.name) {
+        await agt.service_protocol.utils.trigger_create_sn_into_db(frm);
       }
     },
     refresh: async (frm: FrappeForm) => {
       // await trigger_sidebar(frm);
       await runSync(frm);
-      if (frm.doc.workflow_state === growatt.namespace.service_protocol.workflow_state.holding_action.name) {
-        await growatt.service_protocol.utils.trigger_create_sn_into_db(frm);
+      if (frm.doc.workflow_state === agt.metadata.doctype.service_protocol.workflow_state.holding_action.name) {
+        await agt.service_protocol.utils.trigger_create_sn_into_db(frm);
       }
     },
     before_save: async (frm: FrappeForm) => {
-      if (frm.doc.workflow_state === growatt.namespace.service_protocol.workflow_state.holding_action.name) {
-        await growatt.service_protocol.utils.trigger_create_sn_into_db(frm);
+      if (frm.doc.workflow_state === agt.metadata.doctype.service_protocol.workflow_state.holding_action.name) {
+        await agt.service_protocol.utils.trigger_create_sn_into_db(frm);
       }
       await agt.service_protocol.utils.share_doc_trigger(frm);
     }

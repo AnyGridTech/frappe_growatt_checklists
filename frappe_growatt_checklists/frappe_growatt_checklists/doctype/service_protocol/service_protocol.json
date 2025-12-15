@@ -184,14 +184,14 @@
    "label": "Number of MPPTs",
    "read_only": 1,
    "mandatory_depends_on": "eval:doc.main_eqp_group == \"Inverter\" || doc.main_eqp_group == \"Inversor\";",
-   "fetch_from": "main_eqp_model_ref.custom_mppt"
+   "fetch_from": "main_eqp_model_ref.mppt"
   },
   {
    "fieldname": "main_eqp_phase",
    "fieldtype": "Data",
    "label": "Inverter Phase",
    "read_only": 1,
-   "fetch_from": "main_eqp_model_ref.custom_phase"
+   "fetch_from": "main_eqp_model_ref.phase"
   },
   {
    "fieldname": "main_eqp_type",
@@ -199,7 +199,7 @@
    "label": "Type",
    "reqd": 1,
    "read_only": 1,
-   "fetch_from": "main_eqp_model_ref.custom_equipament_type",
+   "fetch_from": "main_eqp_model_ref.equipament_type",
    "bold": 1
   },
   {
@@ -220,7 +220,7 @@
    "label": "Family",
    "reqd": 1,
    "read_only": 1,
-   "fetch_from": "main_eqp_model_ref.custom_family"
+   "fetch_from": "main_eqp_model_ref.family"
   },
   {
    "fieldname": "main_eqp_error_version",
@@ -228,7 +228,7 @@
    "label": "Version",
    "reqd": 1,
    "read_only": 1,
-   "fetch_from": "main_eqp_model_ref.custom_error_version"
+   "fetch_from": "main_eqp_model_ref.error_version"
   },
   {
    "fieldname": "service_partner_company",
@@ -236,7 +236,7 @@
    "label": "Service Partner",
    "options": "Company",
    "read_only": 1,
-   "link_filters": "[[\"Company\",\"custom_service_partner\",\"=\",1]]"
+   "link_filters": "[[\"Company\",\"service_partner\",\"=\",1]]"
   },
   {
    "fieldname": "main_eqp_start_firmware",
