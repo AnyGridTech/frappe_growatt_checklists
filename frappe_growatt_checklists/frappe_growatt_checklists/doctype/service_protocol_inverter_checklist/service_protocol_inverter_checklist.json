@@ -9,28 +9,9 @@
   "section_main",
   "ticket_docname",
   "sp_docname",
-  "section_eqp",
-  "main_eqp_serial_no",
-  "main_eqp_model_ref",
-  "main_eqp_model",
-  "main_eqp_item_code",
-  "main_eqp_mppt_number",
-  "main_eqp_phase",
-  "column_break_rwki",
-  "main_eqp_type",
-  "main_eqp_group",
-  "main_eqp_family",
-  "main_eqp_error_version",
-  "service_partner_company",
-  "column_break_nrwx",
-  "main_eqp_start_firmware",
-  "main_eqp_end_firmware",
   "main_eqp_serial_no_label_picture",
   "main_eqp_purchase_invoice",
   "section_additional",
-  "main_eqp_grid_connection_type",
-  "distributor",
-  "main_uf_installation",
   "column_break_wfsg",
   "section_eqp_failure",
   "column_break_ftxy",
@@ -182,113 +163,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "section_eqp",
-   "fieldtype": "Section Break",
-   "label": "Equipment Information"
-  },
-  {
-   "fieldname": "main_eqp_serial_no",
-   "fieldtype": "Data",
-   "label": "Serial Number",
-   "reqd": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "main_eqp_model_ref",
-   "fieldtype": "Link",
-   "label": "Model Reference",
-   "options": "Item",
-   "reqd": 1,
-   "read_only": 1,
-   "fetch_from": "ref_naming_series.main_eqp_model_ref"
-  },
-  {
-   "fieldname": "main_eqp_model",
-   "fieldtype": "Data",
-   "label": "Model",
-   "reqd": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "main_eqp_item_code",
-   "fieldtype": "Data",
-   "label": "Model Code",
-   "reqd": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "main_eqp_mppt_number",
-   "fieldtype": "Data",
-   "label": "Number of MPPT",
-   "reqd": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "main_eqp_phase",
-   "fieldtype": "Data",
-   "label": "Inverter Phase",
-   "reqd": 1,
-   "read_only": 1,
-   "fetch_from": "main_eqp_model_ref.custom_phase"
-  },
-  {
-   "fieldname": "column_break_rwki",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "main_eqp_type",
-   "fieldtype": "Data",
-   "label": "Type",
-   "reqd": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "main_eqp_group",
-   "fieldtype": "Data",
-   "label": "Group",
-   "reqd": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "main_eqp_family",
-   "fieldtype": "Data",
-   "label": "Family",
-   "reqd": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "main_eqp_error_version",
-   "fieldtype": "Data",
-   "label": "Version",
-   "reqd": 1,
-   "read_only": 1,
-   "fetch_from": "main_eqp_model_ref.error_version",
-   "link_filters": "[[\"Item Group\",\"parent_item_group\",\"=\",\"Phase\"]]"
-  },
-  {
-   "fieldname": "service_partner_company",
-   "fieldtype": "Data",
-   "label": "Service Partner",
-   "reqd": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_nrwx",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "main_eqp_start_firmware",
-   "fieldtype": "Data",
-   "label": "Initial Firmware",
-   "read_only": 1
-  },
-  {
-   "fieldname": "main_eqp_end_firmware",
-   "fieldtype": "Data",
-   "label": "Final Firmware",
-   "read_only": 1
-  },
-  {
    "fieldname": "main_eqp_serial_no_label_picture",
    "fieldtype": "Attach",
    "label": "Label Photo",
@@ -304,29 +178,6 @@
    "fieldname": "section_additional",
    "fieldtype": "Section Break",
    "label": "Additional Information"
-  },
-  {
-   "fieldname": "main_eqp_grid_connection_type",
-   "fieldtype": "Select",
-   "label": "Connection Type",
-   "options": "Single Phase\nTwo Phase\nThree Phase",
-   "read_only": 1,
-   "link_filters": "[[\"Item Group\",\"parent_item_group\",\"=\",\"Phase\"]]"
-  },
-  {
-   "fieldname": "distributor",
-   "fieldtype": "Link",
-   "label": "Distributor",
-   "options": "Distributor",
-   "reqd": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "main_uf_installation",
-   "fieldtype": "Data",
-   "label": "Installation State",
-   "reqd": 1,
-   "read_only": 1
   },
   {
    "fieldname": "column_break_wfsg",

@@ -223,7 +223,7 @@
    "fieldname": "solution_select",
    "fieldtype": "Link",
    "label": "Applied Solution",
-   "options": "Service Protocol - Applied Solution"
+   "options": "Parameterization\nInstallation\nTechnical Questions\nDeep Analysis\nNo Action Needed\nUpdate Firmware"
   },
   {
    "fieldname": "tab_internal",
