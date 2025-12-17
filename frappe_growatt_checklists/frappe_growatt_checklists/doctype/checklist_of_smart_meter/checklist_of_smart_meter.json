@@ -1,0 +1,1040 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-12-17 16:02:54.179270",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "suporte_tab",
+  "dados_do_caso_section",
+  "distributor",
+  "main_eqp_serial_no",
+  "main_eqp_model",
+  "main_eqp_type",
+  "main_eqp_purchase_invoice",
+  "column_break_rwki",
+  "ticket_docname",
+  "sp_docname",
+  "ext_fault_code",
+  "ext_fault_description",
+  "main_eqp_grid_connection_type",
+  "main_eqp_serial_no_label_picture",
+  "instala\u00e7\u00e3o_section",
+  "column_break_ftxy",
+  "main_eqp_has_neutral",
+  "main_eqp_has_transformer",
+  "main_eqp_has_stringbox",
+  "main_eqp_has_smartmeter",
+  "main_eqp_has_sem",
+  "main_eqp_has_battery",
+  "column_break_qwyr",
+  "main_eqp_env_picture",
+  "ext_fault_video",
+  "project_diagram",
+  "measurements_ca_section",
+  "voltage_between_phases",
+  "inverter_voltage_r_s_picture",
+  "inverter_voltage_s_t_picture",
+  "inverter_voltage_t_r_picture",
+  "voltage_between_phase_and_earth",
+  "inverter_voltage_r_pe_picture",
+  "inverter_voltage_s_pe_picture",
+  "inverter_voltage_t_pe_picture",
+  "column_break_zjab",
+  "inverter_voltage_ne_pe_picture",
+  "inverter_voltage_r_ne_picture",
+  "inverter_voltage_s_ne_picture",
+  "inverter_voltage_t_ne_picture",
+  "column_break_orny",
+  "ac_panel_picture",
+  "inverter_ac_connector_picture",
+  "inverter_ac_continuity_test_video",
+  "medi\u00e7\u00f5es_cc_section",
+  "inverter_dc_connectors_picture",
+  "inverter_mppt_continuity_test_video",
+  "column_break_jtyk",
+  "inverter_dc_strings_opencircuit_voltage_picture",
+  "column_break_dprh",
+  "inverter_dc_voltage_positive_pe_picture",
+  "column_break_zeol",
+  "inverter_dc_voltage_negative_pe_picture",
+  "transformador_section",
+  "transformer_label_picture",
+  "column_break_uyjf",
+  "transformer_voltage_r_s_picture",
+  "transformer_voltage_s_t_picture",
+  "transformer_voltage_t_r_picture",
+  "column_break_qffj",
+  "transformer_voltage_r_ne_picture",
+  "transformer_voltage_s_ne_picture",
+  "transformer_voltage_t_ne_picture",
+  "column_break_hajo",
+  "transformer_voltage_ne_pe_picture",
+  "transformer_voltage_r_pe_picture",
+  "transformer_voltage_s_pe_picture",
+  "transformer_voltage_t_pe_picture",
+  "smart_",
+  "smart_meter_eqp_picture",
+  "column_break_erfy",
+  "smart_meter_end_block_connections",
+  "column_break_wxrh",
+  "smart_meter_tcs_picture",
+  "column_break_ggee",
+  "smart_meter_tela_video",
+  "smart_meter_section",
+  "smart_energy_serial_no_picture",
+  "smart_energy_leds_video",
+  "column_break_fffo",
+  "smart_energy_end_block_connections",
+  "column_break_okwy",
+  "smart_energy_tcs_picture",
+  "column_break_mgls",
+  "smart_energy_position_tc",
+  "ac_measurements_output",
+  "tens\u00e3o_entre_fases_column",
+  "inverter_output_voltage_r_s_picture",
+  "inverter_output_voltage_s_t_picture",
+  "inverter_output_voltage_t_r_picture",
+  "column_break_xnyk",
+  "inverter_output_voltage_r_pe_picture",
+  "inverter_output_voltage_s_pe_picture",
+  "inverter_output_voltage_t_pe_picture",
+  "column_break_ovoa",
+  "inverter_output_voltage_ne_pe_picture",
+  "inverter_output_voltage_r_ne_picture",
+  "inverter_output_voltage_s_ne_picture",
+  "inverter_output_voltage_t_ne_picture",
+  "column_break_szyy",
+  "inverter_output_connector_load_picture",
+  "inverter_out_ac_continuity_test_video",
+  "baterias_section",
+  "battery_model",
+  "battery_serial_no",
+  "battery_comm_entry",
+  "column_break_jbab",
+  "battery_label_picture",
+  "battery_configurations_video",
+  "column_break_udtl",
+  "battery_opencircuit_voltage_picture",
+  "battery_closedcircuit_voltage_picture",
+  "column_break_frzl",
+  "battery_quantity_connected",
+  "battery_settings_section",
+  "battery_type",
+  "battery_program_36",
+  "column_break_zkgu",
+  "battery_program_19",
+  "battery_program_02",
+  "column_break_hhsp",
+  "battery_program_05",
+  "battery_program_20",
+  "column_break_cnnm",
+  "battery_program_12",
+  "battery_program_21",
+  "section_break_resolution",
+  "t\u00e9cnico_column",
+  "technical_responsible",
+  "ext_fault_support_description",
+  "perifericos_column",
+  "which_periferals",
+  "selecione",
+  "trigger_battery_sending",
+  "eqp_column",
+  "main_eqp_connector_type",
+  "warranty_approval",
+  "warranty_denial_reason",
+  "email",
+  "caveat",
+  "internal_tab",
+  "priority",
+  "sac",
+  "warranty_battery",
+  "confirm_battery_warranty",
+  "confirm_sac",
+  "corrections_tracker",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "CHKSMT-.MM.YY.-.####",
+   "reqd": 1,
+   "default": "CHKSMT-.MM.YY.-.####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "suporte_tab",
+   "fieldtype": "Tab Break",
+   "label": "Support"
+  },
+  {
+   "fieldname": "dados_do_caso_section",
+   "fieldtype": "Section Break",
+   "label": "Case Data"
+  },
+  {
+   "fieldname": "distributor",
+   "fieldtype": "Link",
+   "label": "Distributor",
+   "options": "Distributor",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "main_eqp_serial_no",
+   "fieldtype": "Data",
+   "label": "Serial Number",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "main_eqp_model",
+   "fieldtype": "Data",
+   "label": "Equipment Model",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "main_eqp_type",
+   "fieldtype": "Data",
+   "label": "Equipment Type",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "main_eqp_purchase_invoice",
+   "fieldtype": "Attach",
+   "label": "Purchase Invoice",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rwki",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ticket_docname",
+   "fieldtype": "Link",
+   "label": "Ticket Reference",
+   "options": "Ticket",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sp_docname",
+   "fieldtype": "Link",
+   "label": "Initial Analysis Reference",
+   "options": "Initial Analysis",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ext_fault_code",
+   "fieldtype": "Link",
+   "label": "Failure",
+   "options": "External Issue Code",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "ext_fault_description",
+   "fieldtype": "Data",
+   "label": "Failure Description",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "main_eqp_grid_connection_type",
+   "fieldtype": "Select",
+   "label": "Connection Type",
+   "link_filters": "[[\"Item Group\",\"parent_item_group\",\"=\",\"Phase\"]]",
+   "options": "Single Phase\nTwo Phase\nThree Phase",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "main_eqp_serial_no_label_picture",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Equipment Label Photo",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "instala\u00e7\u00e3o_section",
+   "fieldtype": "Section Break",
+   "label": "Installation"
+  },
+  {
+   "fieldname": "column_break_ftxy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_has_neutral",
+   "fieldtype": "Check",
+   "label": "Neutral",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_has_transformer",
+   "fieldtype": "Check",
+   "label": "Transformer",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_has_stringbox",
+   "fieldtype": "Check",
+   "label": "String Box",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_has_smartmeter",
+   "fieldtype": "Check",
+   "label": "Smart Meter",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_has_sem",
+   "fieldtype": "Check",
+   "label": "Smart Energy",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_has_battery",
+   "fieldtype": "Check",
+   "label": "Batteries",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qwyr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "main_eqp_env_picture",
+   "fieldtype": "Attach",
+   "label": "Environment Photo"
+  },
+  {
+   "fieldname": "ext_fault_video",
+   "fieldtype": "Attach",
+   "label": "Problem Video",
+   "read_only": 1
+  },
+  {
+   "fieldname": "project_diagram",
+   "fieldtype": "Attach",
+   "label": "Project Diagram"
+  },
+  {
+   "fieldname": "measurements_ca_section",
+   "fieldtype": "Section Break",
+   "label": "AC Measurements must be taken at the Inverter Connector/Terminal"
+  },
+  {
+   "depends_on": "eval:doc.phase == \"Bif\u00e1sico\" || doc.tipo == \"Trif\u00e1sico\"",
+   "fieldname": "voltage_between_phases",
+   "fieldtype": "Column Break",
+   "label": "Voltage Between Phases"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Bif\u00e1sico\" || phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "inverter_voltage_r_s_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phases R and S"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "inverter_voltage_s_t_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phases S and T"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "inverter_voltage_t_r_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phases T and R"
+  },
+  {
+   "fieldname": "voltage_between_phase_and_earth",
+   "fieldtype": "Column Break",
+   "label": "Voltage Between Phase and Ground"
+  },
+  {
+   "fieldname": "inverter_voltage_r_pe_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase R and Ground"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Bif\u00e1sico\" || phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "inverter_voltage_s_pe_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase S and Ground"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "inverter_voltage_t_pe_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase T and Ground"
+  },
+  {
+   "fieldname": "column_break_zjab",
+   "fieldtype": "Column Break",
+   "label": "Measurements with Neutral"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_neutral !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "inverter_voltage_ne_pe_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Ground and Neutral"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_neutral !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "inverter_voltage_r_ne_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase R and Neutral"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_neutral !== 1) return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Bif\u00e1sico\" || phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "inverter_voltage_s_ne_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase S and Neutral"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_neutral !== 1) return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "inverter_voltage_t_ne_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase T and Neutral"
+  },
+  {
+   "fieldname": "column_break_orny",
+   "fieldtype": "Column Break",
+   "label": "Auxiliary Photos"
+  },
+  {
+   "fieldname": "ac_panel_picture",
+   "fieldtype": "Attach",
+   "label": "AC Panel Photo"
+  },
+  {
+   "fieldname": "inverter_ac_connector_picture",
+   "fieldtype": "Attach",
+   "label": "Inverter AC Connector Photo"
+  },
+  {
+   "fieldname": "inverter_ac_continuity_test_video",
+   "fieldtype": "Attach",
+   "label": "AC Continuity Test (optional)"
+  },
+  {
+   "fieldname": "medi\u00e7\u00f5es_cc_section",
+   "fieldtype": "Section Break",
+   "label": "DC Measurements"
+  },
+  {
+   "fieldname": "inverter_dc_connectors_picture",
+   "fieldtype": "Attach",
+   "label": "DC Connectors Photo"
+  },
+  {
+   "fieldname": "inverter_mppt_continuity_test_video",
+   "fieldtype": "Attach",
+   "label": "MPPT Continuity Test (optional)"
+  },
+  {
+   "fieldname": "column_break_jtyk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "inverter_dc_strings_opencircuit_voltage_picture",
+   "fieldtype": "Attach",
+   "label": "DC Measurement of Strings in Open Circuit"
+  },
+  {
+   "fieldname": "column_break_dprh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "inverter_dc_voltage_positive_pe_picture",
+   "fieldtype": "Attach",
+   "label": "Positive to Ground Measurement"
+  },
+  {
+   "fieldname": "column_break_zeol",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "inverter_dc_voltage_negative_pe_picture",
+   "fieldtype": "Attach",
+   "label": "Negative to Ground Measurement"
+  },
+  {
+   "fieldname": "transformador_section",
+   "fieldtype": "Section Break",
+   "label": "Transformer"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_transformer !== 1) return false;\r\n  return true;\r\n})();\r\n",
+   "fieldname": "transformer_label_picture",
+   "fieldtype": "Attach",
+   "label": "Transformer Label Photo"
+  },
+  {
+   "fieldname": "column_break_uyjf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_transformer !== 1) return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Bif\u00e1sico\" || phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "transformer_voltage_r_s_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phases R and S"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_transformer !== 1) return false;\r\n  const phase = doc.main_eqp_grid_connection_type; \r\n  if (phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "transformer_voltage_s_t_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phases S and T"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_transformer !== 1) return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "transformer_voltage_t_r_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phases T and R"
+  },
+  {
+   "fieldname": "column_break_qffj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_transformer !== 1) return false;\r\n  if (doc.main_eqp_has_neutral !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "transformer_voltage_r_ne_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase R and Ground"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_transformer !== 1) return false;\r\n  if (doc.main_eqp_has_neutral !== 1) return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Bif\u00e1sico\" || phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "transformer_voltage_s_ne_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase S and Ground"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_transformer !== 1) return false;\r\n  if (doc.main_eqp_has_neutral !== 1) return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "transformer_voltage_t_ne_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase T and Ground"
+  },
+  {
+   "depends_on": "eval:doc.main_eqp_has_neutral == 1",
+   "fieldname": "column_break_hajo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_transformer !== 1) return false;\r\n  if (doc.main_eqp_has_neutral !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "transformer_voltage_ne_pe_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Ground and Neutral"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_transformer !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "transformer_voltage_r_pe_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase R and Neutral"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_transformer !== 1) return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Bif\u00e1sico\" || phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "transformer_voltage_s_pe_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase S and Neutral"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_transformer !== 1) return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "transformer_voltage_t_pe_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase T and Neutral"
+  },
+  {
+   "fieldname": "smart_",
+   "fieldtype": "Section Break",
+   "label": "Smart Meter"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_smartmeter !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "smart_meter_eqp_picture",
+   "fieldtype": "Attach",
+   "label": "Label Photo"
+  },
+  {
+   "fieldname": "column_break_erfy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_smartmeter !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "smart_meter_end_block_connections",
+   "fieldtype": "Attach",
+   "label": "Terminal Block Connections"
+  },
+  {
+   "fieldname": "column_break_wxrh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_smartmeter !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "smart_meter_tcs_picture",
+   "fieldtype": "Attach",
+   "label": "CTs Photo (optional)"
+  },
+  {
+   "fieldname": "column_break_ggee",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_smartmeter !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "smart_meter_tela_video",
+   "fieldtype": "Attach",
+   "label": "Meter Screen Video"
+  },
+  {
+   "fieldname": "smart_meter_section",
+   "fieldtype": "Section Break",
+   "label": "Smart Energy Manager"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_sem !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "smart_energy_serial_no_picture",
+   "fieldtype": "Attach",
+   "label": "Label Photo"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_sem !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "smart_energy_leds_video",
+   "fieldtype": "Attach",
+   "label": "Video Showing ShineMaster LEDs"
+  },
+  {
+   "fieldname": "column_break_fffo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_sem !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "smart_energy_end_block_connections",
+   "fieldtype": "Attach",
+   "label": "Terminal Block Connections"
+  },
+  {
+   "fieldname": "column_break_okwy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_sem !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "smart_energy_tcs_picture",
+   "fieldtype": "Attach",
+   "label": "Foto dos TCs"
+  },
+  {
+   "fieldname": "column_break_mgls",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_sem !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "smart_energy_position_tc",
+   "fieldtype": "Small Text",
+   "label": "Side and Location Where CTs Were Installed"
+  },
+  {
+   "fieldname": "ac_measurements_output",
+   "fieldtype": "Section Break",
+   "label": "AC Measurements (Output)"
+  },
+  {
+   "fieldname": "tens\u00e3o_entre_fases_column",
+   "fieldtype": "Column Break",
+   "label": "Voltage Between Phases"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Bif\u00e1sico\" || phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "inverter_output_voltage_r_s_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phases R and S"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "inverter_output_voltage_s_t_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phases S and T"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "inverter_output_voltage_t_r_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phases T and R"
+  },
+  {
+   "fieldname": "column_break_xnyk",
+   "fieldtype": "Column Break",
+   "label": "Voltage Between Phase and Ground"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "inverter_output_voltage_r_pe_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase R and Ground"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Bif\u00e1sico\" || phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "inverter_output_voltage_s_pe_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase S and Ground"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "inverter_output_voltage_t_pe_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase T and Ground"
+  },
+  {
+   "depends_on": "eval:doc.main_eqp_has_neutral == 1",
+   "fieldname": "column_break_ovoa",
+   "fieldtype": "Column Break",
+   "label": "Measurements with Neutral"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  if (doc.main_eqp_has_neutral !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "inverter_output_voltage_ne_pe_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Ground and Neutral"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  if (doc.main_eqp_has_neutral !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "inverter_output_voltage_r_ne_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase R and Neutral"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  if (doc.main_eqp_has_neutral !== 1) return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Bif\u00e1sico\" || phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "inverter_output_voltage_s_ne_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase S and Neutral"
+  },
+  {
+   "depends_on": "// inverter_output_voltage_t_ne_picture\r\neval: (() => {\r\n  if (doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  if (doc.main_eqp_has_neutral !== 1) return false;\r\n  const phase = doc.main_eqp_grid_connection_type;\r\n  if (phase == \"Trif\u00e1sico\") return true;\r\n  return false;\r\n})();",
+   "fieldname": "inverter_output_voltage_t_ne_picture",
+   "fieldtype": "Attach",
+   "label": "Voltage Between Phase T and Neutral"
+  },
+  {
+   "fieldname": "column_break_szyy",
+   "fieldtype": "Column Break",
+   "label": "Auxiliary Photos"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "inverter_output_connector_load_picture",
+   "fieldtype": "Attach",
+   "label": "Connector Photo (LOADS)"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "inverter_out_ac_continuity_test_video",
+   "fieldtype": "Attach",
+   "label": "AC Continuity Test (optional)"
+  },
+  {
+   "fieldname": "baterias_section",
+   "fieldtype": "Section Break",
+   "label": "Batteries"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_model",
+   "fieldtype": "Link",
+   "label": "Battery Model",
+   "options": "Item"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_serial_no",
+   "fieldtype": "Link",
+   "label": "Battery S/N",
+   "options": "Serial No"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_comm_entry",
+   "fieldtype": "Select",
+   "label": "Communication Entry",
+   "options": "BMS\nRS485"
+  },
+  {
+   "fieldname": "column_break_jbab",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_label_picture",
+   "fieldtype": "Attach",
+   "label": "Battery Label Photo"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_configurations_video",
+   "fieldtype": "Attach",
+   "label": "Battery Settings Video"
+  },
+  {
+   "fieldname": "column_break_udtl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_opencircuit_voltage_picture",
+   "fieldtype": "Attach",
+   "label": "Battery Voltage in Open Circuit"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_closedcircuit_voltage_picture",
+   "fieldtype": "Attach",
+   "label": "Battery Voltage in Closed Circuit"
+  },
+  {
+   "fieldname": "column_break_frzl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_quantity_connected",
+   "fieldtype": "Select",
+   "label": "Number of Connected Batteries",
+   "options": "0\n1\n2\n3\n4\n5\n6\n7\n8"
+  },
+  {
+   "fieldname": "battery_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Battery Settings"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();\r\n",
+   "fieldname": "battery_type",
+   "fieldtype": "Select",
+   "label": "Battery Type",
+   "options": "Lithium\nLead Acid"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_program_36",
+   "fieldtype": "Data",
+   "label": "Program 36"
+  },
+  {
+   "fieldname": "column_break_zkgu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_program_19",
+   "fieldtype": "Data",
+   "label": "Program 19"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_program_02",
+   "fieldtype": "Data",
+   "label": "Program 02"
+  },
+  {
+   "fieldname": "column_break_hhsp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_program_05",
+   "fieldtype": "Data",
+   "label": "Program 05"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_program_20",
+   "fieldtype": "Data",
+   "label": "Program 20"
+  },
+  {
+   "fieldname": "column_break_cnnm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_program_12",
+   "fieldtype": "Data",
+   "label": "Program 12"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_program_21",
+   "fieldtype": "Data",
+   "label": "Program 21"
+  },
+  {
+   "fieldname": "section_break_resolution",
+   "fieldtype": "Section Break",
+   "label": "Resolution"
+  },
+  {
+   "fieldname": "t\u00e9cnico_column",
+   "fieldtype": "Column Break",
+   "label": "Technician"
+  },
+  {
+   "fieldname": "technical_responsible",
+   "fieldtype": "Data",
+   "label": "Technical Responsible"
+  },
+  {
+   "fieldname": "ext_fault_support_description",
+   "fieldtype": "Small Text",
+   "label": "Observations"
+  },
+  {
+   "fieldname": "perifericos_column",
+   "fieldtype": "Column Break",
+   "label": "Peripherals"
+  },
+  {
+   "fieldname": "which_periferals",
+   "fieldtype": "Data",
+   "label": "Which?"
+  },
+  {
+   "fieldname": "selecione",
+   "fieldtype": "Markdown Editor",
+   "label": "Select",
+   "options": "Peripheral 1\nPeripheral 2"
+  },
+  {
+   "fieldname": "trigger_battery_sending",
+   "fieldtype": "Data",
+   "label": "Trigger Battery Shipment"
+  },
+  {
+   "fieldname": "eqp_column",
+   "fieldtype": "Column Break",
+   "label": "Equipment"
+  },
+  {
+   "fieldname": "main_eqp_connector_type",
+   "fieldtype": "Select",
+   "label": "Connector",
+   "options": "Terminal\nLarge\nSmall\nMedium"
+  },
+  {
+   "fieldname": "warranty_approval",
+   "fieldtype": "Select",
+   "label": "Warranty",
+   "options": "Approved\nRejected"
+  },
+  {
+   "depends_on": "eval:doc.warranty == \"Reprovado\" ;",
+   "fieldname": "warranty_denial_reason",
+   "fieldtype": "Select",
+   "label": "Rejection Reason",
+   "options": "1. Product Seal Breach\n2. Incorrect Installation or Commissioning\n3. Failure Related to Non-Observance of User Manual\n4. Unauthorized Modifications, Changes or Repair Attempts\n5. Inappropriate or Incorrect Operation\n6. Insufficient Ventilation for the Device\n7. Force Majeure (Lightning, Overvoltage, Fans, Fires and Others)\n8. Warranty Period Expired"
+  },
+  {
+   "depends_on": "eval:doc.warranty == \"Reprovado\" ;",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "depends_on": "eval:doc.status == \"Aprovado\" ;",
+   "fieldname": "caveat",
+   "fieldtype": "Select",
+   "label": "Caveat",
+   "options": "Sun Exposure\nSpacing\nHigh Grid Voltage"
+  },
+  {
+   "fieldname": "internal_tab",
+   "fieldtype": "Tab Break",
+   "label": "Internal"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Maximum\nReclame Aqui\nLegal Process"
+  },
+  {
+   "fieldname": "sac",
+   "fieldtype": "Link",
+   "label": "SAC",
+   "options": "Compliance Statement"
+  },
+  {
+   "fieldname": "warranty_battery",
+   "fieldtype": "Link",
+   "label": "Warranty Battery",
+   "options": "Checklist of Battery"
+  },
+  {
+   "default": "0",
+   "fieldname": "confirm_battery_warranty",
+   "fieldtype": "Check",
+   "label": "Confirm Battery"
+  },
+  {
+   "default": "0",
+   "fieldname": "confirm_sac",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Confirm SAC"
+  },
+  {
+   "fieldname": "corrections_tracker",
+   "fieldtype": "Table",
+   "label": "Correction Requests",
+   "options": "Corrections Tracker"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Checklist of Smart Meter",
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-17 16:02:54.179270",
+ "modified_by": "Administrator",
+ "module": "Frappe Growatt Checklists",
+ "name": "Checklist of Smart Meter",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

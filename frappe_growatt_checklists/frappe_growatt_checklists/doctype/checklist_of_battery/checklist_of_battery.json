@@ -1,0 +1,465 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-12-17 15:49:34.784443",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "suporte_tab",
+  "dados_do_caso_section",
+  "distributor",
+  "main_eqp_serial_no",
+  "main_eqp_model",
+  "main_eqp_type",
+  "column_break_rwki",
+  "ticket_docname",
+  "sp_docname",
+  "ext_fault_code",
+  "ext_fault_description",
+  "main_eqp_grid_connection_type",
+  "instala\u00e7\u00e3o_section",
+  "column_break_qwyr",
+  "main_eqp_purchase_invoice",
+  "main_eqp_serial_no_label_picture",
+  "main_eqp_env_picture",
+  "ext_fault_video",
+  "project_diagram",
+  "baterias_section",
+  "battery_model",
+  "battery_serial_no",
+  "battery_comm_entry",
+  "column_break_jbab",
+  "battery_label_picture",
+  "battery_configurations_video",
+  "column_break_udtl",
+  "battery_opencircuit_voltage_picture",
+  "battery_closedcircuit_voltage_picture",
+  "battery_settings_section",
+  "battery_type",
+  "battery_program_36",
+  "column_break_zkgu",
+  "battery_program_19",
+  "battery_program_02",
+  "column_break_hhsp",
+  "battery_program_05",
+  "battery_program_20",
+  "column_break_cnnm",
+  "battery_program_12",
+  "battery_program_21",
+  "section_break_resolution",
+  "t\u00e9cnico_column",
+  "technical_responsible",
+  "ext_fault_support_description",
+  "eqp_column",
+  "main_eqp_connector_type",
+  "warranty_approval",
+  "warranty_denial_reason",
+  "email",
+  "caveat",
+  "internal_tab",
+  "priority",
+  "sac",
+  "warranty_battery",
+  "confirm_battery_warranty",
+  "confirm_sac",
+  "corrections_tracker",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "CHKBAT-.MM.YY.-.####",
+   "reqd": 1,
+   "default": "CHKBAT-.MM.YY.-.####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "suporte_tab",
+   "fieldtype": "Tab Break",
+   "label": "Support"
+  },
+  {
+   "fieldname": "dados_do_caso_section",
+   "fieldtype": "Section Break",
+   "label": "Case Data"
+  },
+  {
+   "fieldname": "distributor",
+   "fieldtype": "Link",
+   "label": "Distributor",
+   "options": "Distributor",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "main_eqp_serial_no",
+   "fieldtype": "Data",
+   "label": "Serial Number",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "main_eqp_model",
+   "fieldtype": "Data",
+   "label": "Equipment Model",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "main_eqp_type",
+   "fieldtype": "Data",
+   "label": "Equipment Type",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rwki",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ticket_docname",
+   "fieldtype": "Link",
+   "label": "Ticket",
+   "options": "Ticket",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "sp_docname",
+   "fieldtype": "Link",
+   "label": "Initial Analysis",
+   "options": "Initial Analysis",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "ext_fault_code",
+   "fieldtype": "Link",
+   "label": "Failure",
+   "options": "External Issue Code",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "ext_fault_description",
+   "fieldtype": "Data",
+   "label": "Failure Description",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "main_eqp_grid_connection_type",
+   "fieldtype": "Select",
+   "label": "Connection Type",
+   "link_filters": "[[\"Item Group\",\"parent_item_group\",\"=\",\"Phase\"]]",
+   "options": "Single Phase\nTwo Phase\nThree Phase",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "instala\u00e7\u00e3o_section",
+   "fieldtype": "Section Break",
+   "label": "Battery Installation"
+  },
+  {
+   "fieldname": "column_break_qwyr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "main_eqp_purchase_invoice",
+   "fieldtype": "Attach",
+   "label": "Purchase Invoice",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "main_eqp_serial_no_label_picture",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Equipment Label Photo",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "main_eqp_env_picture",
+   "fieldtype": "Attach",
+   "label": "Environment Photo"
+  },
+  {
+   "fieldname": "ext_fault_video",
+   "fieldtype": "Attach",
+   "label": "Problem Video",
+   "read_only": 1
+  },
+  {
+   "fieldname": "project_diagram",
+   "fieldtype": "Attach",
+   "label": "Project Diagram"
+  },
+  {
+   "fieldname": "baterias_section",
+   "fieldtype": "Section Break",
+   "label": "Battery Information"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_model",
+   "fieldtype": "Link",
+   "label": "Battery Model",
+   "options": "Item"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_serial_no",
+   "fieldtype": "Link",
+   "label": "Battery S/N",
+   "options": "Serial No"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_comm_entry",
+   "fieldtype": "Select",
+   "label": "Communication Entry",
+   "options": "BMS\nRS485"
+  },
+  {
+   "fieldname": "column_break_jbab",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_label_picture",
+   "fieldtype": "Attach",
+   "label": "Battery Label Photo"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_configurations_video",
+   "fieldtype": "Attach",
+   "label": "Battery Settings Video"
+  },
+  {
+   "fieldname": "column_break_udtl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_opencircuit_voltage_picture",
+   "fieldtype": "Attach",
+   "label": "Battery Voltage in Open Circuit"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_closedcircuit_voltage_picture",
+   "fieldtype": "Attach",
+   "label": "Battery Voltage in Closed Circuit"
+  },
+  {
+   "fieldname": "battery_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Battery Settings"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();\r\n",
+   "fieldname": "battery_type",
+   "fieldtype": "Select",
+   "label": "Battery Type",
+   "options": "Lithium\nLead Acid"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_program_36",
+   "fieldtype": "Data",
+   "label": "Program 36"
+  },
+  {
+   "fieldname": "column_break_zkgu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_program_19",
+   "fieldtype": "Data",
+   "label": "Program 19"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_program_02",
+   "fieldtype": "Data",
+   "label": "Program 02"
+  },
+  {
+   "fieldname": "column_break_hhsp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_program_05",
+   "fieldtype": "Data",
+   "label": "Program 05"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_program_20",
+   "fieldtype": "Data",
+   "label": "Program 20"
+  },
+  {
+   "fieldname": "column_break_cnnm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_program_12",
+   "fieldtype": "Data",
+   "label": "Program 12"
+  },
+  {
+   "depends_on": "eval: (() => {\r\n  if (doc.main_eqp_has_battery !== 1) return false;\r\n  if (doc.main_eqp_type !== \"HIBRIDO\" && doc.main_eqp_type !== \"OFFGRID\") return false;\r\n  return true;\r\n})();",
+   "fieldname": "battery_program_21",
+   "fieldtype": "Data",
+   "label": "Program 21"
+  },
+  {
+   "fieldname": "section_break_resolution",
+   "fieldtype": "Section Break",
+   "label": "Resolution"
+  },
+  {
+   "fieldname": "t\u00e9cnico_column",
+   "fieldtype": "Column Break",
+   "label": "Technician"
+  },
+  {
+   "fieldname": "technical_responsible",
+   "fieldtype": "Data",
+   "label": "Technical Responsible"
+  },
+  {
+   "fieldname": "ext_fault_support_description",
+   "fieldtype": "Small Text",
+   "label": "Observations"
+  },
+  {
+   "fieldname": "eqp_column",
+   "fieldtype": "Column Break",
+   "label": "Equipment"
+  },
+  {
+   "fieldname": "main_eqp_connector_type",
+   "fieldtype": "Select",
+   "label": "Connector",
+   "options": "Terminal\nLarge\nSmall\nMedium"
+  },
+  {
+   "fieldname": "warranty_approval",
+   "fieldtype": "Select",
+   "label": "Warranty",
+   "options": "Approved\nRejected"
+  },
+  {
+   "depends_on": "eval:doc.warranty == \"Reprovado\" ;",
+   "fieldname": "warranty_denial_reason",
+   "fieldtype": "Select",
+   "label": "Rejection Reason",
+   "options": "1. Product Seal Breach\n2. Incorrect Installation or Commissioning\n3. Failure Related to Non-Observance of User Manual\n4. Unauthorized Modifications, Changes or Repair Attempts\n5. Inappropriate or Incorrect Operation\n6. Insufficient Ventilation for the Device\n7. Force Majeure (Lightning, Overvoltage, Fans, Fires and Others)\n8. Warranty Period Expired"
+  },
+  {
+   "depends_on": "eval:doc.warranty == \"Reprovado\" ;",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "depends_on": "eval:doc.status == \"Aprovado\" ;",
+   "fieldname": "caveat",
+   "fieldtype": "Select",
+   "label": "Caveat",
+   "options": "Sun Exposure\nSpacing\nHigh Grid Voltage"
+  },
+  {
+   "fieldname": "internal_tab",
+   "fieldtype": "Tab Break",
+   "label": "Internal"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Maximum\nReclame Aqui\nLegal Process"
+  },
+  {
+   "fieldname": "sac",
+   "fieldtype": "Link",
+   "label": "Compliance Statement",
+   "options": "Compliance Statement"
+  },
+  {
+   "fieldname": "warranty_battery",
+   "fieldtype": "Link",
+   "label": "Warranty Battery",
+   "options": "Checklist of Battery"
+  },
+  {
+   "default": "0",
+   "fieldname": "confirm_battery_warranty",
+   "fieldtype": "Check",
+   "label": "Confirm Battery"
+  },
+  {
+   "default": "0",
+   "fieldname": "confirm_sac",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Confirm Compliance Statement"
+  },
+  {
+   "fieldname": "corrections_tracker",
+   "fieldtype": "Table",
+   "label": "Correction Requests",
+   "options": "Corrections Tracker"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Checklist of Battery",
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-12-17 15:49:34.784443",
+ "modified_by": "Administrator",
+ "module": "Frappe Growatt Checklists",
+ "name": "Checklist of Battery",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

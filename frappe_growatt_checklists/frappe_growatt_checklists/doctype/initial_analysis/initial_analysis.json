@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2025-12-16 17:22:20.615945",
+ "creation": "2025-12-17 18:30:11.672803",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -48,13 +48,13 @@
  ],
  "fields": [
   {
+   "default": "INANLY-.MM.YY.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Series",
-   "options": "INA-.MM.YY.-.####",
-   "reqd": 1,
-   "default": "INA-.MM.YY.-.####",
-   "hidden": 1
+   "options": "INANLY-.MM.YY.-.####",
+   "reqd": 1
   },
   {
    "fieldname": "tab_public",
@@ -221,7 +221,7 @@
   },
   {
    "fieldname": "solution_select",
-   "fieldtype": "Link",
+   "fieldtype": "Select",
    "label": "Applied Solution",
    "options": "Parameterization\nInstallation\nTechnical Questions\nDeep Analysis\nNo Action Needed\nUpdate Firmware"
   },
@@ -273,7 +273,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-16 20:22:04.150423",
+ "modified": "2025-12-17 18:30:11.672803",
  "modified_by": "Administrator",
  "module": "Frappe Growatt Checklists",
  "name": "Initial Analysis",

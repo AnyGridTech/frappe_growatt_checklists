@@ -11,12 +11,12 @@ frappe.provide("growatt.checklist_table_datalogger");
 frappe.provide("growatt.child_tracker_table");
 
 const get_checklist_doctype = (checklist_tracker_name: string) => {
-  if (checklist_tracker_name === "child_tracker_table") return "Service Protocol Inverter Checklist";
-  if (checklist_tracker_name === "child_tracker_table") return "Service Protocol EV Charger Checklist";
-  if (checklist_tracker_name === "child_tracker_table") return "Service Protocol Battery Checklist";
-  if (checklist_tracker_name === "child_tracker_table") return "Service Protocol Smart Meter Checklist";
-  if (checklist_tracker_name === "child_tracker_table") return "Service Protocol Smart Energy Manager Checklist";
-  if (checklist_tracker_name === "child_tracker_table") return "Service Protocol Datalogger Checklist";
+  if (checklist_tracker_name === "child_tracker_table") return "Checklist of Inverter";
+  if (checklist_tracker_name === "child_tracker_table") return "Checklist of EV Charger";
+  if (checklist_tracker_name === "child_tracker_table") return "Checklist of Battery";
+  if (checklist_tracker_name === "child_tracker_table") return "Checklist of Smart Meter";
+  if (checklist_tracker_name === "child_tracker_table") return "Checklist of Smart Energy Manager";
+  if (checklist_tracker_name === "child_tracker_table") return "Checklist of Datalogger";
   return null;
 };
 
@@ -66,12 +66,12 @@ async function runSync(frm: FrappeForm) {
   }
 
   const doctypes = [
-    'Service Protocol Inverter Checklist',
-    'Service Protocol EV Charger Checklist',
-    'Service Protocol Battery Checklist',
-    'Service Protocol Smart Meter Checklist',
-    'Service Protocol Smart Energy Manager Checklist',
-    'Service Protocol Datalogger Checklist',
+    'Checklist of Inverter',
+    'Checklist of EV Charger',
+    'Checklist of Battery',
+    'Checklist of Smart Meter',
+    'Checklist of Smart Energy Manager',
+    'Checklist of Datalogger',
   ];
 
   // Espelhar todos os documentos relacionados pelo sp_docname
@@ -162,12 +162,12 @@ async function runSync(frm: FrappeForm) {
 }
 
 const checklistConfig = [
-  { group: 'Inverter', doctype: 'Service Protocol Inverter Checklist', table_field: 'child_tracker_table', childname: 'sp_docname' },
-  { group: 'EV Charger', doctype: 'Service Protocol EV Charger Checklist', table_field: 'child_tracker_table', childname: 'sp_docname' },
-  { group: 'Battery', doctype: 'Service Protocol Battery Checklist', table_field: 'child_tracker_table', childname: 'sp_docname' },
-  { group: 'Smart Meter', doctype: 'Service Protocol Smart Meter Checklist', table_field: 'child_tracker_table', childname: 'sp_docname' },
-  { group: 'Smart Energy Manager', doctype: 'Service Protocol Smart Energy Manager Checklist', table_field: 'child_tracker_table', childname: 'sp_docname' },
-  { group: 'Datalogger', doctype: 'Service Protocol Datalogger Checklist', table_field: 'child_tracker_table', childname: 'sp_docname' }
+  { group: 'Inverter', doctype: 'Checklist of Inverter', table_field: 'child_tracker_table', childname: 'sp_docname' },
+  { group: 'EV Charger', doctype: 'Checklist of EV Charger', table_field: 'child_tracker_table', childname: 'sp_docname' },
+  { group: 'Battery', doctype: 'Checklist of Battery', table_field: 'child_tracker_table', childname: 'sp_docname' },
+  { group: 'Smart Meter', doctype: 'Checklist of Smart Meter', table_field: 'child_tracker_table', childname: 'sp_docname' },
+  { group: 'Smart Energy Manager', doctype: 'Checklist of Smart Energy Manager', table_field: 'child_tracker_table', childname: 'sp_docname' },
+  { group: 'Datalogger', doctype: 'Checklist of Datalogger', table_field: 'child_tracker_table', childname: 'sp_docname' }
 ];
 
 agt.checklist_table.setup = async () => {
