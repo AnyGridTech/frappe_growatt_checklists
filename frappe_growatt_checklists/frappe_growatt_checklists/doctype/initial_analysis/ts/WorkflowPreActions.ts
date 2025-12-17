@@ -3,12 +3,12 @@ import { FrappeForm } from "@anygridtech/frappe-types/client/frappe/core";
 import { WorkflowPreActions } from "@anygridtech/frappe-agt-types/agt/client/workflow/";
 
 const preActionsChecklistConfig = [
-  { group: "Inverter", doctype: "Service Protocol Inverter Checklist", table_field: "child_tracker_table" },
-  { group: "EV Charger", doctype: "Service Protocol EV Charger Checklist", table_field: "child_tracker_table" },
-  { group: "Battery", doctype: "Service Protocol Battery Checklist", table_field: "child_tracker_table" },
-  { group: "Smart Meter", doctype: "Service Protocol Smart Meter Checklist", table_field: "child_tracker_table" },
-  { group: "Smart Energy Manager", doctype: "Service Protocol Smart Energy Manager Checklist", table_field: "child_tracker_table" },
-  { group: "Datalogger", doctype: "Service Protocol Datalogger Checklist", table_field: "child_tracker_table" },
+  { group: "Inverter", doctype: "Checklist of Inverter", table_field: "child_tracker_table" },
+  { group: "EV Charger", doctype: "Checklist of EV Charger", table_field: "child_tracker_table" },
+  { group: "Battery", doctype: "Checklist of Battery", table_field: "child_tracker_table" },
+  { group: "Smart Meter", doctype: "Checklist of Smart Meter", table_field: "child_tracker_table" },
+  { group: "Smart Energy Manager", doctype: "Checklist of Smart Energy Manager", table_field: "child_tracker_table" },
+  { group: "Datalogger", doctype: "Checklist of Datalogger", table_field: "child_tracker_table" },
 ];
 
 const preActions = {

@@ -27,28 +27,28 @@ const service_protocol_utils = {
 
     const shared_users = frappe.model.get_shared('Initial Analysis', cur_frm.docname);
     wci?.forEach(async row => {
-      await agt.utils.doc.update_doc('Service Protocol Inverter Checklist', row.checklist_docname, clean_dict);
-      await agt.utils.doc.share_doc('Service Protocol Inverter Checklist', row.checklist_docname, shared_users);
+      await agt.utils.doc.update_doc('Checklist of Inverter', row.checklist_docname, clean_dict);
+      await agt.utils.doc.share_doc('Checklist of Inverter', row.checklist_docname, shared_users);
     });
     wcc?.forEach(async row => {
-      await agt.utils.doc.update_doc('Service Protocol EV Charger Checklist', row.checklist_docname, clean_dict);
-      await agt.utils.doc.share_doc('Service Protocol EV Charger Checklist', row.checklist_docname, shared_users);
+      await agt.utils.doc.update_doc('Checklist of EV Charger', row.checklist_docname, clean_dict);
+      await agt.utils.doc.share_doc('Checklist of EV Charger', row.checklist_docname, shared_users);
     });
     wcb?.forEach(async row => {
-      await agt.utils.doc.update_doc('Service Protocol Battery Checklist', row.checklist_docname, clean_dict);
-      await agt.utils.doc.share_doc('Service Protocol Battery Checklist', row.checklist_docname, shared_users);
+      await agt.utils.doc.update_doc('Checklist of Battery', row.checklist_docname, clean_dict);
+      await agt.utils.doc.share_doc('Checklist of Battery', row.checklist_docname, shared_users);
     });
     wcs?.forEach(async row => {
-      await agt.utils.doc.update_doc('Service Protocol Smart Meter Checklist', row.checklist_docname, clean_dict);
-      await agt.utils.doc.share_doc('Service Protocol Smart Meter Checklist', row.checklist_docname, shared_users);
+      await agt.utils.doc.update_doc('Checklist of Smart Meter', row.checklist_docname, clean_dict);
+      await agt.utils.doc.share_doc('Checklist of Smart Meter', row.checklist_docname, shared_users);
     });
     wcem?.forEach(async row => {
-      await agt.utils.doc.update_doc('Service Protocol Smart Energy Manager Checklist', row.checklist_docname, clean_dict);
-      await agt.utils.doc.share_doc('Service Protocol Smart Energy Manager Checklist', row.checklist_docname, shared_users);
+      await agt.utils.doc.update_doc('Checklist of Smart Energy Manager', row.checklist_docname, clean_dict);
+      await agt.utils.doc.share_doc('Checklist of Smart Energy Manager', row.checklist_docname, shared_users);
     });
     wcd?.forEach(async row => {
-      await agt.utils.doc.update_doc('Service Protocol Datalogger Checklist', row.checklist_docname, clean_dict);
-      await agt.utils.doc.share_doc('Service Protocol Datalogger Checklist', row.checklist_docname, shared_users);
+      await agt.utils.doc.update_doc('Checklist of Datalogger', row.checklist_docname, clean_dict);
+      await agt.utils.doc.share_doc('Checklist of Datalogger', row.checklist_docname, shared_users);
     });
     wsp?.forEach(async row => {
       await agt.utils.doc.update_doc('Service Protocol', row.checklist_docname, clean_dict);

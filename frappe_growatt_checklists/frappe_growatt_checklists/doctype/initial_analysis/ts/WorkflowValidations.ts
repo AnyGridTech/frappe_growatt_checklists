@@ -85,12 +85,12 @@ const workflow_validations: WorkflowValidation[] = [
 
 
 // const checklistConfig = [
-//   { group: 'Inverter', doctype: 'Service Protocol Inverter Checklist', table_field: 'child_tracker_table', childname: 'child_tracker_workflow_state' },
-//   { group: 'EV Charger', doctype: 'Service Protocol EV Charger Checklist', table_field: 'child_tracker_table', childname: 'child_tracker_workflow_state' },
-//   { group: 'Battery', doctype: 'Service Protocol Battery Checklist', table_field: 'child_tracker_table', childname: 'child_tracker_workflow_state' },
-//   { group: 'Smart Meter', doctype: 'Service Protocol Smart Meter Checklist', table_field: 'child_tracker_table', childname: 'child_tracker_workflow_state' },
-//   { group: 'Smart Energy Manager', doctype: 'Service Protocol Smart Energy Manager Checklist', table_field: 'child_tracker_table', childname: 'child_tracker_workflow_state' },
-//   { group: 'Datalogger', doctype: 'Service Protocol Datalogger Checklist', table_field: 'child_tracker_table', childname: 'child_tracker_workflow_state' }
+//   { group: 'Inverter', doctype: 'Checklist of Inverter', table_field: 'child_tracker_table', childname: 'child_tracker_workflow_state' },
+//   { group: 'EV Charger', doctype: 'Checklist of EV Charger', table_field: 'child_tracker_table', childname: 'child_tracker_workflow_state' },
+//   { group: 'Battery', doctype: 'Checklist of Battery', table_field: 'child_tracker_table', childname: 'child_tracker_workflow_state' },
+//   { group: 'Smart Meter', doctype: 'Checklist of Smart Meter', table_field: 'child_tracker_table', childname: 'child_tracker_workflow_state' },
+//   { group: 'Smart Energy Manager', doctype: 'Checklist of Smart Energy Manager', table_field: 'child_tracker_table', childname: 'child_tracker_workflow_state' },
+//   { group: 'Datalogger', doctype: 'Checklist of Datalogger', table_field: 'child_tracker_table', childname: 'child_tracker_workflow_state' }
 // ];
 
 
