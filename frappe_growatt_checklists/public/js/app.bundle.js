@@ -36,17 +36,17 @@
   growatt.checklist_table_smart_meter.setup = GetChecklistTrackerSetup("child_tracker_table");
   growatt.checklist_table_smart_energy_manager.setup = GetChecklistTrackerSetup("child_tracker_table");
   growatt.checklist_table_datalogger.setup = GetChecklistTrackerSetup("child_tracker_table");
-  growatt.child_tracker_table.setup = async () => {
+  agt.corrections_tracker.table.mirror_child_tracker_table = async () => {
     if (cur_frm.doc.__islocal) return;
-    if (!cur_frm.fields_dict?.child_tracker_table) return;
+    if (!cur_frm.fields_dict?.["child_tracker_table"]) return;
     cur_frm.set_df_property("child_tracker_table", "cannot_add_rows", 1);
     cur_frm.set_df_property("child_tracker_table", "cannot_delete_rows", 1);
   };
   async function runSync(frm) {
     if (frm.doc.__islocal) return;
-    const cfg = checklistConfig.find((c) => c.group === frm.doc.main_eqp_group);
+    const cfg = checklistConfig.find((c) => c.group === frm.doc["main_eqp_group"]);
     if (!cfg) {
-      console.warn(`Unmapped group: ${frm.doc.main_eqp_group}`);
+      console.warn(`Unmapped group: ${frm.doc["main_eqp_group"]}`);
       return;
     }
     const doctypes = [
@@ -57,7 +57,7 @@
       "Service Protocol Smart Energy Manager Checklist",
       "Service Protocol Datalogger Checklist"
     ];
-    await growatt.child_tracker.mirror_child_tracker_table(frm, doctypes, "sp_docname");
+    await agt.corrections_tracker.table.mirror_child_tracker_table(frm, doctypes, "sp_docname");
     growatt.utils.render_doc_fields_table(
       frm.fields_dict.child_tracker_html.$wrapper,
       frm.doc.child_tracker_table,
@@ -149,22 +149,22 @@
     await agt.checklist_table_smart_energy_manager.setup();
     await agt.checklist_table_datalogger.setup();
     await agt.child_tracker_table.setup();
-    frappe.ui.form.on("Service Protocol", {
+    frappe.ui.form.on("Initial Analysis", {
       onload: async (frm) => {
         await runSync(frm);
-        if (frm.doc.workflow_state === growatt.namespace.service_protocol.workflow_state.holding_action.name) {
-          await growatt.service_protocol.utils.trigger_create_sn_into_db(frm);
+        if (frm.doc.workflow_state === agt.metadata.doctype.service_protocol.workflow_state.holding_action.name) {
+          await agt.service_protocol.utils.trigger_create_sn_into_db(frm);
         }
       },
       refresh: async (frm) => {
         await runSync(frm);
-        if (frm.doc.workflow_state === growatt.namespace.service_protocol.workflow_state.holding_action.name) {
-          await growatt.service_protocol.utils.trigger_create_sn_into_db(frm);
+        if (frm.doc.workflow_state === agt.metadata.doctype.service_protocol.workflow_state.holding_action.name) {
+          await agt.service_protocol.utils.trigger_create_sn_into_db(frm);
         }
       },
       before_save: async (frm) => {
-        if (frm.doc.workflow_state === growatt.namespace.service_protocol.workflow_state.holding_action.name) {
-          await growatt.service_protocol.utils.trigger_create_sn_into_db(frm);
+        if (frm.doc.workflow_state === agt.metadata.doctype.service_protocol.workflow_state.holding_action.name) {
+          await agt.service_protocol.utils.trigger_create_sn_into_db(frm);
         }
         await agt.service_protocol.utils.share_doc_trigger(frm);
       }

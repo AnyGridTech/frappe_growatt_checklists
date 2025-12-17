@@ -233,7 +233,7 @@ Public,Público
 Purchase Invoice,Nota Fiscal de Compra
 RS485,RS485
 Reclame Aqui,Reclame Aqui
-Reference [Service Protocol],Referência [Protocolo de Atendimento]
+Reference [Initial Analysis],Referência [Análise Inicial]
 Reference [Ticket],Referência [Ticket]
 Rejected,Reprovada
 Rejection Reason,Motivo da Rejeição
@@ -246,9 +246,9 @@ Select,Selecione
 Serial Number,Número de Série
 Series,Série
 Service Partner,Parceiro de Serviço
-Service Protocol,Protocolo de Atendimento
+Initial Analysis,Análise Inicial
 Service Protocol EV Charger Checklist,Checklist de Carregador EV do Protocolo de Atendimento
-Service Protocol Reference,Referência do Protocolo de Atendimento
+Initial Analysis Reference,Referência da Análise Inicial
 Side and Location Where CTs Were Installed,Lado e Localização Onde os TCs Foram Instalados
 Single Phase,Monofásico
 Smart Energy,Smart Energy

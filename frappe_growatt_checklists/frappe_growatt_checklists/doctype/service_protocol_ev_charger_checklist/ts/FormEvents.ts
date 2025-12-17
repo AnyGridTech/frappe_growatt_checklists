@@ -1,5 +1,5 @@
 /*
-* This file handles the form events for the Service Protocol doctype.
+* This file handles the form events for the Initial Analysis doctype.
 * Read more: https://docs.frappe.io/framework/user/en/api/form#form-events
 */
 

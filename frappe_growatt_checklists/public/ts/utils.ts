@@ -25,7 +25,7 @@ const service_protocol_utils = {
         return acc;
       }, {} as Record<string, any>);
 
-    const shared_users = frappe.model.get_shared('Service Protocol', cur_frm.docname);
+    const shared_users = frappe.model.get_shared('Initial Analysis', cur_frm.docname);
     wci?.forEach(async row => {
       await agt.utils.doc.update_doc('Service Protocol Inverter Checklist', row.checklist_docname, clean_dict);
       await agt.utils.doc.share_doc('Service Protocol Inverter Checklist', row.checklist_docname, shared_users);

@@ -2,34 +2,34 @@
 // For license information, please see license.txt
 "use strict";
 (() => {
-  // frappe_growatt_checklists/doctype/service_protocol/ts/FormEvents.ts
-  var service_protocol_utils = {
+  // frappe_growatt_checklists/doctype/initial_analysis/ts/FormEvents.ts
+  var initial_analysis_utils = {
     fields_listener: (_form) => {
     }
   };
   frappe.ui.form.on(
-    "Service Protocol",
+    "Initial Analysis",
     {
       setup: async (form) => {
         await agt.setup.run();
-        service_protocol_utils.fields_listener(form);
+        initial_analysis_utils.fields_listener(form);
       },
       onload: async (form) => {
-        service_protocol_utils.fields_listener(form);
+        initial_analysis_utils.fields_listener(form);
       },
       refresh: async (form) => {
-        service_protocol_utils.fields_listener(form);
+        initial_analysis_utils.fields_listener(form);
       },
       before_load: async (form) => {
-        service_protocol_utils.fields_listener(form);
+        initial_analysis_utils.fields_listener(form);
       },
       validate: async (form) => {
-        service_protocol_utils.fields_listener(form);
+        initial_analysis_utils.fields_listener(form);
       }
     }
   );
 
-  // frappe_growatt_checklists/doctype/service_protocol/ts/WorkflowPreActions.ts
+  // frappe_growatt_checklists/doctype/initial_analysis/ts/WorkflowPreActions.ts
   var preActionsChecklistConfig = [
     { group: "Inverter", doctype: "Service Protocol Inverter Checklist", table_field: "child_tracker_table" },
     { group: "EV Charger", doctype: "Service Protocol EV Charger Checklist", table_field: "child_tracker_table" },
@@ -53,7 +53,7 @@
           await agt.utils.update_workflow_state({
             doctype: "Serial No",
             docname: db_sn.serial_no,
-            workflow_state: agt.metadata.doctype.service_protocol.workflow_state.holding_action.name,
+            workflow_state: agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name,
             ignore_workflow_validation: true
           });
         } else {
@@ -72,7 +72,7 @@
           await agt.utils.update_workflow_state({
             doctype: "Serial No",
             docname: sn_docname,
-            workflow_state: agt.metadata.doctype.service_protocol.workflow_state.holding_action.name,
+            workflow_state: agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name,
             ignore_workflow_validation: true
           });
         }
@@ -84,8 +84,8 @@
       try {
         const swa = frm.states.frm.selected_workflow_action;
         const ws = frm.doc.workflow_state;
-        const swa_request_checklist = agt.metadata.doctype.service_protocol.workflow_action.request_checklist.name;
-        const ws_preliminary_assessment = agt.metadata.doctype.service_protocol.workflow_state.holding_action.name;
+        const swa_request_checklist = agt.metadata.doctype.initial_analysis.workflow_action.request_checklist.name;
+        const ws_preliminary_assessment = agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name;
         if (ws !== ws_preliminary_assessment || !ws || swa !== swa_request_checklist || !swa)
           throw new Error(`N\xE3o foi poss\xEDvel criar checklist: crit\xE9rios do workflow n\xE3o atendidos.`);
         const main_eqp_group = frm.doc.main_eqp_group;
@@ -95,7 +95,7 @@
         const trackerRows = frm.doc[fieldname];
         if (trackerRows?.length) {
           const not_rejected = trackerRows.filter(
-            (cit) => cit.child_tracker_workflow_state !== agt.metadata.doctype.service_protocol.workflow_state.rejected.name && cit.child_tracker_doctype === doctype
+            (cit) => cit.child_tracker_workflow_state !== agt.metadata.doctype.initial_analysis.workflow_state.rejected.name && cit.child_tracker_doctype === doctype
           );
           if (not_rejected?.length && not_rejected.length > 0) {
             const available_list_html = not_rejected.map((cit) => `<li> ${cit.child_tracker_docname || cit.name || "Sem nome"} </li>`).join("");
@@ -160,7 +160,7 @@
     }
   };
   var wp = {
-    [agt.metadata.doctype.service_protocol.workflow_action.request_checklist.name]: {
+    [agt.metadata.doctype.initial_analysis.workflow_action.request_checklist.name]: {
       "Create Serial No.": preActions.trigger_create_sn_into_db,
       "Create Checklist": preActions.create_checklist
     },
@@ -168,18 +168,18 @@
       "Create Proposed Dispatch": preActions.create_proposed_dispatch
     }
   };
-  frappe.ui.form.on("Service Protocol", "before_load", async () => {
+  frappe.ui.form.on("Initial Analysis", "before_load", async () => {
     if (!globalThis.workflow_preactions) {
       globalThis.workflow_preactions = {};
     }
     Object.assign(globalThis.workflow_preactions, wp);
   });
 
-  // frappe_growatt_checklists/doctype/service_protocol/ts/WorkflowValidations.ts
+  // frappe_growatt_checklists/doctype/initial_analysis/ts/WorkflowValidations.ts
   var workflow_validations = [
     {
-      workflow_action: agt.metadata.doctype.service_protocol.workflow_action.request_checklist.name,
-      workflow_state: agt.metadata.doctype.service_protocol.workflow_state.holding_action.name,
+      workflow_action: agt.metadata.doctype.initial_analysis.workflow_action.request_checklist.name,
+      workflow_state: agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name,
       workflow_fields: [
         {
           name: "main_eqp_purchase_invoice",
@@ -187,6 +187,7 @@
             const main_eqp_purchase_invoice = frm.doc.main_eqp_purchase_invoice;
             if (!main_eqp_purchase_invoice)
               return `A nota fiscal deve ser anexada para prosseguir com a cria\xE7\xE3o do checklist.`;
+            return void 0;
           }
         },
         {
@@ -195,6 +196,7 @@
             const main_eqp_serial_no_label_picture = frm.doc.main_eqp_serial_no_label_picture;
             if (!main_eqp_serial_no_label_picture)
               return `A etiqueta do n\xFAmero de s\xE9rie deve ser anexada para prosseguir com a cria\xE7\xE3o do checklist.`;
+            return void 0;
           }
         },
         {
@@ -203,6 +205,7 @@
             const ext_fault_date = frm.doc.ext_fault_date;
             if (!ext_fault_date)
               return "A data da falha deve ser informada para prosseguir com a cria\xE7\xE3o do checklist.";
+            return void 0;
           }
         },
         {
@@ -211,6 +214,7 @@
             const ext_fault_code = frm.doc.ext_fault_code;
             if (!ext_fault_code)
               return "O c\xF3digo da falha deve ser informado para prosseguir com a cria\xE7\xE3o do checklist.";
+            return void 0;
           }
         },
         {
@@ -219,6 +223,7 @@
             const ext_fault_description = frm.doc.ext_fault_description;
             if (!ext_fault_description)
               return "A descri\xE7\xE3o da falha deve ser informada para prosseguir com a cria\xE7\xE3o do checklist.";
+            return void 0;
           }
         },
         {
@@ -227,6 +232,7 @@
             const ext_fault_customer_description = frm.doc.ext_fault_customer_description;
             if (!ext_fault_customer_description || ext_fault_customer_description.length < 15)
               return `A descri\xE7\xE3o do label(${ext_fault_customer_description}) deve ter no m\xEDnimo 15 caracteres para prosseguir com a cria\xE7\xE3o do checklist.`;
+            return void 0;
           }
         },
         {
@@ -235,6 +241,7 @@
             const solution_description = frm.doc.solution_description;
             if (!solution_description || solution_description.length < 15)
               return `A descri\xE7\xE3o da solu\xE7\xE3o(${solution_description}) deve ter no m\xEDnimo 15 caracteres para prosseguir com a cria\xE7\xE3o do checklist.`;
+            return void 0;
           }
         },
         {
@@ -245,6 +252,7 @@
               return "A solu\xE7\xE3o deve ser selecionada para prosseguir com a cria\xE7\xE3o do checklist.";
             if (solution_select === "Abertura de Checklist")
               return "A solu\xE7\xE3o aplicada deve ser condizente com a finaliza\xE7\xE3o do caso.";
+            return void 0;
           }
         }
       ]

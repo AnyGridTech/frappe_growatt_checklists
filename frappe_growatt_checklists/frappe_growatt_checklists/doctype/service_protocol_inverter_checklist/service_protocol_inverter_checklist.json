@@ -177,8 +177,8 @@
   {
    "fieldname": "sp_docname",
    "fieldtype": "Link",
-   "label": "Reference [Service Protocol]",
-   "options": "Service Protocol",
+   "label": "Reference [Initial Analysis]",
+   "options": "Initial Analysis",
    "read_only": 1
   },
   {

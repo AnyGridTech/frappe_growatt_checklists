@@ -1,7 +1,6 @@
 import { ChecklistTracker } from "@anygridtech/frappe-agt-types/agt/doctype";
 import { FrappeForm } from "@anygridtech/frappe-types/client/frappe/core";
 
-
 frappe.provide("growatt.checklist_table");
 frappe.provide("growatt.checklist_table_inverter");
 frappe.provide("growatt.checklist_table_ev_charger");
@@ -43,26 +42,26 @@ growatt.checklist_table_smart_energy_manager.setup = GetChecklistTrackerSetup("c
 growatt.checklist_table_datalogger.setup = GetChecklistTrackerSetup("child_tracker_table");
 
 // Setup para a nova tabela child_tracker_table
-growatt.child_tracker_table.setup = async () => {
+agt.corrections_tracker.table.mirror_child_tracker_table = async () => {
   if (cur_frm.doc.__islocal) return;
 
   // Verificar se o campo child_tracker_table existe
-  if (!cur_frm.fields_dict?.child_tracker_table) return;
+  if (!cur_frm.fields_dict?.['child_tracker_table']) return;
 
   cur_frm.set_df_property('child_tracker_table', 'cannot_add_rows', 1);
   cur_frm.set_df_property('child_tracker_table', 'cannot_delete_rows', 1);
 };
 
 /**
- * Sync checklist tables with the Service Protocol form.
- * This function is triggered on the 'onload' event of the Service Protocol form.
+ * Sync checklist tables with the Initial Analysis form.
+ * This function is triggered on the 'onload' event of the Initial Analysis form.
  */
 async function runSync(frm: FrappeForm) {
   if (frm.doc.__islocal) return;
 
-  const cfg = checklistConfig.find(c => c.group === frm.doc.main_eqp_group);
+  const cfg = checklistConfig.find(c => c.group === frm.doc['main_eqp_group']);
   if (!cfg) {
-    console.warn(`Unmapped group: ${frm.doc.main_eqp_group}`);
+    console.warn(`Unmapped group: ${frm.doc['main_eqp_group']}`);
     return;
   }
 
@@ -76,7 +75,7 @@ async function runSync(frm: FrappeForm) {
   ];
 
   // Espelhar todos os documentos relacionados pelo sp_docname
-  await growatt.child_tracker.mirror_child_tracker_table(frm, doctypes, 'sp_docname');
+  await agt.corrections_tracker.table.mirror_child_tracker_table(frm, doctypes, 'sp_docname');
 
   growatt.utils.render_doc_fields_table(
     frm.fields_dict.child_tracker_html.$wrapper,
@@ -180,26 +179,26 @@ agt.checklist_table.setup = async () => {
   await agt.checklist_table_datalogger.setup();
   await agt.child_tracker_table.setup();
 
-  frappe.ui.form.on('Service Protocol', {
+  frappe.ui.form.on('Initial Analysis', {
     onload: async (frm: FrappeForm) => {
       // await trigger_sidebar(frm);
       await runSync(frm);
-      if (frm.doc.workflow_state === agt.metadata.doctype.service_protocol.workflow_state.holding_action.name) {
-        await agt.service_protocol.utils.trigger_create_sn_into_db(frm);
+      if (frm.doc.workflow_state === agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name) {
+        await agt.initial_analysis.utils.trigger_create_sn_into_db(frm);
       }
     },
     refresh: async (frm: FrappeForm) => {
       // await trigger_sidebar(frm);
       await runSync(frm);
-      if (frm.doc.workflow_state === agt.metadata.doctype.service_protocol.workflow_state.holding_action.name) {
-        await agt.service_protocol.utils.trigger_create_sn_into_db(frm);
+      if (frm.doc.workflow_state === agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name) {
+        await agt.initial_analysis.utils.trigger_create_sn_into_db(frm);
       }
     },
     before_save: async (frm: FrappeForm) => {
-      if (frm.doc.workflow_state === agt.metadata.doctype.service_protocol.workflow_state.holding_action.name) {
-        await agt.service_protocol.utils.trigger_create_sn_into_db(frm);
+      if (frm.doc.workflow_state === agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name) {
+        await agt.initial_analysis.utils.trigger_create_sn_into_db(frm);
       }
-      await agt.service_protocol.utils.share_doc_trigger(frm);
+      await agt.initial_analysis.utils.share_doc_trigger(frm);
     }
   });
 

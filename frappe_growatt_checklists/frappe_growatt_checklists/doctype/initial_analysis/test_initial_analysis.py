@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestServiceProtocol(FrappeTestCase):
+class TestInitialAnalysis(FrappeTestCase):
 	pass

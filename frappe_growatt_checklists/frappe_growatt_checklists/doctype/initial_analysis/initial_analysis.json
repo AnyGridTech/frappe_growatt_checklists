@@ -1,0 +1,301 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-12-16 17:22:20.615945",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "tab_public",
+  "section_checklist_links",
+  "info_card",
+  "ticket_docname",
+  "sp_docname",
+  "child_tracker_html",
+  "child_tracker_table",
+  "main_eqp_purchase_invoice",
+  "main_eqp_serial_no_label_picture",
+  "section_eqp_failure",
+  "ext_fault_date",
+  "ext_fault_code",
+  "ext_fault_description",
+  "ext_fault_customer_description",
+  "section_pre_analysis",
+  "an\u00e1lise_column",
+  "main_eqp_is_online",
+  "main_eqp_has_updated",
+  "main_eqp_has_reseted",
+  "main_eqp_has_neutral",
+  "main_eqp_has_stringbox",
+  "main_eqp_has_battery",
+  "main_eqp_has_transformer",
+  "main_eqp_has_sm",
+  "main_eqp_has_sem",
+  "column_break_hitx",
+  "oss_data_extraction",
+  "section_pre_analysis_conclusion",
+  "solution_description",
+  "solution_select",
+  "tab_internal",
+  "informa\u00e7\u00f5es_internas_section",
+  "priority",
+  "corrections_tracker",
+  "tab_system",
+  "fields_section",
+  "email_applicant",
+  "subject_email"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "INA-.MM.YY.-.####",
+   "reqd": 1,
+   "default": "INA-.MM.YY.-.####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "tab_public",
+   "fieldtype": "Tab Break",
+   "label": "Public"
+  },
+  {
+   "fieldname": "section_checklist_links",
+   "fieldtype": "Section Break",
+   "label": "Derived Documents"
+  },
+  {
+   "fieldname": "info_card",
+   "fieldtype": "HTML",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ticket_docname",
+   "fieldtype": "Data",
+   "label": "Reference [Ticket]",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sp_docname",
+   "fieldtype": "Data",
+   "label": "Reference [Initial Analysis]",
+   "read_only": 1
+  },
+  {
+   "fieldname": "child_tracker_html",
+   "fieldtype": "HTML",
+   "label": "Child Tracker - HTML",
+   "read_only": 1
+  },
+  {
+   "fieldname": "child_tracker_table",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Child Tracker",
+   "options": "Child Tracker Table",
+   "read_only": 1
+  },
+  {
+   "fieldname": "main_eqp_purchase_invoice",
+   "fieldtype": "Attach",
+   "label": "Purchase Invoice"
+  },
+  {
+   "fieldname": "main_eqp_serial_no_label_picture",
+   "fieldtype": "Attach",
+   "label": "Label Photo"
+  },
+  {
+   "fieldname": "section_eqp_failure",
+   "fieldtype": "Section Break",
+   "label": "Failure Information"
+  },
+  {
+   "default": "Today",
+   "fieldname": "ext_fault_date",
+   "fieldtype": "Date",
+   "label": "Failure Date"
+  },
+  {
+   "fieldname": "ext_fault_code",
+   "fieldtype": "Link",
+   "label": "Failure Code",
+   "options": "External Issue Code"
+  },
+  {
+   "fetch_from": "ext_fault_code.error_name",
+   "fieldname": "ext_fault_description",
+   "fieldtype": "Data",
+   "label": "Failure Description",
+   "placeholder": "***Fill in the Failure Code***",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ext_fault_customer_description",
+   "fieldtype": "Text Editor",
+   "label": "Problem Description (Customer)"
+  },
+  {
+   "fieldname": "section_pre_analysis",
+   "fieldtype": "Section Break",
+   "label": "Preliminary Analysis"
+  },
+  {
+   "fieldname": "an\u00e1lise_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_is_online",
+   "fieldtype": "Check",
+   "label": "Online"
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_has_updated",
+   "fieldtype": "Check",
+   "label": "Updated"
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_has_reseted",
+   "fieldtype": "Check",
+   "label": "Reset"
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_has_neutral",
+   "fieldtype": "Check",
+   "label": "Neutral"
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_has_stringbox",
+   "fieldtype": "Check",
+   "label": "String Box"
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_has_battery",
+   "fieldtype": "Check",
+   "label": "Batteries"
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_has_transformer",
+   "fieldtype": "Check",
+   "label": "Transformer"
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_has_sm",
+   "fieldtype": "Check",
+   "label": "Smart Meter"
+  },
+  {
+   "default": "0",
+   "fieldname": "main_eqp_has_sem",
+   "fieldtype": "Check",
+   "label": "Smart Energy Manager"
+  },
+  {
+   "fieldname": "column_break_hitx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "oss_data_extraction",
+   "fieldtype": "Attach",
+   "label": "OSS Screenshot"
+  },
+  {
+   "fieldname": "section_pre_analysis_conclusion",
+   "fieldtype": "Section Break",
+   "label": "Analysis Conclusion"
+  },
+  {
+   "fieldname": "solution_description",
+   "fieldtype": "Text Editor",
+   "label": "Analysis Conclusion"
+  },
+  {
+   "fieldname": "solution_select",
+   "fieldtype": "Link",
+   "label": "Applied Solution",
+   "options": "Service Protocol - Applied Solution"
+  },
+  {
+   "fieldname": "tab_internal",
+   "fieldtype": "Tab Break",
+   "label": "Private"
+  },
+  {
+   "fieldname": "informa\u00e7\u00f5es_internas_section",
+   "fieldtype": "Section Break",
+   "label": "Internal Information"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Maximum\nReclame Aqui\nLegal Process"
+  },
+  {
+   "fieldname": "corrections_tracker",
+   "fieldtype": "Table",
+   "label": "Correction Requests",
+   "options": "Corrections Tracker"
+  },
+  {
+   "depends_on": "eval: (frappe.user_roles.length === 1 && frappe.user_roles.includes(\"Customer\"))",
+   "fieldname": "tab_system",
+   "fieldtype": "Tab Break",
+   "label": "System"
+  },
+  {
+   "fieldname": "fields_section",
+   "fieldtype": "Section Break",
+   "label": "Fields"
+  },
+  {
+   "fieldname": "email_applicant",
+   "fieldtype": "Data",
+   "label": "E-mail",
+   "options": "Email"
+  },
+  {
+   "fieldname": "subject_email",
+   "fieldtype": "Data",
+   "label": "E-mail Subject"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-16 20:22:04.150423",
+ "modified_by": "Administrator",
+ "module": "Frappe Growatt Checklists",
+ "name": "Initial Analysis",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
