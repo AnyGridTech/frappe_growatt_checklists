@@ -14,7 +14,8 @@ const preActionsChecklistConfig = [
 const preActions = {
   trigger_create_sn_into_db: async (frm: FrappeForm<InitialAnalysis> | FrappeForm<Record<string, any>>) => {
     try {
-      const serial_no = frm.doc.main_eqp_serial_no;
+      // const serial_no = frm.doc.main_eqp_serial_no;
+      const serial_no = await agt.utils.get_value_from_any_doc(frm, 'Ticket', 'ticket_docname', 'main_eqp_serial_no');
       if (!serial_no) throw new Error("Número de série não fornecido");
 
       const db_sn = await frappe.db
@@ -22,7 +23,8 @@ const preActions = {
         .then(r => r?.message)
         .catch(e => { throw new Error("Erro ao buscar número de série: " + (e instanceof Error ? e.message : String(e))); });
 
-      const service_partner_company = frm.doc.service_partner_company;
+      // const service_partner_company = frm.doc.service_partner_company;
+      const service_partner_company = await agt.utils.get_value_from_any_doc(frm, 'Ticket', 'ticket_docname', 'service_partner_company');
       if (!service_partner_company) throw new Error("Empresa parceira de serviço não definida");
 
       const hasKeys = (obj: any) => obj && typeof obj === "object" && Object.keys(obj).length > 0;
@@ -48,7 +50,7 @@ const preActions = {
           status: { value: "Active" }
         };
 
-        const sn_docname = await agt.utils.doc.create_doc<SerialNo>('Serial No', { docname: "sp_docname" }, serialNoFields);
+        const sn_docname = await agt.utils.doc.create_doc<SerialNo>('Serial No', { docname: "inanly_docname" }, serialNoFields);
         if (!sn_docname) throw new Error("Falha ao criar Serial No - nenhum nome de documento retornado");
 
         await agt.utils.update_workflow_state({
@@ -72,7 +74,8 @@ const preActions = {
       if (ws !== ws_preliminary_assessment || !ws || swa !== swa_request_checklist || !swa)
         throw new Error(`Não foi possível criar checklist: critérios do workflow não atendidos.`);
 
-      const main_eqp_group = frm.doc.main_eqp_group;
+      // const main_eqp_group = frm.doc.main_eqp_group;
+      const main_eqp_group = await agt.utils.get_value_from_any_doc(frm, 'Ticket', 'ticket_docname', 'main_eqp_group');
       const pair = preActionsChecklistConfig.find(c => c.group === main_eqp_group);
       if (!pair) throw new Error(`Grupo do equipamento não é '${main_eqp_group}'`);
       const { doctype, table_field: fieldname } = pair;
@@ -96,7 +99,7 @@ const preActions = {
         }
       }
 
-      const docname = await agt.utils.doc.create_doc(doctype, { docname: "sp_docname" }, frm.fields_dict);
+      const docname = await agt.utils.doc.create_doc(doctype, { docname: "inanly_docname" }, frm.fields_dict);
       if (!docname) throw new Error(`Falha ao criar checklist '${doctype}'`);
 
       const checklist_doc = await frappe.db.get_value(doctype, docname, ['workflow_state']);
@@ -138,7 +141,8 @@ const preActions = {
       const docname = await agt.utils.doc.create_doc(dt_name, { ticket_docname: "ticket_docname" }, frm.fields_dict);
       if (!docname) throw new Error("Falha ao criar Proposta de Envio.");
 
-      const main_eqp_group = frm.doc.main_eqp_group;
+      // const main_eqp_group = frm.doc.main_eqp_group;
+      const main_eqp_group = await agt.utils.get_value_from_any_doc(frm, 'Ticket', 'ticket_docname', 'main_eqp_group');
       if (!main_eqp_group) throw new Error("Grupo do equipamento principal não definido.");
 
       await agt.utils.table.row.add_one(frm, "proposed_dispatch_table", {

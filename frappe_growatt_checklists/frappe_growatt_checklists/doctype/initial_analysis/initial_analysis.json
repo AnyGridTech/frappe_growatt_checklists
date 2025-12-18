@@ -11,7 +11,7 @@
   "section_checklist_links",
   "info_card",
   "ticket_docname",
-  "sp_docname",
+  "inanly_docname",
   "child_tracker_html",
   "child_tracker_table",
   "main_eqp_purchase_invoice",
@@ -78,7 +78,7 @@
    "read_only": 1
   },
   {
-   "fieldname": "sp_docname",
+   "fieldname": "inanly_docname",
    "fieldtype": "Data",
    "label": "Reference [Initial Analysis]",
    "read_only": 1

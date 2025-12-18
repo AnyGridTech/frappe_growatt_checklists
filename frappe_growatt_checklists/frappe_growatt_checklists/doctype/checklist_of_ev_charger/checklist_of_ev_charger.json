@@ -60,7 +60,7 @@
   "confirm_sac",
   "sp_protocol",
   "ticket_docname",
-  "sp_docname",
+  "inanly_docname",
   "amended_from"
  ],
  "fields": [
@@ -372,7 +372,7 @@
    "options": "Initial Analysis"
   },
   {
-   "fieldname": "sp_docname",
+   "fieldname": "inanly_docname",
    "fieldtype": "Link",
    "label": "Service Protocol Reference",
    "options": "Initial Analysis"

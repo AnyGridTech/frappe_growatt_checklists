@@ -1,13 +1,13 @@
 // import { format } from "path";
 import { FrappeForm } from "@anygridtech/frappe-types/client/frappe/core";
-import { Item, SerialNo, Company, ServiceProtocol } from "@anygridtech/frappe-agt-types/agt/doctype";
+import { Item, SerialNo, Company, InitialAnalysis } from "@anygridtech/frappe-agt-types/agt/doctype";
 
 // const hasCustomer = frappe.user.has_role('Customer');
 // const hasStandardEmployee = frappe.user.has_role('Standard Employee');
 // const hasSupport = frappe.user.has_role('Support User') || frappe.user.has_role('Support Manager');
 const hasAdmin = frappe.user.has_role('System Manager') || frappe.user.has_role('Administrator') || frappe.user.has_role('Information Technology');
 
-const service_protocol_utils = {
+const frappe_growatt_checklists_utils = {
   async update_related_forms(): Promise<void> {
     const fields_record = cur_frm.fields_dict;
     const wci = agt.utils.table.row.find(cur_frm, 'checklist_table_inverter', { or: { docstatus: [0] } });
@@ -55,18 +55,18 @@ const service_protocol_utils = {
       await agt.utils.doc.share_doc('Service Protocol', row.checklist_docname, shared_users);
     });
   },
-  fields_listener(frm: FrappeForm<ServiceProtocol>) {
-    service_protocol_utils.fields_handler(frm);
-    Object.keys(frm.fields_dict).forEach((fn) => {
-      const field = frm.fields_dict[fn];
+  fields_listener(form: FrappeForm<InitialAnalysis>) {
+    frappe_growatt_checklists_utils.fields_handler(form);
+    Object.keys(form.fields_dict).forEach((fn) => {
+      const field = form.fields_dict[fn];
       if (field && field.df) {
         field.df['onchange'] = () => {
-          service_protocol_utils.fields_handler(frm);
+          frappe_growatt_checklists_utils.fields_handler(form);
         };
       }
     });
   },
-  fields_handler: async function (form: FrappeForm<ServiceProtocol>) {
+  fields_handler: async function (form: FrappeForm<InitialAnalysis>) {
 
     if (form.doc['opening_date'] === "" || form.doc['opening_date'] === undefined || form.doc['opening_date'] === null) {
       form.doc['opening_date'] = frappe.datetime.now_date();
@@ -77,8 +77,6 @@ const service_protocol_utils = {
       form.doc['opening_user'] = frappe.session.user;
     }
     form.set_df_property('opening_user', 'read_only', form.doc['opening_user'] ? 1 : 0);
-
-    agt.utils.form.set_button_primary_style(form, 'add_child_button');
 
     agt.utils.table.set_custom_properties(
       form, {
@@ -123,10 +121,10 @@ const service_protocol_utils = {
     // Definir valores padrão baseados no main_eqp_group
     let defaultTableRow = { item_name: '', item_quantity: 1 };
 
-    // if (frm.doc.main_eqp_group === 'Datalogger') {
+    // if (form.doc.main_eqp_group === 'Datalogger') {
     //   defaultTableRow.item_name = 'Datalogger';
     //   defaultTableRow.item_quantity = 1;
-    // } else if (frm.doc.main_eqp_group === 'Inverter') {
+    // } else if (form.doc.main_eqp_group === 'Inverter') {
     //   defaultTableRow.item_name = 'Inverter';
     //   defaultTableRow.item_quantity = 1;
     // }
@@ -141,7 +139,7 @@ const service_protocol_utils = {
     }
 
     // growatt.utils.set_table_custom_properties(
-    //   frm,
+    //   form,
     //   {
     //     hidden: false,
     //     cannot_delete_rows: !hasAdmin && !hasSupport,
@@ -164,12 +162,10 @@ const service_protocol_utils = {
     // );
 
     // setup const to grab workflow state by number
-    const workflowStates = agt.metadata.doctype.service_protocol.workflow_state;
+    const workflowStates = agt.metadata.doctype.initial_analysis.workflow_state;
     const currentStateId = Object.values(workflowStates).find(state => state.name === form.doc['workflow_state'])?.id || 0;
     // add_child_button, child_table, checklist_table_html, section_eqp_failure
     const sectionStarting = [
-      'add_child_button',
-      'child_table_html',
       'section_checklist_links',
       'checklist_table_html',
       'section_eqp_failure',
@@ -206,9 +202,10 @@ const service_protocol_utils = {
     form.set_df_property('ext_fault_description', 'read_only', 1);
   },
 
-  trigger_create_sn_into_db: async (frm: FrappeForm<ServiceProtocol>) => {
-    if (frm.doc.__islocal) return;
-    const serial_no = frm.doc.main_eqp_serial_no!;
+  trigger_create_sn_into_db: async (form: FrappeForm<InitialAnalysis>) => {
+    if (form.doc.__islocal) return;
+    // const serial_no = form.doc.main_eqp_serial_no!;
+    const serial_no = await agt.utils.get_value_from_any_doc(form, 'Ticket', 'ticket_docname', 'main_eqp_serial_no');
     if (!serial_no) {
       console.error("Número de série não fornecido");
       return;
@@ -224,7 +221,8 @@ const service_protocol_utils = {
 
     const hasKeys = (obj: any) => obj && typeof obj === "object" && Object.keys(obj).length > 0;
     // const isEmptyObj = (obj: any) => obj && typeof obj === "object" && Object.keys(obj).length === 0;
-    const service_partner_company = frm.doc.service_partner_company;
+    // const service_partner_company = form.doc.service_partner_company;
+    const service_partner_company = await agt.utils.get_value_from_any_doc(form, 'Ticket', 'ticket_docname', 'service_partner_company');
     if (!service_partner_company) {
       console.error("Empresa parceira de serviço não definida");
       return;
@@ -238,7 +236,7 @@ const service_protocol_utils = {
         await agt.utils.update_workflow_state({
           doctype: "Serial No",
           docname: db_sn.serial_no,
-          workflow_state: agt.metadata.doctype.service_protocol.workflow_state.holding_action.name,
+          workflow_state: agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name,
           ignore_workflow_validation: true
         });
         console.log("Estado de workflow do Serial No atualizado com sucesso:", db_sn.serial_no);
@@ -249,7 +247,7 @@ const service_protocol_utils = {
     } else {
       // Serial Number not found or empty - create new
       const item = await frappe.db
-        .get_value<Item>('Item', { item_code: frm.doc['main_eqp_item_code']! }, ['item_name', 'item_code'])
+        .get_value<Item>('Item', { item_code: form.doc['main_eqp_item_code']! }, ['item_name', 'item_code'])
         .catch(e => {
           console.error("Erro ao buscar item:", e);
           return null;
@@ -257,8 +255,8 @@ const service_protocol_utils = {
         .then(r => r?.message);
 
       if (!item) {
-        console.error("Item not found for code:", frm.doc['main_eqp_item_code']);
-        throw new Error(`Item not found for code: ${frm.doc['main_eqp_item_code']}`);
+        console.error("Item not found for code:", form.doc['main_eqp_item_code']);
+        throw new Error(`Item not found for code: ${form.doc['main_eqp_item_code']}`);
       }
 
       try {
@@ -276,7 +274,7 @@ const service_protocol_utils = {
 
         console.log("Fields for Serial No creation:", JSON.stringify(serialNoFields));
 
-        const sn_docname = await agt.utils.doc.create_doc<SerialNo>('Serial No', { docname: "sp_docname" }, serialNoFields);
+        const sn_docname = await agt.utils.doc.create_doc<SerialNo>('Serial No', { docname: "inanly_docname" }, serialNoFields);
         if (!sn_docname) {
           throw new Error("Failed to create Serial No - no document name returned");
         }
@@ -287,7 +285,7 @@ const service_protocol_utils = {
         await agt.utils.update_workflow_state({
           doctype: "Serial No",
           docname: sn_docname,
-          workflow_state: agt.metadata.doctype.service_protocol.workflow_state.holding_action.name,
+          workflow_state: agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name,
           ignore_workflow_validation: true
         });
         console.log("Serial No workflow state updated successfully:", sn_docname);
@@ -298,9 +296,9 @@ const service_protocol_utils = {
     }
   },
 
-  set_service_partner: async function (form: FrappeForm<ServiceProtocol>) {
+  set_service_partner: async function (form: FrappeForm<InitialAnalysis>) {
     async function decideServicePartner() {
-      const service_partner_companies = await service_protocol_utils.GetServPartnerCompanies();
+      const service_partner_companies = await frappe_growatt_checklists_utils.GetServPartnerCompanies();
       return service_partner_companies?.filter((c: Company) => c.name === "Growatt")[0];
     }
     // if (form.doc.workflow_state === growatt.namespace.ticket.workflow_state.active.name) return;
@@ -322,9 +320,9 @@ const service_protocol_utils = {
     });
   },
 
-  share_doc_trigger: async function (frm: FrappeForm) {
-    if (frm.doc.__islocal) return;
-    const mainCustomer = frm.doc['main_customer_email'];
+  share_doc_trigger: async function (form: FrappeForm) {
+    if (form.doc.__islocal) return;
+    const mainCustomer = form.doc['main_customer_email'];
     if (mainCustomer) {
       const shared_users = [
         {
@@ -339,8 +337,8 @@ const service_protocol_utils = {
           write: 1
         }
       ];
-      await agt.utils.doc.share_doc('Service Protocol', frm.doc.name, shared_users);
+      await agt.utils.doc.share_doc('Service Protocol', form.doc.name, shared_users);
     }
   },
 };
-export { service_protocol_utils };
+export { frappe_growatt_checklists_utils };

@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-17 12:50:33.111220",
+ "custom": 1,
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "battery_model",
+  "battery_serial_no",
+  "battery_type",
+  "battery_comm_entry",
+  "battery_label_picture",
+  "battery_configurations_video",
+  "battery_opencircuit_voltage_picture",
+  "battery_closedcircuit_voltage_picture"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "allow_on_submit": 1,
+   "columns": 2,
+   "fieldname": "battery_model",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Modelo de Bateria",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "allow_on_submit": 1,
+   "columns": 2,
+   "fieldname": "battery_serial_no",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "SN",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "allow_on_submit": 1,
+   "columns": 2,
+   "fieldname": "battery_type",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Tipo de Bateria",
+   "options": "\nL\u00edtio\nChumbo \u00c1cido",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "allow_on_submit": 1,
+   "columns": 2,
+   "fieldname": "battery_comm_entry",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Entrada de comunica\u00e7\u00e3o",
+   "options": "\nBMS\nRS485",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "allow_on_submit": 1,
+   "fieldname": "battery_label_picture",
+   "fieldtype": "Attach",
+   "label": "Foto da Etiqueta da Bateria",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "allow_on_submit": 1,
+   "fieldname": "battery_configurations_video",
+   "fieldtype": "Attach",
+   "label": "Video das configura\u00e7\u00f5es da Bateria",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "allow_on_submit": 1,
+   "fieldname": "battery_opencircuit_voltage_picture",
+   "fieldtype": "Attach",
+   "label": "Tens\u00e3o da Bateria em circuito Aberto",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "allow_on_submit": 1,
+   "fieldname": "battery_closedcircuit_voltage_picture",
+   "fieldtype": "Attach",
+   "label": "Tens\u00e3o da Bateria circuito Fechado",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-12-17 12:50:33.111220",
+ "modified_by": "Administrator",
+ "module": "Frappe Growatt Checklists",
+ "name": "Inverter Checklist Connected Batteries Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

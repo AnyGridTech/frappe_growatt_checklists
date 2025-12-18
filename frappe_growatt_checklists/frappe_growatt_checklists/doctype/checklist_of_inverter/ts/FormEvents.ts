@@ -45,12 +45,12 @@ async function fields_handler(form: FrappeForm<ChecklistInverter>) {
 
   // take values from service protocol
   const main_eqp_type = await agt.utils.get_value_from_any_doc(form, 'Ticket', 'ticket_docname', 'main_eqp_type');
-  const main_eqp_has_battery = await agt.utils.get_value_from_any_doc(form, 'Initial Analysis', 'sp_docname', 'main_eqp_has_battery');
-  const main_eqp_has_sem = await agt.utils.get_value_from_any_doc(form, 'Initial Analysis', 'sp_docname', 'main_eqp_has_sem');
-  const main_eqp_has_sm = await agt.utils.get_value_from_any_doc(form, 'Initial Analysis', 'sp_docname', 'main_eqp_has_sm');
-  const main_eqp_phase = await agt.utils.get_value_from_any_doc(form, 'Initial Analysis', 'sp_docname', 'main_eqp_phase');
-  const main_eqp_has_neutral = await agt.utils.get_value_from_any_doc(form, 'Initial Analysis', 'sp_docname', 'main_eqp_has_neutral');
-  const main_eqp_has_transformer = await agt.utils.get_value_from_any_doc(form, 'Initial Analysis', 'sp_docname', 'main_eqp_has_transformer');
+  const main_eqp_phase = await agt.utils.get_value_from_any_doc(form, 'Ticket', 'ticket_docname', 'main_eqp_phase');
+  const main_eqp_has_battery = await agt.utils.get_value_from_any_doc(form, 'Initial Analysis', 'inanly_docname', 'main_eqp_has_battery');
+  const main_eqp_has_sem = await agt.utils.get_value_from_any_doc(form, 'Initial Analysis', 'inanly_docname', 'main_eqp_has_sem');
+  const main_eqp_has_sm = await agt.utils.get_value_from_any_doc(form, 'Initial Analysis', 'inanly_docname', 'main_eqp_has_sm');
+  const main_eqp_has_neutral = await agt.utils.get_value_from_any_doc(form, 'Initial Analysis', 'inanly_docname', 'main_eqp_has_neutral');
+  const main_eqp_has_transformer = await agt.utils.get_value_from_any_doc(form, 'Initial Analysis', 'inanly_docname', 'main_eqp_has_transformer');
   //
   const workflowStates = agt.metadata.doctype.checklist.workflow_state;
   const currentStateId = Object.values(workflowStates).find(state => state.name === form.doc.workflow_state)?.id ?? 0;
