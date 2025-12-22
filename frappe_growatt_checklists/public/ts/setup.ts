@@ -1,14 +1,15 @@
-import { ChecklistTracker } from "@anygridtech/frappe-agt-types/agt/doctype";
+import { InitialAnalysis } from "@anygridtech/frappe-agt-types/agt/doctype";
 import { FrappeForm } from "@anygridtech/frappe-types/client/frappe/core";
+import { frappe_growatt_checklists_utils } from "./utils";
 
-frappe.provide("growatt.checklist_table");
-frappe.provide("growatt.checklist_table_inverter");
-frappe.provide("growatt.checklist_table_ev_charger");
-frappe.provide("growatt.checklist_table_battery");
-frappe.provide("growatt.checklist_table_smart_meter");
-frappe.provide("growatt.checklist_table_smart_energy_manager");
-frappe.provide("growatt.checklist_table_datalogger");
-frappe.provide("growatt.child_tracker_table");
+frappe.provide("agt.checklist.table");
+frappe.provide("agt.checklist.table.inverter");
+frappe.provide("agt.checklist.table.ev_charger");
+frappe.provide("agt.checklist.table.battery");
+frappe.provide("agt.checklist.table.smart_meter");
+frappe.provide("agt.checklist.table.smart_energy_manager");
+frappe.provide("agt.checklist.table.datalogger");
+frappe.provide("agt.checklist.table.child_tracker_table");
 
 const get_checklist_doctype = (checklist_tracker_name: string) => {
   if (checklist_tracker_name === "child_tracker_table") return "Checklist of Inverter";
@@ -34,12 +35,12 @@ const GetChecklistTrackerSetup = (checklist_tracker_name: string) => {
   }
 }
 
-growatt.checklist_table_inverter.setup = GetChecklistTrackerSetup("child_tracker_table");
-growatt.checklist_table_ev_charger.setup = GetChecklistTrackerSetup("child_tracker_table");
-growatt.checklist_table_battery.setup = GetChecklistTrackerSetup("child_tracker_table");
-growatt.checklist_table_smart_meter.setup = GetChecklistTrackerSetup("child_tracker_table");
-growatt.checklist_table_smart_energy_manager.setup = GetChecklistTrackerSetup("child_tracker_table");
-growatt.checklist_table_datalogger.setup = GetChecklistTrackerSetup("child_tracker_table");
+agt.checklist.table.inverter.setup = GetChecklistTrackerSetup("child_tracker_table");
+agt.checklist.table.ev_charger.setup = GetChecklistTrackerSetup("child_tracker_table");
+agt.checklist.table.battery.setup = GetChecklistTrackerSetup("child_tracker_table");
+agt.checklist.table.smart_meter.setup = GetChecklistTrackerSetup("child_tracker_table");
+agt.checklist.table.smart_energy_manager.setup = GetChecklistTrackerSetup("child_tracker_table");
+agt.checklist.table.datalogger.setup = GetChecklistTrackerSetup("child_tracker_table");
 
 // Setup para a nova tabela child_tracker_table
 agt.corrections_tracker.table.mirror_child_tracker_table = async () => {
@@ -56,12 +57,18 @@ agt.corrections_tracker.table.mirror_child_tracker_table = async () => {
  * Sync checklist tables with the Initial Analysis form.
  * This function is triggered on the 'onload' event of the Initial Analysis form.
  */
-async function runSync(frm: FrappeForm) {
-  if (frm.doc.__islocal) return;
+async function runSync(form: FrappeForm<InitialAnalysis>) {
+  if (form.doc.__islocal) return;
 
-  const cfg = checklistConfig.find(c => c.group === frm.doc['main_eqp_group']);
+  // const cfg = checklistConfig.find(c => c.group === form.doc['main_eqp_group']);
+  // if (!cfg) {
+  //   console.warn(`Unmapped group: ${form.doc['main_eqp_group']}`);
+  //   return;
+  // }
+  const main_eqp_group = await agt.utils.get_value_from_any_doc(form, 'Ticket', 'ticket_docname', 'main_eqp_serial_no');
+  const cfg = checklistConfig.find(c => c.group === main_eqp_group);
   if (!cfg) {
-    console.warn(`Unmapped group: ${frm.doc['main_eqp_group']}`);
+    console.warn(`Unmapped group: ${main_eqp_group}`);
     return;
   }
 
@@ -74,19 +81,22 @@ async function runSync(frm: FrappeForm) {
     'Checklist of Datalogger',
   ];
 
-  // Espelhar todos os documentos relacionados pelo sp_docname
-  await agt.corrections_tracker.table.mirror_child_tracker_table(frm, doctypes, 'sp_docname');
+  // Espelhar todos os documentos relacionados pelo inanly_docname
+  await agt.corrections_tracker.table.mirror_child_tracker_table(form, doctypes, 'inanly_docname');
 
-  growatt.utils.render_doc_fields_table(
-    frm.fields_dict.child_tracker_html.$wrapper,
-    frm.doc.child_tracker_table,
+  const childTrackerField = form.fields_dict['child_tracker_html'];
+  if (!childTrackerField?.$wrapper) return;
+
+  agt.utils.form.render_doc_fields_table(
+    childTrackerField.$wrapper,
+    form.doc['child_tracker_table'],
     [
       {
         fieldname: 'child_tracker_docname',
         label: 'Link do Documento',
         formatter: (value, doc) => {
-          if (!value || !doc.child_tracker_doctype) return String(value || '');
-          const slug = String(doc.child_tracker_doctype).toLowerCase().replace(/\s+/g, '-');
+          if (!value || !doc['child_tracker_doctype']) return String(value || '');
+          const slug = String(doc['child_tracker_doctype']).toLowerCase().replace(/\s+/g, '-');
           return `<a href="/app/${slug}/${encodeURIComponent(String(value))}" target="_blank">${String(value)} <i class="fa fa-external-link" style="font-size: 1.25em; color: var(--text-muted)"></i></a>`;
         }
       },
@@ -102,7 +112,8 @@ async function runSync(frm: FrappeForm) {
       {
         fieldname: 'child_tracker_workflow_state',
         label: 'Status do Documento',
-        formatter: (value, doc, meta) => {
+        // formatter: (value, doc, meta) => {
+        formatter: (value, doc) => {
           if (!value) return String(value || '');
 
           const state = String(value);
@@ -134,7 +145,7 @@ async function runSync(frm: FrappeForm) {
           };
 
           // Tenta primeiro usar os metadados do workflow do Frappe
-          const doctype = doc.child_tracker_doctype;
+          const doctype = doc['child_tracker_doctype'];
           if (doctype && (window as any).frappe?.boot?.workflows) {
             try {
               const workflows = (window as any).frappe.boot.workflows as Record<string, any>;
@@ -162,54 +173,54 @@ async function runSync(frm: FrappeForm) {
 }
 
 const checklistConfig = [
-  { group: 'Inverter', doctype: 'Checklist of Inverter', table_field: 'child_tracker_table', childname: 'sp_docname' },
-  { group: 'EV Charger', doctype: 'Checklist of EV Charger', table_field: 'child_tracker_table', childname: 'sp_docname' },
-  { group: 'Battery', doctype: 'Checklist of Battery', table_field: 'child_tracker_table', childname: 'sp_docname' },
-  { group: 'Smart Meter', doctype: 'Checklist of Smart Meter', table_field: 'child_tracker_table', childname: 'sp_docname' },
-  { group: 'Smart Energy Manager', doctype: 'Checklist of Smart Energy Manager', table_field: 'child_tracker_table', childname: 'sp_docname' },
-  { group: 'Datalogger', doctype: 'Checklist of Datalogger', table_field: 'child_tracker_table', childname: 'sp_docname' }
+  { group: 'Inverter', doctype: 'Checklist of Inverter', table_field: 'child_tracker_table', childname: 'inanly_docname' },
+  { group: 'EV Charger', doctype: 'Checklist of EV Charger', table_field: 'child_tracker_table', childname: 'inanly_docname' },
+  { group: 'Battery', doctype: 'Checklist of Battery', table_field: 'child_tracker_table', childname: 'inanly_docname' },
+  { group: 'Smart Meter', doctype: 'Checklist of Smart Meter', table_field: 'child_tracker_table', childname: 'inanly_docname' },
+  { group: 'Smart Energy Manager', doctype: 'Checklist of Smart Energy Manager', table_field: 'child_tracker_table', childname: 'inanly_docname' },
+  { group: 'Datalogger', doctype: 'Checklist of Datalogger', table_field: 'child_tracker_table', childname: 'inanly_docname' }
 ];
 
-agt.checklist_table.setup = async () => {
-  await agt.checklist_table_inverter.setup();
-  await agt.checklist_table_ev_charger.setup();
-  await agt.checklist_table_battery.setup();
-  await agt.checklist_table_smart_meter.setup();
-  await agt.checklist_table_smart_energy_manager.setup();
-  await agt.checklist_table_datalogger.setup();
-  await agt.child_tracker_table.setup();
+agt.checklist.setup = async () => {
+  await agt.checklist.table.inverter.setup();
+  await agt.checklist.table.ev_charger.setup();
+  await agt.checklist.table.battery.setup();
+  await agt.checklist.table.smart_meter.setup();
+  await agt.checklist.table.smart_energy_manager.setup();
+  await agt.checklist.table.datalogger.setup();
+  await agt.checklist.tracker_table.all.setup();
 
   frappe.ui.form.on('Initial Analysis', {
-    onload: async (frm: FrappeForm) => {
-      // await trigger_sidebar(frm);
-      await runSync(frm);
-      if (frm.doc.workflow_state === agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name) {
-        await agt.initial_analysis.utils.trigger_create_sn_into_db(frm);
+    onload: async (form: FrappeForm<InitialAnalysis>) => {
+      // await trigger_sidebar(form);
+      await runSync(form);
+      if (form.doc.workflow_state === agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name) {
+        await frappe_growatt_checklists_utils.trigger_create_sn_into_db(form);
       }
     },
-    refresh: async (frm: FrappeForm) => {
-      // await trigger_sidebar(frm);
-      await runSync(frm);
-      if (frm.doc.workflow_state === agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name) {
-        await agt.initial_analysis.utils.trigger_create_sn_into_db(frm);
+    refresh: async (form: FrappeForm<InitialAnalysis>) => {
+      // await trigger_sidebar(form);
+      await runSync(form);
+      if (form.doc.workflow_state === agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name) {
+        await frappe_growatt_checklists_utils.trigger_create_sn_into_db(form);
       }
     },
-    before_save: async (frm: FrappeForm) => {
-      if (frm.doc.workflow_state === agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name) {
-        await agt.initial_analysis.utils.trigger_create_sn_into_db(frm);
+    before_save: async (form: FrappeForm<InitialAnalysis>) => {
+      if (form.doc.workflow_state === agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name) {
+        await frappe_growatt_checklists_utils.trigger_create_sn_into_db(form);
       }
-      await agt.initial_analysis.utils.share_doc_trigger(frm);
+      await frappe_growatt_checklists_utils.share_doc_trigger(form);
     }
   });
 
   checklistConfig.forEach(config => {
     frappe.ui.form.on(config.doctype, 'onload', async (form: FrappeForm) => {
-      agt.utils.form.transport_values(form, "sp_docname");
+      agt.utils.form.transport_values(form, "inanly_docname");
     });
   });
 
   frappe.ui.form.on("Compliance Statement", 'onload', async (form: FrappeForm) => {
-    agt.utils.form.transport_values(form, "sp_docname");
+    agt.utils.form.transport_values(form, "inanly_docname");
   });
 };
 

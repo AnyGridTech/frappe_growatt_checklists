@@ -16,7 +16,7 @@
   "main_eqp_purchase_invoice",
   "column_break_rwki",
   "ticket_docname",
-  "sp_docname",
+  "inanly_docname",
   "ext_fault_code",
   "ext_fault_description",
   "main_eqp_grid_connection_type",
@@ -224,7 +224,7 @@
    "reqd": 1
   },
   {
-   "fieldname": "sp_docname",
+   "fieldname": "inanly_docname",
    "fieldtype": "Link",
    "label": "Initial Analysis Reference",
    "options": "Initial Analysis",

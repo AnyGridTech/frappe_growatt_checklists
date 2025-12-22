@@ -2,7 +2,7 @@ import { WorkflowValidation } from "@anygridtech/frappe-agt-types/agt/client/wor
 
 const workflow_validations: WorkflowValidation[] = [
   {
-    workflow_action: agt.metadata.doctype.initial_analysis.workflow_action.request_checklist.name,
+    workflow_action: agt.metadata.doctype.initial_analysis.workflow_action.finish.name,
     workflow_state: agt.metadata.doctype.initial_analysis.workflow_state.holding_action.name,
     workflow_fields: [
       {

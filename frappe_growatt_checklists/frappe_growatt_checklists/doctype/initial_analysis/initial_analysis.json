@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2025-12-17 18:30:11.672803",
+ "creation": "2025-12-19 13:35:21.366300",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -11,7 +11,7 @@
   "section_checklist_links",
   "info_card",
   "ticket_docname",
-  "sp_docname",
+  "inanly_docname",
   "child_tracker_html",
   "child_tracker_table",
   "main_eqp_purchase_invoice",
@@ -78,7 +78,7 @@
    "read_only": 1
   },
   {
-   "fieldname": "sp_docname",
+   "fieldname": "inanly_docname",
    "fieldtype": "Data",
    "label": "Reference [Initial Analysis]",
    "read_only": 1
@@ -273,7 +273,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-17 18:30:11.672803",
+ "modified": "2025-12-19 13:35:21.366300",
  "modified_by": "Administrator",
  "module": "Frappe Growatt Checklists",
  "name": "Initial Analysis",
