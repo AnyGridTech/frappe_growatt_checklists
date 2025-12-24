@@ -5,11 +5,12 @@
  "creation": "2025-12-17 15:48:14.260424",
  "doctype": "DocType",
  "engine": "InnoDB",
- "field_order": [
-  "suporte_tab",
-  "protocolo_vinculado_section",
-  "ticket_docname",
-  "inanly_docname",
+    "field_order": [
+    "suporte_tab",
+    "protocolo_vinculado_section",
+    "ticket_docname",
+    "inanly_docname",
+    "info_card",
   "general_info_section",
   "main_eqp_serial_no",
   "main_eqp_model_ref",
@@ -81,15 +82,20 @@
    "read_only": 1,
    "reqd": 1
   },
-  {
-   "description": "*<strong>Linked</strong> with the document above. Access the link to view.",
-   "fieldname": "inanly_docname",
-   "fieldtype": "Link",
-   "label": "Service Protocol Reference",
-   "options": "Initial Analysis",
-   "read_only": 1,
-   "reqd": 1
-  },
+    {
+     "description": "*<strong>Linked</strong> with the document above. Access the link to view.",
+     "fieldname": "inanly_docname",
+     "fieldtype": "Link",
+     "label": "Initial Analysis Reference",
+     "options": "Initial Analysis",
+     "read_only": 1,
+     "reqd": 1
+    },
+    {
+     "fieldname": "info_card",
+     "fieldtype": "HTML",
+     "label": "Ticket Info Card"
+    },
   {
    "fieldname": "general_info_section",
    "fieldtype": "Section Break",

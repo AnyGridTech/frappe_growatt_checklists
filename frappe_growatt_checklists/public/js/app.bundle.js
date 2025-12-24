@@ -44,8 +44,8 @@
         await agt.utils.doc.share_doc("Checklist of Datalogger", row.checklist_docname, shared_users);
       });
       wsp?.forEach(async (row) => {
-        await agt.utils.doc.update_doc("Service Protocol", row.checklist_docname, clean_dict);
-        await agt.utils.doc.share_doc("Service Protocol", row.checklist_docname, shared_users);
+        await agt.utils.doc.update_doc("Initial Analysis", row.checklist_docname, clean_dict);
+        await agt.utils.doc.share_doc("Initial Analysis", row.checklist_docname, shared_users);
       });
     },
     fields_listener(form) {
@@ -249,7 +249,7 @@
             write: 1
           }
         ];
-        await agt.utils.doc.share_doc("Service Protocol", form.doc.name, shared_users);
+        await agt.utils.doc.share_doc("Initial Analysis", form.doc.name, shared_users);
       }
     }
   };

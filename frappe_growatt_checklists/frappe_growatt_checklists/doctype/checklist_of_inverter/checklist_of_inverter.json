@@ -531,7 +531,7 @@
    "fieldname": "batteries_table",
    "fieldtype": "Table",
    "label": "Connected Batteries",
-   "options": "Inverter Checklist Connected Batteries Table"
+   "options": "Checklist of Inverter Connected Batteries Table"
   },
   {
    "fieldname": "section_battery_settings",
