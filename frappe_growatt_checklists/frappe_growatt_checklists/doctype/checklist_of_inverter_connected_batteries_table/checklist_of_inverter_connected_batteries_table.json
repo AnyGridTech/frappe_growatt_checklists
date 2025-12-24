@@ -1,8 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-12-17 12:50:33.111220",
- "custom": 1,
+ "creation": "2025-12-24 12:26:02.386334",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -26,7 +25,7 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "Modelo de Bateria",
+    "label": "Battery Model",
    "reqd": 1
   },
   {
@@ -39,7 +38,7 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "SN",
+    "label": "Battery S/N",
    "reqd": 1
   },
   {
@@ -52,8 +51,8 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "Tipo de Bateria",
-   "options": "\nL\u00edtio\nChumbo \u00c1cido",
+    "label": "Battery Type",
+    "options": "\nLithium\nLead Acid",
    "reqd": 1
   },
   {
@@ -66,8 +65,8 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "Entrada de comunica\u00e7\u00e3o",
-   "options": "\nBMS\nRS485",
+    "label": "Communication Entry",
+    "options": "\nBMS\nRS485",
    "reqd": 1
   },
   {
@@ -75,7 +74,7 @@
    "allow_on_submit": 1,
    "fieldname": "battery_label_picture",
    "fieldtype": "Attach",
-   "label": "Foto da Etiqueta da Bateria",
+    "label": "Battery Label Photo",
    "reqd": 1
   },
   {
@@ -83,7 +82,7 @@
    "allow_on_submit": 1,
    "fieldname": "battery_configurations_video",
    "fieldtype": "Attach",
-   "label": "Video das configura\u00e7\u00f5es da Bateria",
+    "label": "Battery Settings Video",
    "reqd": 1
   },
   {
@@ -91,7 +90,7 @@
    "allow_on_submit": 1,
    "fieldname": "battery_opencircuit_voltage_picture",
    "fieldtype": "Attach",
-   "label": "Tens\u00e3o da Bateria em circuito Aberto",
+    "label": "Battery Voltage in Open Circuit",
    "reqd": 1
   },
   {
@@ -99,7 +98,7 @@
    "allow_on_submit": 1,
    "fieldname": "battery_closedcircuit_voltage_picture",
    "fieldtype": "Attach",
-   "label": "Tens\u00e3o da Bateria circuito Fechado",
+    "label": "Battery Voltage in Closed Circuit",
    "reqd": 1
   }
  ],
@@ -107,10 +106,10 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-12-17 12:50:33.111220",
+ "modified": "2025-12-24 12:26:52.839971",
  "modified_by": "Administrator",
  "module": "Frappe Growatt Checklists",
- "name": "Inverter Checklist Connected Batteries Table",
+ "name": "Checklist of Inverter Connected Batteries Table",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",

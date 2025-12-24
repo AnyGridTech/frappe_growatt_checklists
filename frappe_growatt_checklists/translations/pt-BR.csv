@@ -1,3 +1,13 @@
+Battery Model,Modelo de Bateria
+Battery S/N,S/N da Bateria
+Battery Type,Tipo de Bateria
+Lithium,Lítio
+Lead Acid,Chumbo Ácido
+Communication Entry,Entrada de Comunicação
+Battery Label Photo,Foto da Etiqueta da Bateria
+Battery Settings Video,Video das configurações da Bateria
+Battery Voltage in Open Circuit,Tensão da Bateria em circuito Aberto
+Battery Voltage in Closed Circuit,Tensão da Bateria circuito Fechado
 AC Continuity Test (optional),Teste de Continuidade AC (opcional)
 AC Current L1,Corrente AC L1
 AC Current L2,Corrente AC L2

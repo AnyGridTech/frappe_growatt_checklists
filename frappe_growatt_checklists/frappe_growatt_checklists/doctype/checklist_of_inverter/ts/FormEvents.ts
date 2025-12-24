@@ -43,7 +43,7 @@ function fields_listener(form: FrappeForm<ChecklistInverter>) {
 
 async function fields_handler(form: FrappeForm<ChecklistInverter>) {
 
-  // take values from service protocol
+  // take values from Initial Analysis
   const main_eqp_type = await agt.utils.get_value_from_any_doc(form, 'Ticket', 'ticket_docname', 'main_eqp_type');
   const main_eqp_phase = await agt.utils.get_value_from_any_doc(form, 'Ticket', 'ticket_docname', 'main_eqp_phase');
   const main_eqp_has_battery = await agt.utils.get_value_from_any_doc(form, 'Initial Analysis', 'inanly_docname', 'main_eqp_has_battery');
