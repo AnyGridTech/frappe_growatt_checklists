@@ -2,6 +2,7 @@
   {
     "docstatus": 0,
     "doctype": "Workflow",
+    "workflow_name": "Proposed Dispatch",
     "document_type": "Proposed Dispatch",
     "is_active": 1,
     "name": "Proposed Dispatch",
@@ -124,6 +125,7 @@
   {
     "docstatus": 0,
     "doctype": "Workflow",
+    "workflow_name": "Initial Analysis",
     "document_type": "Initial Analysis",
     "is_active": 1,
     "name": "Initial Analysis",
@@ -297,6 +299,7 @@
   {
     "docstatus": 0,
     "doctype": "Workflow",
+    "workflow_name": "Checklist of Inverter",
     "document_type": "Checklist of Inverter",
     "is_active": 1,
     "name": "Checklist of Inverter",
@@ -470,6 +473,7 @@
   {
     "docstatus": 0,
     "doctype": "Workflow",
+    "workflow_name": "Checklist of Datalogger",
     "document_type": "Checklist of Datalogger",
     "is_active": 1,
     "name": "Checklist of Datalogger",
@@ -643,6 +647,7 @@
   {
     "docstatus": 0,
     "doctype": "Workflow",
+    "workflow_name": "Checklist of EV Charger",
     "document_type": "Checklist of EV Charger",
     "is_active": 1,
     "name": "Checklist of EV Charger",
@@ -816,6 +821,7 @@
   {
     "docstatus": 0,
     "doctype": "Workflow",
+    "workflow_name": "Checklist of Smart Energy Manager",
     "document_type": "Checklist of Smart Energy Manager",
     "is_active": 1,
     "name": "Checklist of Smart Energy Manager",
@@ -989,6 +995,7 @@
   {
     "docstatus": 0,
     "doctype": "Workflow",
+    "workflow_name": "Checklist of Smart Meter",
     "document_type": "Checklist of Smart Meter",
     "is_active": 1,
     "name": "Checklist of Smart Meter",
