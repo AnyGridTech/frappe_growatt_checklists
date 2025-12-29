@@ -23,7 +23,8 @@
         "state": "Active",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Proposed Dispatch"
       },
       {
         "allow_edit": "Information Technology User",
@@ -38,7 +39,8 @@
         "state": "Finished",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Proposed Dispatch"
       },
       {
         "allow_edit": "Information Technology User",
@@ -53,7 +55,8 @@
         "state": "Rejected",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Proposed Dispatch"
       },
       {
         "allow_edit": "Information Technology User",
@@ -68,7 +71,8 @@
         "state": "Cancelled",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Proposed Dispatch"
       }
     ],
     "transitions": [
@@ -82,7 +86,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Active",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Proposed Dispatch"
       },
       {
         "action": "Cancel",
@@ -94,7 +99,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Active",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Proposed Dispatch"
       },
       {
         "action": "Cancel",
@@ -106,7 +112,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Rejected",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Proposed Dispatch"
       },
       {
         "action": "Cancel",
@@ -118,7 +125,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Finished",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Proposed Dispatch"
       }
     ]
   },
@@ -146,7 +154,8 @@
         "state": "Awaiting Action",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Initial Analysis"
       },
       {
         "allow_edit": "All",
@@ -161,7 +170,8 @@
         "state": "Revision",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Initial Analysis"
       },
       {
         "allow_edit": "Information Technology User",
@@ -176,7 +186,8 @@
         "state": "Finished",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Initial Analysis"
       },
       {
         "allow_edit": "Information Technology User",
@@ -191,7 +202,8 @@
         "state": "Rejected",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Initial Analysis"
       },
       {
         "allow_edit": "Information Technology User",
@@ -206,7 +218,8 @@
         "state": "Cancelled",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Initial Analysis"
       }
     ],
     "transitions": [
@@ -220,7 +233,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Initial Analysis"
       },
       {
         "action": "Finish",
@@ -232,7 +246,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Initial Analysis"
       },
       {
         "action": "Reject",
@@ -244,7 +259,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Initial Analysis"
       },
       {
         "action": "Cancel",
@@ -256,7 +272,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Revision",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Initial Analysis"
       },
       {
         "action": "Approve",
@@ -268,7 +285,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Revision",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Initial Analysis"
       },
       {
         "action": "Cancel",
@@ -280,7 +298,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Rejected",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Initial Analysis"
       },
       {
         "action": "Cancel",
@@ -292,7 +311,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Finished",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Initial Analysis"
       }
     ]
   },
@@ -320,7 +340,8 @@
         "state": "Awaiting Action",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Inverter"
       },
       {
         "allow_edit": "All",
@@ -335,7 +356,8 @@
         "state": "Revision",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Inverter"
       },
       {
         "allow_edit": "Information Technology User",
@@ -350,7 +372,8 @@
         "state": "Finished",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Inverter"
       },
       {
         "allow_edit": "Information Technology User",
@@ -365,7 +388,8 @@
         "state": "Rejected",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Inverter"
       },
       {
         "allow_edit": "Information Technology User",
@@ -380,7 +404,8 @@
         "state": "Cancelled",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Inverter"
       }
     ],
     "transitions": [
@@ -394,7 +419,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Inverter"
       },
       {
         "action": "Finish",
@@ -406,7 +432,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Inverter"
       },
       {
         "action": "Reject",
@@ -418,7 +445,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Inverter"
       },
       {
         "action": "Cancel",
@@ -430,7 +458,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Revision",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Inverter"
       },
       {
         "action": "Approve",
@@ -442,7 +471,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Revision",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Inverter"
       },
       {
         "action": "Cancel",
@@ -454,7 +484,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Rejected",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Inverter"
       },
       {
         "action": "Cancel",
@@ -466,7 +497,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Finished",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Inverter"
       }
     ]
   },
@@ -494,7 +526,8 @@
         "state": "Awaiting Action",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Datalogger"
       },
       {
         "allow_edit": "All",
@@ -509,7 +542,8 @@
         "state": "Revision",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Datalogger"
       },
       {
         "allow_edit": "Information Technology User",
@@ -524,7 +558,8 @@
         "state": "Finished",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Datalogger"
       },
       {
         "allow_edit": "Information Technology User",
@@ -539,7 +574,8 @@
         "state": "Rejected",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Datalogger"
       },
       {
         "allow_edit": "Information Technology User",
@@ -554,7 +590,8 @@
         "state": "Cancelled",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Datalogger"
       }
     ],
     "transitions": [
@@ -568,7 +605,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Datalogger"
       },
       {
         "action": "Finish",
@@ -580,7 +618,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Datalogger"
       },
       {
         "action": "Reject",
@@ -592,7 +631,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Datalogger"
       },
       {
         "action": "Cancel",
@@ -604,7 +644,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Revision",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Datalogger"
       },
       {
         "action": "Approve",
@@ -616,7 +657,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Revision",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Datalogger"
       },
       {
         "action": "Cancel",
@@ -628,7 +670,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Rejected",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Datalogger"
       },
       {
         "action": "Cancel",
@@ -640,7 +683,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Finished",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Datalogger"
       }
     ]
   },
@@ -668,7 +712,8 @@
         "state": "Awaiting Action",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of EV Charger"
       },
       {
         "allow_edit": "All",
@@ -683,7 +728,8 @@
         "state": "Revision",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of EV Charger"
       },
       {
         "allow_edit": "Information Technology User",
@@ -698,7 +744,8 @@
         "state": "Finished",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of EV Charger"
       },
       {
         "allow_edit": "Information Technology User",
@@ -713,7 +760,8 @@
         "state": "Rejected",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of EV Charger"
       },
       {
         "allow_edit": "Information Technology User",
@@ -728,7 +776,8 @@
         "state": "Cancelled",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of EV Charger"
       }
     ],
     "transitions": [
@@ -742,7 +791,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of EV Charger"
       },
       {
         "action": "Finish",
@@ -754,7 +804,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of EV Charger"
       },
       {
         "action": "Reject",
@@ -766,7 +817,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of EV Charger"
       },
       {
         "action": "Cancel",
@@ -778,7 +830,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Revision",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of EV Charger"
       },
       {
         "action": "Approve",
@@ -790,7 +843,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Revision",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of EV Charger"
       },
       {
         "action": "Cancel",
@@ -802,7 +856,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Rejected",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of EV Charger"
       },
       {
         "action": "Cancel",
@@ -814,7 +869,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Finished",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of EV Charger"
       }
     ]
   },
@@ -842,7 +898,8 @@
         "state": "Awaiting Action",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Energy Manager"
       },
       {
         "allow_edit": "All",
@@ -857,7 +914,8 @@
         "state": "Revision",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Energy Manager"
       },
       {
         "allow_edit": "Information Technology User",
@@ -872,7 +930,8 @@
         "state": "Finished",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Energy Manager"
       },
       {
         "allow_edit": "Information Technology User",
@@ -887,7 +946,8 @@
         "state": "Rejected",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Energy Manager"
       },
       {
         "allow_edit": "Information Technology User",
@@ -902,7 +962,8 @@
         "state": "Cancelled",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Energy Manager"
       }
     ],
     "transitions": [
@@ -916,7 +977,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Energy Manager"
       },
       {
         "action": "Finish",
@@ -928,7 +990,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Energy Manager"
       },
       {
         "action": "Reject",
@@ -940,7 +1003,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Energy Manager"
       },
       {
         "action": "Cancel",
@@ -952,7 +1016,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Revision",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Energy Manager"
       },
       {
         "action": "Approve",
@@ -964,7 +1029,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Revision",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Energy Manager"
       },
       {
         "action": "Cancel",
@@ -976,7 +1042,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Rejected",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Energy Manager"
       },
       {
         "action": "Cancel",
@@ -988,7 +1055,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Finished",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Energy Manager"
       }
     ]
   },
@@ -1016,7 +1084,8 @@
         "state": "Awaiting Action",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Meter"
       },
       {
         "allow_edit": "All",
@@ -1031,7 +1100,8 @@
         "state": "Revision",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Meter"
       },
       {
         "allow_edit": "Information Technology User",
@@ -1046,7 +1116,8 @@
         "state": "Finished",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Meter"
       },
       {
         "allow_edit": "Information Technology User",
@@ -1061,7 +1132,8 @@
         "state": "Rejected",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Meter"
       },
       {
         "allow_edit": "Information Technology User",
@@ -1076,7 +1148,8 @@
         "state": "Cancelled",
         "update_field": null,
         "update_value": null,
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Meter"
       }
     ],
     "transitions": [
@@ -1090,7 +1163,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Meter"
       },
       {
         "action": "Finish",
@@ -1102,7 +1176,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Meter"
       },
       {
         "action": "Reject",
@@ -1114,7 +1189,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Awaiting Action",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Meter"
       },
       {
         "action": "Cancel",
@@ -1126,7 +1202,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Revision",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Meter"
       },
       {
         "action": "Approve",
@@ -1138,7 +1215,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Revision",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Meter"
       },
       {
         "action": "Cancel",
@@ -1150,7 +1228,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Rejected",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Meter"
       },
       {
         "action": "Cancel",
@@ -1162,7 +1241,8 @@
         "parentfield": "transitions",
         "parenttype": "Workflow",
         "state": "Finished",
-        "workflow_builder_id": null
+        "workflow_builder_id": null,
+        "workflow_name": "Checklist of Smart Meter"
       }
     ]
   }
