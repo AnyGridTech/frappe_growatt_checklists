@@ -39,12 +39,12 @@
     const main_eqp_has_transformer = await agt.utils.get_value_from_any_doc(form, "Initial Analysis", "inanly_docname", "main_eqp_has_transformer");
     const workflowStates = agt.metadata.doctype.checklist.workflow_state;
     const currentStateId = Object.values(workflowStates).find((state) => state.name === form.doc.workflow_state)?.id ?? 0;
-    agt.utils.table.custom_add_row_button(form, "inverter_mppt_continuity_test_video", "Adicionar V\xEDdeo");
-    agt.utils.table.custom_add_row_button(form, "inverter_dc_strings_opencircuit_voltage_picture", "Adicionar Foto");
-    agt.utils.table.custom_add_row_button(form, "inverter_dc_voltage_positive_pe_picture", "Adicionar Foto");
-    agt.utils.table.custom_add_row_button(form, "inverter_dc_voltage_negative_pe_picture", "Adicionar Foto");
-    agt.utils.table.custom_add_row_button(form, "inverter_dc_connectors_picture", "Adicionar Foto");
-    agt.utils.table.custom_add_row_button(form, "batteries_table", "Adicionar Bateria");
+    agt.utils.table.custom_add_row_button(form, "inverter_mppt_continuity_test_video", "Add Video");
+    agt.utils.table.custom_add_row_button(form, "inverter_dc_strings_opencircuit_voltage_picture", "Add Photo");
+    agt.utils.table.custom_add_row_button(form, "inverter_dc_voltage_positive_pe_picture", "Add Photo");
+    agt.utils.table.custom_add_row_button(form, "inverter_dc_voltage_negative_pe_picture", "Add Photo");
+    agt.utils.table.custom_add_row_button(form, "inverter_dc_connectors_picture", "Add Photo");
+    agt.utils.table.custom_add_row_button(form, "batteries_table", "Add Battery");
     if (form.doc.__islocal) {
       Object.keys(form.fields_dict).forEach((fn) => form.set_df_property(fn, "hidden", 1));
     }
