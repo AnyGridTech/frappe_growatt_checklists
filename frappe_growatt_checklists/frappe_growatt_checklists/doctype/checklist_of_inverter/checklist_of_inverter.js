@@ -32,11 +32,23 @@
   async function fields_handler(form) {
     const main_eqp_type = await agt.utils.get_value_from_any_doc(form, "Ticket", "ticket_docname", "main_eqp_type");
     const main_eqp_phase = await agt.utils.get_value_from_any_doc(form, "Ticket", "ticket_docname", "main_eqp_phase");
-    const main_eqp_has_battery = await agt.utils.get_value_from_any_doc(form, "Initial Analysis", "inanly_docname", "main_eqp_has_battery");
-    const main_eqp_has_sem = await agt.utils.get_value_from_any_doc(form, "Initial Analysis", "inanly_docname", "main_eqp_has_sem");
-    const main_eqp_has_sm = await agt.utils.get_value_from_any_doc(form, "Initial Analysis", "inanly_docname", "main_eqp_has_sm");
-    const main_eqp_has_neutral = await agt.utils.get_value_from_any_doc(form, "Initial Analysis", "inanly_docname", "main_eqp_has_neutral");
-    const main_eqp_has_transformer = await agt.utils.get_value_from_any_doc(form, "Initial Analysis", "inanly_docname", "main_eqp_has_transformer");
+    const main_eqp_purchase_invoice = await agt.utils.get_target_field_by_field_match(form, "Initial Analysis", "ticket_docname", "ticket_docname", "main_eqp_purchase_invoice");
+    const main_eqp_has_battery = await agt.utils.get_target_field_by_field_match(form, "Initial Analysis", "ticket_docname", "ticket_docname", "main_eqp_has_battery");
+    const main_eqp_has_sem = await agt.utils.get_target_field_by_field_match(form, "Initial Analysis", "ticket_docname", "ticket_docname", "main_eqp_has_sem");
+    const main_eqp_has_sm = await agt.utils.get_target_field_by_field_match(form, "Initial Analysis", "ticket_docname", "ticket_docname", "main_eqp_has_sm");
+    const main_eqp_has_neutral = await agt.utils.get_target_field_by_field_match(form, "Initial Analysis", "ticket_docname", "ticket_docname", "main_eqp_has_neutral");
+    const main_eqp_has_transformer = await agt.utils.get_target_field_by_field_match(form, "Initial Analysis", "ticket_docname", "ticket_docname", "main_eqp_has_transformer");
+    const valuesToSet = {
+      main_eqp_purchase_invoice,
+      main_eqp_has_battery,
+      main_eqp_has_sem,
+      main_eqp_has_sm,
+      main_eqp_has_neutral,
+      main_eqp_has_transformer
+    };
+    Object.entries(valuesToSet).forEach(([field, value]) => {
+      form.set_value(field, value);
+    });
     const workflowStates = agt.metadata.doctype.checklist.workflow_state;
     const currentStateId = Object.values(workflowStates).find((state) => state.name === form.doc.workflow_state)?.id ?? 0;
     agt.utils.table.custom_add_row_button(form, "inverter_mppt_continuity_test_video", "Add Video");

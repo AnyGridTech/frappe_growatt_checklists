@@ -10,7 +10,6 @@
         "section_checklist_links",
         "info_card",
         "ticket_docname",
-        "inanly_docname",
         "child_tracker_html",
         "child_tracker_table",
         "main_eqp_purchase_invoice",
@@ -74,12 +73,6 @@
             "fieldname": "ticket_docname",
             "fieldtype": "Data",
             "label": "Reference [Ticket]",
-            "read_only": 1
-        },
-        {
-            "fieldname": "inanly_docname",
-            "fieldtype": "Data",
-            "label": "Reference [Initial Analysis]",
             "read_only": 1
         },
         {

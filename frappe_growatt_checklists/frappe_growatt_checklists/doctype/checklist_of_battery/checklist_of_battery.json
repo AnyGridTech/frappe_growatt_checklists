@@ -15,7 +15,6 @@
         "main_eqp_type",
         "column_break_rwki",
         "ticket_docname",
-        "inanly_docname",
         "info_card",
         "ext_fault_code",
         "ext_fault_description",
@@ -133,14 +132,6 @@
             "fieldname": "info_card",
             "fieldtype": "HTML",
             "label": "Ticket Info Card"
-        },
-        {
-            "fieldname": "inanly_docname",
-            "fieldtype": "Link",
-            "label": "Initial Analysis",
-            "options": "Initial Analysis",
-            "read_only": 1,
-            "reqd": 1
         },
         {
             "fieldname": "ext_fault_code",

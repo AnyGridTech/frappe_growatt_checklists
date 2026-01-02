@@ -59,7 +59,7 @@
             company: { value: service_partner_company },
             status: { value: "Active" }
           };
-          const sn_docname = await agt.utils.doc.create_doc("Serial No", { docname: "inanly_docname" }, serialNoFields);
+          const sn_docname = await agt.utils.doc.create_doc("Serial No", { docname: "ticket_docname" }, serialNoFields);
           if (!sn_docname) throw new Error("Falha ao criar Serial No - nenhum nome de documento retornado");
           await agt.utils.update_workflow_state({
             doctype: "Serial No",
