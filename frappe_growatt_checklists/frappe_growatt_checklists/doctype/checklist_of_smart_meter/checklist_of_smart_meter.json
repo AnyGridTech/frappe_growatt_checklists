@@ -16,7 +16,6 @@
         "main_eqp_purchase_invoice",
         "column_break_rwki",
         "ticket_docname",
-        "inanly_docname",
         "info_card",
         "ext_fault_code",
         "ext_fault_description",
@@ -222,13 +221,6 @@
             "fieldtype": "Link",
             "label": "Ticket Reference",
             "options": "Ticket",
-            "reqd": 1
-        },
-        {
-            "fieldname": "inanly_docname",
-            "fieldtype": "Link",
-            "label": "Initial Analysis Reference",
-            "options": "Initial Analysis",
             "reqd": 1
         },
         {

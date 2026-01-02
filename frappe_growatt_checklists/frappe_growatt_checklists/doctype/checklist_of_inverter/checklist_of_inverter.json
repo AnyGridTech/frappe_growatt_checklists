@@ -10,7 +10,6 @@
   "suporte_tab",
   "section_main",
   "ticket_docname",
-  "inanly_docname",
   "info_card",
   "main_eqp_serial_no_label_picture",
   "main_eqp_purchase_invoice",
@@ -154,13 +153,6 @@
    "fieldtype": "Link",
    "label": "Reference [Ticket]",
    "options": "Ticket",
-   "read_only": 1
-  },
-  {
-   "fieldname": "inanly_docname",
-   "fieldtype": "Link",
-   "label": "Reference [Initial Analysis]",
-   "options": "Initial Analysis",
    "read_only": 1
   },
   {
