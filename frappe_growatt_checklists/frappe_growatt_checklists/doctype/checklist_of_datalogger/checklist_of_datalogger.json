@@ -230,12 +230,12 @@
    "options": "Corrections Tracker"
   },
   {
-   "default": "CHKDLG-.MM.YY.-.####",
+   "default": "CHKDLG-.DD.MM.YY.-.####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "hidden": 1,
    "label": "Series",
-   "options": "CHKDLG-.MM.YY.-.####",
+   "options": "CHKDLG-.DD.MM.YY.-.####",
    "reqd": 1
   },
   {

@@ -810,9 +810,9 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Series",
-   "options": "CHKINV-.MM.YY.-.####",
+   "options": "CHKINV-.DD.MM.YY.-.####",
    "reqd": 1,
-   "default": "CHKINV-.MM.YY.-.####",
+   "default": "CHKINV-.DD.MM.YY.-.####",
    "hidden": 1
   },
   {

@@ -161,9 +161,9 @@
             "fieldname": "naming_series",
             "fieldtype": "Select",
             "label": "Series",
-            "options": "CHKSEM-.MM.YY.-.####",
+            "options": "CHKSEM-.DD.MM.YY.-.####",
             "reqd": 1,
-            "default": "CHKSEM-.MM.YY.-.####",
+            "default": "CHKSEM-.DD.MM.YY.-.####",
             "hidden": 1
         },
         {

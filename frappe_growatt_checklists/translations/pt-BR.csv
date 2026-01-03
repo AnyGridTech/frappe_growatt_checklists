@@ -330,3 +330,12 @@ ZIP Code,CEP
 "7. Force Majeure (Lightning, Overvoltage, Fans, Fires and Others)","7. Força Maior (raios, sobretensão, ventoinhas, incêndios e outros)."
 8,8
 8. Warranty Period Expired,8. Tempo de garantia expirado
+The applied solution must be consistent with the case completion.,A solução aplicada deve ser condizente com a finalização do caso.
+The failure code must be provided to proceed with checklist creation.,O código da falha deve ser informado para prosseguir com a criação do checklist.
+The failure date must be provided to proceed with checklist creation.,A data da falha deve ser informada para prosseguir com a criação do checklist.
+The failure description must be provided to proceed with checklist creation.,A descrição da falha deve ser informada para prosseguir com a criação do checklist.
+The label description must have at least 15 characters to proceed with checklist creation.,A descrição do label deve ter no mínimo 15 caracteres para prosseguir com a criação do checklist.
+The purchase invoice must be attached to proceed with checklist creation.,A nota fiscal deve ser anexada para prosseguir com a criação do checklist.
+The serial number label must be attached to proceed with checklist creation.,A etiqueta do número de série deve ser anexada para prosseguir com a criação do checklist.
+The solution description must have at least 15 characters to proceed with checklist creation.,A descrição da solução deve ter no mínimo 15 caracteres para prosseguir com a criação do checklist.
+The solution must be selected to proceed with checklist creation.,A solução deve ser selecionada para prosseguir com a criação do checklist.

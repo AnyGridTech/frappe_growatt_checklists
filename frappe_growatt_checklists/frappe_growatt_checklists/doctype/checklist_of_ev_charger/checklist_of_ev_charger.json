@@ -340,9 +340,9 @@
       "fieldname": "naming_series",
       "fieldtype": "Select",
       "label": "Series",
-      "options": "CHKEVC-.MM.YY.-.####",
+      "options": "CHKEVC-.DD.MM.YY.-.####",
       "reqd": 1,
-      "default": "CHKEVC-.MM.YY.-.####",
+      "default": "CHKEVC-.DD.MM.YY.-.####",
       "hidden": 1
     },
     {
