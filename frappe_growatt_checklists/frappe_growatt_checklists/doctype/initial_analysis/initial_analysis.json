@@ -46,12 +46,12 @@
     ],
     "fields": [
         {
-            "default": "INANLY-.MM.YY.-.####",
+            "default": "INANLY-.DD.MM.YY.-.####",
             "fieldname": "naming_series",
             "fieldtype": "Select",
             "hidden": 1,
             "label": "Series",
-            "options": "INANLY-.MM.YY.-.####",
+            "options": "INANLY-.DD.MM.YY.-.####",
             "reqd": 1
         },
         {
@@ -215,7 +215,7 @@
             "fieldname": "solution_select",
             "fieldtype": "Select",
             "label": "Applied Solution",
-            "options": "Parameterization\nInstallation\nTechnical Questions\nDeep Analysis\nNo Action Needed\nUpdate Firmware"
+            "options": "\nParameterization\nInstallation\nTechnical Questions\nDeep Analysis\nNo Action Needed\nUpdate Firmware"
         },
         {
             "fieldname": "tab_internal",

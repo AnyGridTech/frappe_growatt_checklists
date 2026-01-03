@@ -72,9 +72,9 @@
             "fieldname": "naming_series",
             "fieldtype": "Select",
             "label": "Series",
-            "options": "CHKBAT-.MM.YY.-.####",
+            "options": "CHKBAT-.DD.MM.YY.-.####",
             "reqd": 1,
-            "default": "CHKBAT-.MM.YY.-.####",
+            "default": "CHKBAT-.DD.MM.YY.-.####",
             "hidden": 1
         },
         {

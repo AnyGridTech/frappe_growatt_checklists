@@ -15,7 +15,9 @@ export const initial_analysis_utils = {
 
 frappe.ui.form.on("Initial Analysis", {
   setup: async (form: FrappeForm<InitialAnalysis>) => {
-    await agt.setup.run();
+    // await agt.setup.run();
+    // await agt.checklist.setup();
+    await agt.corrections_tracker.run.run();
     initial_analysis_utils.fields_listener(form);
   },
   onload: async (form: FrappeForm<InitialAnalysis>) => {
@@ -29,6 +31,9 @@ frappe.ui.form.on("Initial Analysis", {
   },
   validate: async (form: FrappeForm<InitialAnalysis>) => {
     initial_analysis_utils.fields_listener(form);
+  },
+  before_workflow_action: async () => {
+    await agt.workflow.validate();
   }
 },
 );
