@@ -92,9 +92,6 @@ const workflow_validations: WorkflowValidation[] = [
           if (!solution) {
             return "The solution must be selected to proceed with checklist creation.";
           }
-          if (solution === "Deep Analysis") {
-            return "The applied solution must be consistent with the case completion. 'Deep Analysis' cannot be used to finish the workflow.";
-          }
           return undefined;
         }
       },
