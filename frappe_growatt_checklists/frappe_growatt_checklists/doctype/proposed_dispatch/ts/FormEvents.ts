@@ -6,8 +6,8 @@ export const proposed_dispatch_utils = {
     const table = form.doc["proposed_dispatch_table"] || [];
     if (!Array.isArray(table) || table.length === 0) {
       frappe.msgprint({
-        title: "Erro de Validação",
-        message: "Adicione pelo menos um item à tabela antes de finalizar.",
+        title: "Validation Error",
+        message: "Add at least one item to the table before submitting.",
         indicator: "red",
       });
       frappe.validated = false;
@@ -16,8 +16,8 @@ export const proposed_dispatch_utils = {
     for (const row of table) {
       if (!row.item_quantity || row.item_quantity < 1) {
         frappe.msgprint({
-          title: "Erro de Validação",
-          message: "Cada item deve ter quantidade maior ou igual a 1.",
+          title: "Validation Error",
+          message: "Each item must have a quantity greater than or equal to 1.",
           indicator: "red",
         });
         frappe.validated = false;
@@ -28,7 +28,15 @@ export const proposed_dispatch_utils = {
 };
 
 frappe.ui.form.on("Proposed Dispatch", {
+  setup: async () => {
+    await agt.corrections_tracker.run.run();
+  },
+  
   validate: (form: FrappeForm<Record<string, any>>) => {
     proposed_dispatch_utils.validate(form);
   },
+  
+  before_workflow_action: async () => {
+    await agt.workflow.validate();
+  }
 });

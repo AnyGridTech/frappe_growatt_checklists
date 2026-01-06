@@ -129,16 +129,8 @@ async function fields_handler(form: FrappeForm<ChecklistInverter>) {
     'inverter_output_voltage_t_pe_picture',
   ];
 
-  if (main_eqp_phase === "Single-Phase") {
-    form.set_df_property('main_eqp_grid_connection_type', 'options', ['', 'Monofásico', 'Bifásico']);
-    form.set_df_property('main_eqp_grid_connection_type', 'read_only', 0);
-  } else if (main_eqp_phase === "Three-Phase") {
-    form.set_value('main_eqp_grid_connection_type', 'Trifásico');
-    form.set_df_property('main_eqp_grid_connection_type', 'read_only', 1);
-  }
-
-  const isMonophase = main_eqp_phase === "Monofásico" || main_eqp_phase === "Single-Phase";
-  const isTriphase = main_eqp_phase === "Trifásico" || main_eqp_phase === "Three-Phase";
+  const isMonophase = main_eqp_phase === "Single-Phase";
+  const isTriphase = main_eqp_phase === "Three-Phase";
   monophaseFields.forEach(f => form.set_df_property(f, 'hidden', !isMonophase));
   triphaseFields.forEach(f => form.set_df_property(f, 'hidden', !isTriphase));
 

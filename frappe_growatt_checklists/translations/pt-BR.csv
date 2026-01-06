@@ -339,7 +339,7 @@ The purchase invoice must be attached to proceed with checklist creation.,A nota
 The serial number label must be attached to proceed with checklist creation.,A etiqueta do número de série deve ser anexada para prosseguir com a criação do checklist.
 The solution description must have at least 15 characters to proceed with checklist creation.,A descrição da solução deve ter no mínimo 15 caracteres para prosseguir com a criação do checklist.
 The solution must be selected to proceed with checklist creation.,A solução deve ser selecionada para prosseguir com a criação do checklist.
-Are you sure you want to advance the workflow to '{0}'? This action will bypass permission checks.,Tem certeza que deseja avançar o workflow para '{0}'? Esta ação irá ignorar verificações de permissão.
+Are you sure you want to move the workflow to '{0}'? This action will bypass permission checks.,Tem certeza que deseja mover o workflow para '{0}'? Esta ação irá ignorar verificações de permissão.
 Workflow successfully transitioned to '{0}',Workflow transicionado com sucesso para '{0}'
 Workflow Transition Failed,Falha na Transição do Workflow
 Failed to transition workflow to '{0}'. Please try again or contact your system administrator.,Falha ao transicionar workflow para '{0}'. Por favor tente novamente ou contate seu administrador do sistema.
