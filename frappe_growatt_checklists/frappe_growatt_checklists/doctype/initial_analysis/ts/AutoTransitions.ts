@@ -30,50 +30,17 @@ export const AutoTransitions = {
 
     console.log(`Preparing to redirect to Ticket: ${ticket_docname}`);
 
-    // Handler to prevent browser tab close during redirect
-    const beforeUnloadHandler = (e: BeforeUnloadEvent) => {
-      e.preventDefault();
-    };
+    // Prevent tab close during redirect
+    const removeTabCloseHandler = agt.utils.dialog.prevent_tab_close();
 
-    // Add beforeunload handler to prevent tab close
-    window.addEventListener('beforeunload', beforeUnloadHandler);
-
-    // Show large non-dismissible modal before redirecting
-    const redirectDialog = new frappe.ui.Dialog({
-      title: __(redirectTitle),
-      size: 'large',
-      fields: [
-        {
-          fieldtype: 'HTML',
-          fieldname: 'redirect_message',
-          label: '',
-          options: `<div style="padding: 40px; text-align: center;">
-            <p style="font-size: 18px; line-height: 1.8; font-weight: 500; color: #000; margin-bottom: 30px;">
-              ${__(redirectMessage)}
-            </p>
-            <div style="margin-top: 30px;">
-              <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem; border-width: 0.4rem;">
-                <span class="sr-only">Loading...</span>
-              </div>
-            </div>
-          </div>`
-        }
-      ],
-      static: true
-    });
-
-    // Remove close button and ESC key functionality
-    redirectDialog['$wrapper'].find('.modal-header .close').remove();
-    redirectDialog['$wrapper'].find('.modal').attr('data-backdrop', 'static');
-    redirectDialog['$wrapper'].find('.modal').attr('data-keyboard', 'false');
-    redirectDialog.show();
+    // Show loading modal
+    agt.utils.dialog.show_loading_modal(redirectTitle, redirectMessage);
 
     // Remove beforeunload handler to allow redirect
-    window.removeEventListener('beforeunload', beforeUnloadHandler);
+    removeTabCloseHandler();
 
-    // Wait 2 seconds before redirecting
+    // Wait before redirecting
     setTimeout(() => {
-      console.log(`Timeout triggered, redirecting now...`);
       console.log(`Redirecting to ticket: ${ticket_docname}`);
       window.location.href = `/app/ticket/${ticket_docname}`;
     }, 100);
@@ -137,7 +104,6 @@ export const AutoTransitions = {
     form: FrappeForm<InitialAnalysis>,
     workflow_state: string
   ): Promise<void> => {
-    // Define localized strings
     const modalTitle = 'Confirm Workflow Transition';
     const confirmationMessage = `Are you sure you want to move the workflow to '${workflow_state}'? This action will bypass permission checks.`;
     const primaryActionLabel = 'Yes, Continue';
@@ -146,29 +112,14 @@ export const AutoTransitions = {
     const failureTitle = 'Workflow Transition Failed';
     const failureMessage = `Failed to transition workflow to '${workflow_state}'. Please try again or contact your system administrator.`;
 
-    // Check if a confirmation dialog is already open
-    if ($(`.modal.show .modal-title:contains("${modalTitle}")`).length > 0) {
-      return;
-    }
+    const ticket_docname = form.doc.ticket_docname;
 
-    // Create a custom modal dialog
-    const dialog = new frappe.ui.Dialog({
-      title: __(modalTitle),
-      fields: [
-        {
-          fieldtype: 'HTML',
-          fieldname: 'message',
-          label: '',
-          options: `<p>${__(confirmationMessage)}</p>`
-        }
-      ],
-      primary_action_label: __(primaryActionLabel),
-      secondary_action_label: __(secondaryActionLabel),
-      primary_action: async function () {
-        dialog.hide();
-
-        const ticket_docname = form.doc.ticket_docname;
-
+    agt.utils.dialog.show_confirmation_modal(
+      modalTitle,
+      confirmationMessage,
+      primaryActionLabel,
+      secondaryActionLabel,
+      async () => {
         try {
           form.set_df_property('workflow_state', 'read_only', 0);
           form.dirty();
@@ -210,11 +161,7 @@ export const AutoTransitions = {
             indicator: "red"
           });
         }
-      },
-      secondary_action: function () {
-        dialog.hide();
       }
-    });
-    dialog.show();
+    );
   }
 };

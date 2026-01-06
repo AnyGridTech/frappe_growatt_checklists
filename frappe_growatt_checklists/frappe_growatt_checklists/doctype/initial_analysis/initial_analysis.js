@@ -23,39 +23,10 @@
       const redirectTitle = "Redirecting to Ticket";
       const redirectMessage = "You will be redirected to the ticket. It is important that you stay on that page to proceed to the next step.";
       console.log(`Preparing to redirect to Ticket: ${ticket_docname}`);
-      const beforeUnloadHandler = (e) => {
-        e.preventDefault();
-      };
-      window.addEventListener("beforeunload", beforeUnloadHandler);
-      const redirectDialog = new frappe.ui.Dialog({
-        title: __(redirectTitle),
-        size: "large",
-        fields: [
-          {
-            fieldtype: "HTML",
-            fieldname: "redirect_message",
-            label: "",
-            options: `<div style="padding: 40px; text-align: center;">
-            <p style="font-size: 18px; line-height: 1.8; font-weight: 500; color: #000; margin-bottom: 30px;">
-              ${__(redirectMessage)}
-            </p>
-            <div style="margin-top: 30px;">
-              <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem; border-width: 0.4rem;">
-                <span class="sr-only">Loading...</span>
-              </div>
-            </div>
-          </div>`
-          }
-        ],
-        static: true
-      });
-      redirectDialog["$wrapper"].find(".modal-header .close").remove();
-      redirectDialog["$wrapper"].find(".modal").attr("data-backdrop", "static");
-      redirectDialog["$wrapper"].find(".modal").attr("data-keyboard", "false");
-      redirectDialog.show();
-      window.removeEventListener("beforeunload", beforeUnloadHandler);
+      const removeTabCloseHandler = agt.utils.dialog.prevent_tab_close();
+      agt.utils.dialog.show_loading_modal(redirectTitle, redirectMessage);
+      removeTabCloseHandler();
       setTimeout(() => {
-        console.log(`Timeout triggered, redirecting now...`);
         console.log(`Redirecting to ticket: ${ticket_docname}`);
         window.location.href = `/app/ticket/${ticket_docname}`;
       }, 100);
@@ -113,24 +84,13 @@
       const successMessage = `Workflow successfully transitioned to '${workflow_state}'`;
       const failureTitle = "Workflow Transition Failed";
       const failureMessage = `Failed to transition workflow to '${workflow_state}'. Please try again or contact your system administrator.`;
-      if ($(`.modal.show .modal-title:contains("${modalTitle}")`).length > 0) {
-        return;
-      }
-      const dialog = new frappe.ui.Dialog({
-        title: __(modalTitle),
-        fields: [
-          {
-            fieldtype: "HTML",
-            fieldname: "message",
-            label: "",
-            options: `<p>${__(confirmationMessage)}</p>`
-          }
-        ],
-        primary_action_label: __(primaryActionLabel),
-        secondary_action_label: __(secondaryActionLabel),
-        primary_action: async function() {
-          dialog.hide();
-          const ticket_docname = form.doc.ticket_docname;
+      const ticket_docname = form.doc.ticket_docname;
+      agt.utils.dialog.show_confirmation_modal(
+        modalTitle,
+        confirmationMessage,
+        primaryActionLabel,
+        secondaryActionLabel,
+        async () => {
           try {
             form.set_df_property("workflow_state", "read_only", 0);
             form.dirty();
@@ -162,12 +122,8 @@
               indicator: "red"
             });
           }
-        },
-        secondary_action: function() {
-          dialog.hide();
         }
-      });
-      dialog.show();
+      );
     }
   };
 
