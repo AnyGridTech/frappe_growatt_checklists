@@ -7,13 +7,13 @@
     fields_listener: (_form) => {
     },
     /**
-     * Força a transição para um workflow específico após confirmação do usuário
-     * @param form - O formulário atual
-     * @param workflow_state - O estado do workflow para o qual transicionar
+     * Forces workflow transition to a specific state after user confirmation
+     * @param form - The current form instance
+     * @param workflow_state - The target workflow state to transition to
      */
     force_workflow_transition: async (form, workflow_state) => {
       const confirmDialog = frappe.confirm(
-        __("Voc\xEA terminou o preenchimento?"),
+        __(`Are you sure you want to advance the workflow to '${workflow_state}'? This action will bypass permission checks.`),
         async () => {
           try {
             await agt.utils.update_workflow_state({
@@ -23,25 +23,25 @@
               ignore_workflow_validation: true
             });
             frappe.show_alert({
-              message: __("Workflow avan\xE7ado com sucesso!"),
+              message: __(`Workflow successfully transitioned to '${workflow_state}'`),
               indicator: "green"
             }, 5);
             form.reload_doc();
           } catch (error) {
-            console.error("Erro ao for\xE7ar transi\xE7\xE3o de workflow:", error);
+            console.error("Error forcing workflow transition:", error);
             frappe.msgprint({
-              title: __("Erro"),
-              message: __("Ocorreu um erro ao avan\xE7ar o workflow. Por favor, tente novamente."),
+              title: __("Workflow Transition Failed"),
+              message: __(`Failed to transition workflow to '${workflow_state}'. Please try again or contact your system administrator.`),
               indicator: "red"
             });
           }
         },
         () => {
-          console.log("Transi\xE7\xE3o de workflow cancelada pelo usu\xE1rio");
+          console.log("Workflow transition cancelled by user");
         }
       );
-      confirmDialog.set_primary_action(__("Sim"));
-      confirmDialog.set_secondary_action_label(__("N\xE3o"));
+      confirmDialog.set_primary_action(__("Yes, Continue"));
+      confirmDialog.set_secondary_action_label(__("No, Cancel"));
     },
     /**
      * Verifica se as condições para avançar para "Finished" foram atendidas

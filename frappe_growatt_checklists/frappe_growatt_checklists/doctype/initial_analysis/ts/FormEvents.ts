@@ -21,19 +21,19 @@ export const initial_analysis_utils = {
   },
   
   /**
-   * Força a transição para um workflow específico após confirmação do usuário
-   * @param form - O formulário atual
-   * @param workflow_state - O estado do workflow para o qual transicionar
+   * Forces workflow transition to a specific state after user confirmation
+   * @param form - The current form instance
+   * @param workflow_state - The target workflow state to transition to
    */
   force_workflow_transition: async (
     form: FrappeForm<InitialAnalysis>,
     workflow_state: string
   ): Promise<void> => {
     const confirmDialog = frappe.confirm(
-      __("Você terminou o preenchimento?"),
+      __(`Are you sure you want to advance the workflow to '${workflow_state}'? This action will bypass permission checks.`),
       async () => {
         try {
-          // Força a transição do workflow ignorando permissões
+          // Force workflow transition ignoring permissions
           await agt.utils.update_workflow_state({
             doctype: form.doc.doctype,
             docname: form.doc.name,
@@ -41,32 +41,32 @@ export const initial_analysis_utils = {
             ignore_workflow_validation: true
           });
 
-          // Mostra mensagem de sucesso
+          // Show success message
           frappe.show_alert({
-            message: __("Workflow avançado com sucesso!"),
+            message: __(`Workflow successfully transitioned to '${workflow_state}'`),
             indicator: "green"
           }, 5);
 
-          // Recarrega o formulário para refletir as mudanças
+          // Reload form to reflect changes
           form.reload_doc();
         } catch (error) {
-          console.error("Erro ao forçar transição de workflow:", error);
+          console.error("Error forcing workflow transition:", error);
           frappe.msgprint({
-            title: __("Erro"),
-            message: __("Ocorreu um erro ao avançar o workflow. Por favor, tente novamente."),
+            title: __("Workflow Transition Failed"),
+            message: __(`Failed to transition workflow to '${workflow_state}'. Please try again or contact your system administrator.`),
             indicator: "red"
           });
         }
       },
       () => {
-        // Se o usuário clicar em "Não", o modal simplesmente fecha
-        console.log("Transição de workflow cancelada pelo usuário");
+        // User clicked "No", modal closes without action
+        console.log("Workflow transition cancelled by user");
       }
     );
 
-    // Define os labels dos botões
-    confirmDialog.set_primary_action(__("Sim"));
-    confirmDialog.set_secondary_action_label(__("Não"));
+    // Set button labels
+    confirmDialog.set_primary_action(__("Yes, Continue"));
+    confirmDialog.set_secondary_action_label(__("No, Cancel"));
   },
 
   /**
