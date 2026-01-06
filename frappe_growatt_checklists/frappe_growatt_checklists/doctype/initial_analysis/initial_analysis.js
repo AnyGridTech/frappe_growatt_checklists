@@ -5,6 +5,70 @@
   // frappe_growatt_checklists/doctype/initial_analysis/ts/FormEvents.ts
   var initial_analysis_utils = {
     fields_listener: (_form) => {
+    },
+    /**
+     * Força a transição para um workflow específico após confirmação do usuário
+     * @param form - O formulário atual
+     * @param workflow_state - O estado do workflow para o qual transicionar
+     */
+    force_workflow_transition: async (form, workflow_state) => {
+      const confirmDialog = frappe.confirm(
+        __("Voc\xEA terminou o preenchimento?"),
+        async () => {
+          try {
+            await agt.utils.update_workflow_state({
+              doctype: form.doc.doctype,
+              docname: form.doc.name,
+              workflow_state,
+              ignore_workflow_validation: true
+            });
+            frappe.show_alert({
+              message: __("Workflow avan\xE7ado com sucesso!"),
+              indicator: "green"
+            }, 5);
+            form.reload_doc();
+          } catch (error) {
+            console.error("Erro ao for\xE7ar transi\xE7\xE3o de workflow:", error);
+            frappe.msgprint({
+              title: __("Erro"),
+              message: __("Ocorreu um erro ao avan\xE7ar o workflow. Por favor, tente novamente."),
+              indicator: "red"
+            });
+          }
+        },
+        () => {
+          console.log("Transi\xE7\xE3o de workflow cancelada pelo usu\xE1rio");
+        }
+      );
+      confirmDialog.set_primary_action(__("Sim"));
+      confirmDialog.set_secondary_action_label(__("N\xE3o"));
+    },
+    /**
+     * Verifica se as condições para avançar para "Finished" foram atendidas
+     * @param form - O formulário atual
+     * @returns true se todas as condições foram atendidas
+     */
+    check_finished_conditions: (form) => {
+      const solution_description = form.doc["solution_description"] || "";
+      const solution_select = form.doc["solution_select"];
+      return solution_description.length >= 15 && !!solution_select;
+    },
+    /**
+     * Verifica as condições e solicita transição para "Finished" se necessário
+     * Esta função é chamada quando os campos relevantes mudam ou no refresh
+     * @param form - O formulário atual
+     */
+    check_and_transition_to_finished: async (form) => {
+      if (!form.doc.name || form.doc.__islocal) {
+        return;
+      }
+      if (form.doc.workflow_state === "Finished") {
+        return;
+      }
+      const conditions_met = initial_analysis_utils.check_finished_conditions(form);
+      if (conditions_met) {
+        await initial_analysis_utils.force_workflow_transition(form, "Finished");
+      }
     }
   };
   frappe.ui.form.on(
@@ -19,6 +83,7 @@
       },
       refresh: async (form) => {
         initial_analysis_utils.fields_listener(form);
+        await initial_analysis_utils.check_and_transition_to_finished(form);
       },
       before_load: async (form) => {
         initial_analysis_utils.fields_listener(form);
@@ -28,6 +93,14 @@
       },
       before_workflow_action: async () => {
         await agt.workflow.validate();
+      },
+      // Event handler para quando solution_description muda
+      solution_description: async (form) => {
+        await initial_analysis_utils.check_and_transition_to_finished(form);
+      },
+      // Event handler para quando solution_select muda
+      solution_select: async (form) => {
+        await initial_analysis_utils.check_and_transition_to_finished(form);
       }
     }
   );
