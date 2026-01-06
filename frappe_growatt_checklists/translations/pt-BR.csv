@@ -339,3 +339,8 @@ The purchase invoice must be attached to proceed with checklist creation.,A nota
 The serial number label must be attached to proceed with checklist creation.,A etiqueta do número de série deve ser anexada para prosseguir com a criação do checklist.
 The solution description must have at least 15 characters to proceed with checklist creation.,A descrição da solução deve ter no mínimo 15 caracteres para prosseguir com a criação do checklist.
 The solution must be selected to proceed with checklist creation.,A solução deve ser selecionada para prosseguir com a criação do checklist.
+Have you finished filling this out?,Você terminou o preenchimento?
+Yes,Sim
+No,Não
+Form successfully advanced to Finished!,Formulário avançado para Finished com sucesso!
+An error occurred while advancing the workflow. Please try again.,Ocorreu um erro ao avançar o workflow. Por favor tente novamente.
