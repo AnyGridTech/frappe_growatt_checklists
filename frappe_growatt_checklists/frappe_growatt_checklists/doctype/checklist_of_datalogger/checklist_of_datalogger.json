@@ -246,15 +246,6 @@
    "options": "Checklist of Inverter",
    "read_only": 1,
    "search_index": 1
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Checklist of Inverter",
-   "read_only": 1,
-   "search_index": 1
   }
  ],
  "grid_page_length": 50,
