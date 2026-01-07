@@ -152,16 +152,14 @@
         },
         {
             "fieldname": "main_eqp_serial_no_label_picture",
-            "fieldtype": "Table",
+            "fieldtype": "Attach",
             "label": "Label Photo",
-            "options": "Global Attachments Table",
             "read_only": 1
         },
         {
             "fieldname": "main_eqp_purchase_invoice",
-            "fieldtype": "Table",
+            "fieldtype": "Attach",
             "label": "Purchase Invoice",
-            "options": "Global Attachments Table",
             "read_only": 1
         },
         {

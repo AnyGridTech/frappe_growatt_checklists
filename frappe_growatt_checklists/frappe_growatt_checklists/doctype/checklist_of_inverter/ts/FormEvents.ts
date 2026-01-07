@@ -224,17 +224,17 @@ async function fields_handler(form: FrappeForm<ChecklistInverter>) {
     Object.fromEntries(sectionTransformer.map(f => [f, { hidden: hide_trafo }]))
   );
 
-  const neutralFields = [
-    'colbreak_transformer_3',
-    'colbreak_ca_output_measurements_3',
-    'colbreak_ca_input_measurements_3',
-  ];
+  // const neutralFields = [
+  //   'colbreak_transformer_3',
+  //   'colbreak_ca_output_measurements_3',
+  //   'colbreak_ca_input_measurements_3',
+  // ];
 
-  const hide_neutral = main_eqp_has_neutral ? false : true;
-  agt.utils.form.field.set_properties(
-    form,
-    Object.fromEntries(neutralFields.map(f => [f, { hidden: hide_neutral }]))
-  );
+  // const hide_neutral = main_eqp_has_neutral ? false : true;
+  // agt.utils.form.field.set_properties(
+  //   form,
+  //   Object.fromEntries(neutralFields.map(f => [f, { hidden: hide_neutral }]))
+  // );
 
   const all_read_only = currentStateId >= 4;
 
