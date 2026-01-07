@@ -20,7 +20,7 @@
   "ext_fault_description",
   "ext_fault_customer_description",
   "section_pre_analysis",
-  "main_eqp_is_online",
+  "main_eqp_is_offline",
   "section_environment",
   "colbreak_environment_1",
   "oss_data_extraction",
@@ -122,9 +122,9 @@
   },
   {
    "default": "0",
-   "fieldname": "main_eqp_is_online",
+   "fieldname": "main_eqp_is_offline",
    "fieldtype": "Check",
-   "label": "Online",
+   "label": "Offline",
    "read_only": 1
   },
   {

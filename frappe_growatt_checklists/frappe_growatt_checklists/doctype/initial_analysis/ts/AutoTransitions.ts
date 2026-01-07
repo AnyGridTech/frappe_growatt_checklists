@@ -61,8 +61,6 @@ export const AutoTransitions = {
     // Define all required field validations
     const validations = [
       { field: 'ticket_docname', check: () => !!form.doc.ticket_docname },
-      { field: 'main_eqp_purchase_invoice', check: () => !!form.doc['main_eqp_purchase_invoice'] },
-      { field: 'main_eqp_serial_no_label_picture', check: () => !!form.doc['main_eqp_serial_no_label_picture'] },
       { field: 'ext_fault_date', check: () => !!form.doc.ext_fault_date },
       { field: 'ext_fault_code', check: () => !!form.doc.ext_fault_code },
       { field: 'ext_fault_description', check: () => !!form.doc.ext_fault_description },

@@ -20,7 +20,7 @@
   "ext_fault_description",
   "ext_fault_customer_description",
   "section_pre_analysis",
-  "main_eqp_is_online",
+  "main_eqp_is_offline",
   "main_eqp_has_neutral",
   "main_eqp_has_stringbox",
   "main_eqp_has_battery",
@@ -216,9 +216,9 @@
   },
   {
    "default": "0",
-   "fieldname": "main_eqp_is_online",
+   "fieldname": "main_eqp_is_offline",
    "fieldtype": "Check",
-   "label": "Online",
+   "label": "Offline",
    "read_only": 1
   },
   {
@@ -770,7 +770,7 @@
    "fieldname": "caveat",
    "fieldtype": "Select",
    "label": "Caveat",
-   "options": "Sun Exposure\nSpacing\nHigh Grid Voltage"
+   "options": "Exposure to weather conditions\nHigh voltage between Neutral and Ground\nHigh voltage between PV and Ground\nImproper proximity between DC and AC cables\nInadequate spacing\nAC voltage deviating from nominal\nDC voltage deviating from nominal"
   },
   {
    "fieldname": "email",

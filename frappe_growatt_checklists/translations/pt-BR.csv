@@ -48,7 +48,7 @@ BMS,BMS
 Batteries,Baterias
 Battery Information,Informações da Bateria
 Battery Installation,Instalação da Bateria
-Battery Label Photo,Foto da Placa da Bateria
+Battery Label Photo,Foto da Etiqueta da Bateria
 Battery Model,Modelo da Bateria
 Battery S/N,S/N da Bateria
 Battery Settings,Configurações da Bateria
@@ -116,7 +116,7 @@ Environment Photos,Fotos do Ambiente
 Equipment,Equipamento
 Equipment Info,Informações do Equipamento
 Equipment Information,Informações do Equipamento
-Equipment Label Photo,Foto da Placa do Equipamento
+Equipment Label Photo,Foto da Etiqueta do Equipamento
 Equipment Model,Modelo do Equipamento
 Equipment Name,Nome do Equipamento
 Equipment SN,SN do Equipamento
@@ -156,7 +156,7 @@ Installation ZIP Code,CEP de Instalação
 Internal,Interno
 Internal Information,Informações Internas
 Inverter AC Connector Photo,Foto do Conector AC do Inversor
-Inverter Nameplate Photo,Foto da Placa do Inversor
+Inverter Nameplate Photo,Foto da Etiqueta do Inversor
 Inverter Phase,Fase do Inversor
 Inverter Photo,Foto do Inversor
 Inverter Video,Vídeo do Inversor
@@ -165,7 +165,7 @@ Invoice Date,Data da Nota Fiscal
 Item,Item
 Item Description,Descrição do Item
 Item Name,Nome do Item
-Label Photo,Foto da Placa
+Label Photo,Foto da Etiqueta
 Large,Grande
 Large Type 1,Grande Tipo 1
 Large Type 2,Grande Tipo 2
@@ -195,7 +195,7 @@ Model,Modelo
 Model Code,Código do Modelo
 Model Reference,Referência do Modelo
 N/A,N/A
-Nameplate Photo,Foto da Placa de Identificação
+Nameplate Photo,Foto da Etiqueta de Identificação
 Negative to Ground Measurement,Medição Negativo para Terra
 Neutral,Neutro
 Neutral Measurements,Medições com Neutro
@@ -285,7 +285,7 @@ Three Phase,Trifásico
 Ticket,Ticket
 Ticket Reference,Referência do Ticket
 Transformer,Transformador
-Transformer Label Photo,Foto da Placa do Transformador
+Transformer Label Photo,Foto da Etiqueta do Transformador
 Treatment,Tratamento
 Trigger Battery Shipment,Acionar Envio de Bateria
 Two Phase,Bifásico
@@ -345,3 +345,10 @@ Workflow Transition Failed,Falha na Transição do Workflow
 Failed to transition workflow to '{0}'. Please try again or contact your system administrator.,Falha ao transicionar workflow para '{0}'. Por favor tente novamente ou contate seu administrador do sistema.
 "Yes, Continue","Sim, Continuar"
 "No, Cancel","Não, Cancelar"
+Exposure to weather conditions,Exposição a intempéries
+High voltage between Neutral and Ground,Tensão elevada entre Neutro e Terra
+High voltage between PV and Ground,Tensão elevada entre PV e Terra
+Improper proximity between DC and AC cables,Proximidade inadequada entre cabos CC e CA
+Inadequate spacing,Espaçamento Inadequado
+AC voltage deviating from nominal,Tensão CA distante da nominal
+DC voltage deviating from nominal,Tensão CC distante da nominal
