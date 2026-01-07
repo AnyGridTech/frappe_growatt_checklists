@@ -14,7 +14,7 @@
         "main_eqp_serial_no_label_picture",
         "main_eqp_purchase_invoice",
         "section_eqp_failure",
-        "column_break_ftxy",
+        "column_break_cust",
         "ext_fault_date",
         "ext_fault_code",
         "ext_fault_description",
@@ -152,16 +152,14 @@
         },
         {
             "fieldname": "main_eqp_serial_no_label_picture",
-            "fieldtype": "Table",
+            "fieldtype": "Attach",
             "label": "Label Photo",
-            "options": "Global Attachments Table",
             "read_only": 1
         },
         {
             "fieldname": "main_eqp_purchase_invoice",
-            "fieldtype": "Table",
+            "fieldtype": "Attach",
             "label": "Purchase Invoice",
-            "options": "Global Attachments Table",
             "read_only": 1
         },
         {
@@ -842,8 +840,4 @@
     "sort_field": "modified",
     "sort_order": "DESC",
     "states": []
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/main
