@@ -142,7 +142,7 @@
             "default": "0",
             "fieldname": "main_eqp_is_offline",
             "fieldtype": "Check",
-            "label": "Online"
+            "label": "Offline"
         },
         {
             "default": "0",
