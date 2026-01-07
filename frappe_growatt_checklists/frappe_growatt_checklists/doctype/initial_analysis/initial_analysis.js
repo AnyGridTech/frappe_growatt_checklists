@@ -42,8 +42,6 @@
       }
       const validations = [
         { field: "ticket_docname", check: () => !!form.doc.ticket_docname },
-        { field: "main_eqp_purchase_invoice", check: () => !!form.doc["main_eqp_purchase_invoice"] },
-        { field: "main_eqp_serial_no_label_picture", check: () => !!form.doc["main_eqp_serial_no_label_picture"] },
         { field: "ext_fault_date", check: () => !!form.doc.ext_fault_date },
         { field: "ext_fault_code", check: () => !!form.doc.ext_fault_code },
         { field: "ext_fault_description", check: () => !!form.doc.ext_fault_description },
@@ -273,24 +271,6 @@
           depends_on: (frm) => {
             if (!frm.doc.ticket_docname) {
               return "The Ticket reference is missing. Cannot proceed without it.";
-            }
-            return void 0;
-          }
-        },
-        {
-          name: "main_eqp_purchase_invoice",
-          depends_on: (frm) => {
-            if (!frm.doc.main_eqp_purchase_invoice) {
-              return "The purchase invoice must be attached to proceed with checklist creation.";
-            }
-            return void 0;
-          }
-        },
-        {
-          name: "main_eqp_serial_no_label_picture",
-          depends_on: (frm) => {
-            if (!frm.doc.main_eqp_serial_no_label_picture) {
-              return "The serial number label must be attached to proceed with checklist creation.";
             }
             return void 0;
           }

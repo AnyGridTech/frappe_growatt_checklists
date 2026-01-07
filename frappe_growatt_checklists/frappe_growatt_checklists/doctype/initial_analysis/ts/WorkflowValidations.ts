@@ -15,24 +15,6 @@ const workflow_validations: WorkflowValidation[] = [
         }
       },
       {
-        name: "main_eqp_purchase_invoice",
-        depends_on: (frm) => {
-          if (!frm.doc.main_eqp_purchase_invoice) {
-            return "The purchase invoice must be attached to proceed with checklist creation.";
-          }
-          return undefined;
-        }
-      },
-      {
-        name: "main_eqp_serial_no_label_picture",
-        depends_on: (frm) => {
-          if (!frm.doc.main_eqp_serial_no_label_picture) {
-            return "The serial number label must be attached to proceed with checklist creation.";
-          }
-          return undefined;
-        }
-      },
-      {
         name: "ext_fault_date",
         depends_on: (frm) => {
           if (!frm.doc.ext_fault_date) {

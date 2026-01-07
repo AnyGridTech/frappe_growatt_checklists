@@ -21,7 +21,7 @@
         "ext_fault_customer_description",
         "section_pre_analysis",
         "an\u00e1lise_column",
-        "main_eqp_is_online",
+        "main_eqp_is_offline",
         "main_eqp_has_updated",
         "main_eqp_has_reseted",
         "main_eqp_has_neutral",
@@ -140,7 +140,7 @@
         },
         {
             "default": "0",
-            "fieldname": "main_eqp_is_online",
+            "fieldname": "main_eqp_is_offline",
             "fieldtype": "Check",
             "label": "Online"
         },
